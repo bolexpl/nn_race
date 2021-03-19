@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Car.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/map.png" type="Texture" id=2]
+[ext_resource path="res://Main.gd" type="Script" id=3]
+
+[node name="Main" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 509.909, 300.925 )
+scale = Vector2( 0.994147, 0.997503 )
+texture = ExtResource( 2 )
+
+[node name="DistanceLabel" type="Label" parent="."]
+margin_left = 384.0
+margin_top = 16.0
+margin_right = 480.0
+margin_bottom = 37.0
+text = "Dystans: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ForwardLabel" type="Label" parent="."]
+margin_left = 384.0
+margin_top = 88.0
+margin_right = 436.0
+margin_bottom = 102.0
+text = "Przód: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftLabel" type="Label" parent="."]
+margin_left = 384.0
+margin_top = 40.0
+margin_right = 432.0
+margin_bottom = 54.0
+text = "Lewa: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftLabel2" type="Label" parent="."]
+margin_left = 384.0
+margin_top = 64.0
+margin_right = 432.0
+margin_bottom = 78.0
+text = "Lewa2: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightLabel" type="Label" parent="."]
+margin_left = 384.0
+margin_top = 136.0
+margin_right = 437.0
+margin_bottom = 150.0
+text = "Prawa: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightLabel2" type="Label" parent="."]
+margin_left = 384.0
+margin_top = 112.0
+margin_right = 445.0
+margin_bottom = 126.0
+text = "Prawa2: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Car" parent="." instance=ExtResource( 1 )]
+position = Vector2( 184.097, 530.417 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 403.904, 2.50763, 0.115417, 0.505367, 1.14817, 600.275, 390.968, 599.331, 637.303, 599.052, 1020.4, 600.387, 1018.73, 2.04514, 405.042, 2.37887, 466.211, 205.217, 485.357, 217.415, 537.913, 216.994, 569.447, 197.654, 582.06, 161.075, 624.526, 119.03, 668.791, 84.6642, 712.389, 71.4568, 844.872, 51.7679, 915.284, 136.53, 944.984, 314.064, 892.925, 467.237, 831.189, 510.619, 700.374, 541.988, 614.945, 478.917, 569.868, 484.4, 489.142, 518.456, 383.609, 550.83, 242.78, 565.352, 164.438, 572.431, 109.222, 525.709, 77.602, 446.895, 46.8299, 388.958, 25.3871, 327.993, 10.2509, 267.028, 14.1312, 201.399, 35.8983, 121.132, 91.8179, 85.3941, 139.749, 76.5647, 209.964, 99.2689, 331.156, 170.03, 377.778, 181.857, 465.544, 205.217 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 0, 0.667419 )
+polygon = PoolVector2Array( 134.443, 202.142, 105.473, 207.698, 100.711, 229.922, 107.06, 256.907, 128.093, 294.608, 150.317, 348.977, 152.301, 445.411, 186.43, 486.684, 281.674, 483.509, 369.364, 463.959, 468.183, 443.172, 532.087, 390.249, 631.461, 390.265, 721.258, 448.633, 817.041, 414.077, 853.063, 299.391, 836.376, 193.444, 807.241, 146.298, 743.143, 156.893, 698.525, 180.589, 666.571, 207.498, 632.514, 244.497, 587.526, 269.303, 546.322, 290.326, 504.793, 310.474, 399.586, 286.542, 249.066, 235.668, 184.049, 221.191 )
