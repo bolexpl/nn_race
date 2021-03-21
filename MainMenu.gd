@@ -11,4 +11,4 @@ func _on_Track1Button_pressed():
 
 
 func _on_EmptyButton_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://EmptyMap.tscn")

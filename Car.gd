@@ -15,6 +15,7 @@ export var working = true
 # steering
 export var wheel_base = 35  # Distance from front to rear wheel
 export var steering_angle = 15  # Amount that front wheel turns, in degrees
+export var steering_scale = 1.7
 # acceleration
 export var engine_power = 800  # Forward acceleration force.
 # friction, drag
@@ -81,35 +82,29 @@ func cast_rays():
 
 
 func set_input(turn_param, accel_param):
-	var turn = 0
-	if turn_param > 0:
-		turn += 1
-	if turn_param < 0:
-		turn -= 1
+	var turn = turn_param
+#	if turn_param > 0:
+#		turn += 1
+#	if turn_param < 0:
+#		turn -= 1
 	steer_angle = turn * deg2rad(steering_angle)
 	if accel_param > 0:
-		acceleration = transform.x * engine_power
+		acceleration = transform.x * engine_power * accel_param
 	if accel_param < 0:
-		acceleration = transform.x * braking
+		acceleration = transform.x * braking * (-accel_param)
 
 
 func get_input():
 	var turn_param = 0
 	var accel_param = 0
-	var constant = 6
 	if Input.is_action_pressed("ui_right"):
-		turn_param += Input.get_action_strength("ui_right") * constant
-		print(Input.get_action_strength("ui_right") * constant)
-#		turn_param += 1
+		turn_param += Input.get_action_strength("ui_right") * steering_scale
 	if Input.is_action_pressed("ui_left"):
-		turn_param -= Input.get_action_strength("ui_left") * constant
-#		turn_param -= 1
+		turn_param -= Input.get_action_strength("ui_left") * steering_scale
 	if Input.is_action_pressed("ui_up"):
 		accel_param += Input.get_action_strength("ui_up")
-#		accel_param += 1
 	if Input.is_action_pressed("ui_down"):
 		accel_param -= Input.get_action_strength("ui_down")
-#		accel_param -= 1
 	set_input(turn_param, accel_param)
 
 
