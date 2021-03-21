@@ -17,7 +17,7 @@ export var wheel_base = 35  # Distance from front to rear wheel
 export var steering_angle = 15  # Amount that front wheel turns, in degrees
 export var steering_scale = 1.7
 # acceleration
-export var engine_power = 800  # Forward acceleration force.
+export var engine_power = 600  # Forward acceleration force.
 # friction, drag
 export var friction = -0.9
 export var drag = -0.0015
@@ -98,13 +98,22 @@ func get_input():
 	var turn_param = 0
 	var accel_param = 0
 	if Input.is_action_pressed("ui_right"):
-		turn_param += Input.get_action_strength("ui_right") * steering_scale
+		turn_param += 1
 	if Input.is_action_pressed("ui_left"):
-		turn_param -= Input.get_action_strength("ui_left") * steering_scale
+		turn_param -= 1
 	if Input.is_action_pressed("ui_up"):
-		accel_param += Input.get_action_strength("ui_up")
+		accel_param += 1
 	if Input.is_action_pressed("ui_down"):
-		accel_param -= Input.get_action_strength("ui_down")
+		accel_param -= 1
+		
+	if Input.is_action_pressed("turn_right"):
+		turn_param += Input.get_action_strength("turn_right") * steering_scale
+	if Input.is_action_pressed("turn_left"):
+		turn_param -= Input.get_action_strength("turn_left") * steering_scale
+	if Input.is_action_pressed("accelerate"):
+		accel_param += Input.get_action_strength("accelerate")
+	if Input.is_action_pressed("brake"):
+		accel_param -= Input.get_action_strength("brake")
 	set_input(turn_param, accel_param)
 
 
