@@ -15,7 +15,7 @@ export var working = true
 # steering
 export var wheel_base = 35  # Distance from front to rear wheel
 export var steering_angle = 15  # Amount that front wheel turns, in degrees
-export var steering_scale = 1.5
+export var steering_scale = 1.7
 # acceleration
 export var engine_power = 800  # Forward acceleration force.
 # friction, drag
