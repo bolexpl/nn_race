@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://MainMenu.gd" type="Script" id=2]
+
+[node name="MainMenu" type="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 375.0
+margin_right = 649.0
+margin_bottom = 600.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="Track1Button" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 224.0
+margin_right = 274.0
+margin_bottom = 275.0
+custom_fonts/font = ExtResource( 1 )
+text = "TRACK 1"
+
+[node name="EmptyButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 325.0
+margin_right = 274.0
+margin_bottom = 376.0
+custom_fonts/font = ExtResource( 1 )
+text = "PUSTA MAPA"
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Track1Button" to="." method="_on_Track1Button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/EmptyButton" to="." method="_on_EmptyButton_pressed"]

@@ -40,20 +40,20 @@ var ray_distances = [0,0,0,0,0]
 
 func _ready():
 	halfsize = wheel_base / 2
-	rays = [$Forward, $Left, $Right, $Left2, $Right2]
-	labels = [get_node("../ForwardLabel"),
-			get_node("../LeftLabel"),
-			get_node("../RightLabel"),
-			get_node("../LeftLabel2"),
-			get_node("../RightLabel2")]
-	label_texts = ["Przód: ", "Lewa: ", "Prawa: ", "Lewa2: ", "Prawa2: "]
+#	rays = [$Forward, $Left, $Right, $Left2, $Right2]
+#	labels = [get_node("../ForwardLabel"),
+#			get_node("../LeftLabel"),
+#			get_node("../RightLabel"),
+#			get_node("../LeftLabel2"),
+#			get_node("../RightLabel2")]
+#	label_texts = ["Przód: ", "Lewa: ", "Prawa: ", "Lewa2: ", "Prawa2: "]
 
 func _physics_process(delta):
 	if not working:
 		return
 	distance += velocity.length() * delta
-	get_node("../DistanceLabel").text = "Dystans: " + String(distance)
-	cast_rays()
+#	get_node("../DistanceLabel").text = "Dystans: " + String(distance)
+#	cast_rays()
 	
 	# TODO pobranie wyniku z sieci neuronowej
 	
@@ -96,14 +96,20 @@ func set_input(turn_param, accel_param):
 func get_input():
 	var turn_param = 0
 	var accel_param = 0
-	if Input.is_action_pressed("steer_right"):
-		turn_param += 1
-	if Input.is_action_pressed("steer_left"):
-		turn_param -= 1
-	if Input.is_action_pressed("accelerate"):
-		accel_param += 1
-	if Input.is_action_pressed("brake"):
-		accel_param -= 1
+	var constant = 6
+	if Input.is_action_pressed("ui_right"):
+		turn_param += Input.get_action_strength("ui_right") * constant
+		print(Input.get_action_strength("ui_right") * constant)
+#		turn_param += 1
+	if Input.is_action_pressed("ui_left"):
+		turn_param -= Input.get_action_strength("ui_left") * constant
+#		turn_param -= 1
+	if Input.is_action_pressed("ui_up"):
+		accel_param += Input.get_action_strength("ui_up")
+#		accel_param += 1
+	if Input.is_action_pressed("ui_down"):
+		accel_param -= Input.get_action_strength("ui_down")
+#		accel_param -= 1
 	set_input(turn_param, accel_param)
 
 
