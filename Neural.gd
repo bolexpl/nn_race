@@ -33,48 +33,55 @@ func train(x, y, iter_count):
 	var a = []
 	a.resize(self.l_count)
 	a[0] = transpose(x)
+	
 	var error = []
 	error.resize(self.l_count)
-	for i in range(self.l_count):
-		error[i] = []
+	for i_layer in range(self.l_count):
+		error[i_layer] = []
 	
-	for _i in range(iter_count):
+	for _i_iteration in range(iter_count):
 		# forward propagation to calculate output using sigmoid function
-		for i2 in range(1, self.l_count): # layers
-			var myk1 = matmul(self.theta[i2 - 1], a[i2 - 1])
+		for i_layer in range(1, self.l_count): # layers
+			var tmp1 = matmul(self.theta[i_layer - 1], a[i_layer - 1])
 			var result = []
 			# matrix loops
-			for i3 in range(myk1.size()): # neurons
+			for i_neuron in range(tmp1.size()): # neurons
 				result.append([])
-				for i4 in range(myk1[i3].size()):
+				for i_example in range(tmp1[i_neuron].size()):
 					# TODO bias do aktywacji
-					myk1[i3][i4] = exp(-myk1[i3][i4])
-					result[i3].append(1 / (1 + myk1[i3][i4]))
-			a[i2] = result
-		
-		# bias takim samym wzorem poprawiać
+					tmp1[i_neuron][i_example] = tmp1[i_neuron][i_example] + biases[i_layer - 1][i_neuron]
+					tmp1[i_neuron][i_example] = exp(-tmp1[i_neuron][i_example])
+					result[i_neuron].append(1 / (1 + tmp1[i_neuron][i_example]))
+			a[i_layer] = result
 		
 		# back propagation to calculate error
 		error[self.l_count - 1] = subtract(a[self.l_count - 1], transpose(y))
-		for i2 in range(self.l_count - 2, 0, -1):
-			var tmp1 = matmul(transpose(self.theta[i2]), error[i2 + 1])
+		for i_layer in range(self.l_count - 2, 0, -1):
+			var tmp1 = matmul(transpose(self.theta[i_layer]), error[i_layer + 1])
 			var tmp2 = []
+			tmp2.resize(a[i_layer].size())
 			# matrix loops
-			tmp2.resize(a[i2].size())
-			for i3 in range(a[i2].size()):
-				tmp2[i3] = []
-				tmp2[i3].resize(a[i2][i3].size())
-				for i4 in range(a[i2][i3].size()):
-					tmp2[i3][i4] = 1 - a[i2][i3][i4]
-			error[i2] = multiply(multiply(tmp1, a[i2]), tmp2)
+			for i_neuron in range(a[i_layer].size()):
+				tmp2[i_neuron] = []
+				tmp2[i_neuron].resize(a[i_layer][i_neuron].size())
+				for i_example in range(a[i_layer][i_neuron].size()):
+					tmp2[i_neuron][i_example] = 1 - a[i_layer][i_neuron][i_example]
+			error[i_layer] = multiply(multiply(tmp1, a[i_layer]), tmp2)
 		
 		# subtract partial derivatives from theta
-		for i2 in range(1, self.l_count):
-			var myk2 = matmul(error[i2], transpose(a[i2 - 1]))
-			var myk3 = self.theta[i2 - 1]
-			self.theta[i2 - 1] = subtract(myk3, myk2)
+		for i_layer in range(1, self.l_count):
+			
 			# w = w - (error * input)
+			# poprawa wag
+			var tmp1 = matmul(error[i_layer], transpose(a[i_layer - 1]))
+			self.theta[i_layer - 1] = subtract(self.theta[i_layer - 1], tmp1)
+			
 			# b = b - (error * -1)
+			# poprawa biasów
+			for i_neuron in range(error[i_layer].size()):
+				for i_example in range(error[i_layer][i_neuron].size()):
+					var tmp2 = error[i_layer][i_neuron][i_example] * (-1)
+					biases[i_layer-1][i_neuron] = biases[i_layer-1][i_neuron] - tmp2
 
 
 func forward(x):
@@ -88,17 +95,18 @@ func forward(x):
 		error[i] = []
 	
 	# forward propagation to calculate output using sigmoid function
-	for i2 in range(1, self.l_count):
-		var tmp1 = matmul(self.theta[i2 - 1], a[i2 - 1])
+	for i_layer in range(1, self.l_count):
+		var tmp1 = matmul(self.theta[i_layer - 1], a[i_layer - 1])
 		var result = []
 		# matrix loops
-		for i3 in range(tmp1.size()):
+		for i_neuron in range(tmp1.size()):
 			result.append([])
-			for i4 in range(tmp1[i3].size()):
+			for i_example in range(tmp1[i_neuron].size()):
 				# TODO bias do aktywacji
-				tmp1[i3][i4] = -exp(tmp1[i3][i4])
-				result[i3].append(1 / (1 + tmp1[i3][i4]))
-		a[i2] = result
+				tmp1[i_neuron][i_example] = tmp1[i_neuron][i_example] + biases[i_layer - 1][i_neuron]
+				tmp1[i_neuron][i_example] = -exp(tmp1[i_neuron][i_example])
+				result[i_neuron].append(1 / (1 + tmp1[i_neuron][i_example]))
+		a[i_layer] = result
 	self.output = a[self.l_count - 1]
 
 
