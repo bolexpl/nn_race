@@ -5,10 +5,14 @@ const Neural = preload("res://Neural.gd")
 
 
 func _ready():
+	# min 20 par do 30
+	# 80% do trenowania
+	# x1 / suma_x1
 	var x = [[0, 0, 1],
 		[1, 0, 1],
 		[1, 1, 1],
 		[0, 1, 1]]
+	# x1 / suma_x1
 	var y = [[0],
 		 [1],
 		 [1],

@@ -127,6 +127,7 @@ func randn(n, m):
 	for i in range(n):
 		result.append([])
 		for _j in range(m):
+			# TODO losować z przedziału wartości wejść
 			result[i].append(rand.randfn())
 	return result
 
