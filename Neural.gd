@@ -40,11 +40,11 @@ func train(x, y, iter_count):
 	
 	for _i in range(iter_count):
 		# forward propagation to calculate output using sigmoid function
-		for i2 in range(1, self.l_count):
+		for i2 in range(1, self.l_count): # layers
 			var myk1 = matmul(self.theta[i2 - 1], a[i2 - 1])
 			var result = []
 			# matrix loops
-			for i3 in range(myk1.size()):
+			for i3 in range(myk1.size()): # neurons
 				result.append([])
 				for i4 in range(myk1[i3].size()):
 					# TODO bias do aktywacji
@@ -52,7 +52,7 @@ func train(x, y, iter_count):
 					result[i3].append(1 / (1 + myk1[i3][i4]))
 			a[i2] = result
 		
-		# bias takim samym wzorem
+		# bias takim samym wzorem poprawiać
 		
 		# back propagation to calculate error
 		error[self.l_count - 1] = subtract(a[self.l_count - 1], transpose(y))
@@ -161,5 +161,4 @@ static func subtract(a, b):
 		for j in range(a[i].size()):
 			matrix[i][j] = a[i][j] - b[i][j]
 	return matrix
-
 
