@@ -6,13 +6,17 @@ var theta
 var output
 var biases
 var rand
+var x_min
+var x_max
 
 
-func _init(input_count, layer_count, neurons_array):
-	rand = RandomNumberGenerator.new()
-	rand.randomize()
+func _init(input_count, layer_count, neurons_array, x_min_p, x_max_p):
+	self.rand = RandomNumberGenerator.new()
+	self.rand.randomize()
 	self.n_array = [input_count] + neurons_array
 	self.l_count = layer_count + 1
+	self.x_min = x_min_p
+	self.x_max = x_max_p
 	self.output = []
 	self.theta = []
 	self.biases = []
@@ -25,7 +29,8 @@ func _init(input_count, layer_count, neurons_array):
 		self.biases.append([])
 		self.biases[i].resize(self.n_array[i+1])
 		for i2 in range(self.biases[i].size()):
-			self.biases[i][i2] = rand.randfn()
+			self.biases[i][i2] = rand.randf_range(self.x_min, self.x_max)
+#			self.biases[i][i2] = rand.randfn()
 
 
 func train(x, y, iter_count):
@@ -49,7 +54,7 @@ func train(x, y, iter_count):
 				result.append([])
 				for i_example in range(tmp1[i_neuron].size()):
 					# TODO bias do aktywacji
-					tmp1[i_neuron][i_example] = tmp1[i_neuron][i_example] + biases[i_layer - 1][i_neuron]
+#					tmp1[i_neuron][i_example] = tmp1[i_neuron][i_example] + biases[i_layer - 1][i_neuron]
 					tmp1[i_neuron][i_example] = exp(-tmp1[i_neuron][i_example])
 					result[i_neuron].append(1 / (1 + tmp1[i_neuron][i_example]))
 			a[i_layer] = result
@@ -71,16 +76,15 @@ func train(x, y, iter_count):
 		# subtract partial derivatives from theta
 		for i_layer in range(1, self.l_count):
 			
-			# w = w - (error * input)
 			# poprawa wag
 			var tmp1 = matmul(error[i_layer], transpose(a[i_layer - 1]))
 			self.theta[i_layer - 1] = subtract(self.theta[i_layer - 1], tmp1)
 			
-			# b = b - (error * -1)
 			# poprawa biasów
+			var x0 = 1
 			for i_neuron in range(error[i_layer].size()):
 				for i_example in range(error[i_layer][i_neuron].size()):
-					var tmp2 = error[i_layer][i_neuron][i_example] * (-1)
+					var tmp2 = error[i_layer][i_neuron][i_example] * x0
 					biases[i_layer-1][i_neuron] = biases[i_layer-1][i_neuron] - tmp2
 
 
@@ -103,14 +107,27 @@ func forward(x):
 			result.append([])
 			for i_example in range(tmp1[i_neuron].size()):
 				# TODO bias do aktywacji
-				tmp1[i_neuron][i_example] = tmp1[i_neuron][i_example] + biases[i_layer - 1][i_neuron]
+#				tmp1[i_neuron][i_example] = tmp1[i_neuron][i_example] + biases[i_layer - 1][i_neuron]
 				tmp1[i_neuron][i_example] = -exp(tmp1[i_neuron][i_example])
 				result[i_neuron].append(1 / (1 + tmp1[i_neuron][i_example]))
 		a[i_layer] = result
 	self.output = a[self.l_count - 1]
 
 
-func transpose(arr):
+static func get_min_max(x):
+	var min_x = x[0][0]
+	var max_x = x[0][0]
+	for i in range(x.size()):
+		for i2 in range(x[i].size()):
+			var tmp = x[i][i2]
+			if tmp < min_x:
+				min_x = tmp
+			if tmp > max_x:
+				max_x = tmp
+	return [min_x, max_x]
+
+
+static func transpose(arr):
 	var result = []
 	var m = arr.size()
 	var n = arr[0].size()
@@ -127,8 +144,8 @@ func randn(n, m):
 	for i in range(n):
 		result.append([])
 		for _j in range(m):
-			# TODO losować z przedziału wartości wejść
-			result[i].append(rand.randfn())
+			result[i].append(rand.randf_range(self.x_min, self.x_max))
+#			result[i].append(rand.randfn())
 	return result
 
 
@@ -171,3 +188,17 @@ static func subtract(a, b):
 			matrix[i][j] = a[i][j] - b[i][j]
 	return matrix
 
+# x1 / suma_x1
+static func normalize(mat):
+	var res = zero_matrix(mat.size(), mat[0].size())
+	var cols = []
+	
+	cols.resize(mat[0].size())
+	for col in range(mat[0].size()):
+		cols[col] = 0.0
+		for row in range(mat.size()):
+			cols[col] = cols[col] + mat[row][col]
+		
+		for row in range(mat.size()):
+			res[row][col] = mat[row][col] / cols[col]
+	return res
