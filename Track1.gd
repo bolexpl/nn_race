@@ -4,6 +4,12 @@ extends Node
 const Neural = preload("res://Neural.gd")
 
 
+# zmiany:
+# - normalizacja x
+# - normalizacja y
+# - generowanie z 
+# - biasy
+
 func _ready():
 	# min 20 par do 30
 	# 80% do trenowania
@@ -35,7 +41,7 @@ func _ready():
 #	var nn = Neural.new(len(x[0]), len(n_array), n_array, 0, 1)
 	
 #	nn.train(Neural.normalize(x), y, iter_count)
-	nn.train(x2, y2, iter_count)
+	nn.train(x, y, iter_count)
 	
 #	nn.forward(Neural.normalize(x2))
 	nn.forward(x2)

@@ -54,7 +54,7 @@ func train(x, y, iter_count):
 				result.append([])
 				for i_example in range(tmp1[i_neuron].size()):
 					# TODO bias do aktywacji
-#					tmp1[i_neuron][i_example] = tmp1[i_neuron][i_example] + biases[i_layer - 1][i_neuron]
+					tmp1[i_neuron][i_example] = tmp1[i_neuron][i_example] + biases[i_layer - 1][i_neuron]
 					tmp1[i_neuron][i_example] = exp(-tmp1[i_neuron][i_example])
 					result[i_neuron].append(1 / (1 + tmp1[i_neuron][i_example]))
 			a[i_layer] = result
@@ -107,7 +107,7 @@ func forward(x):
 			result.append([])
 			for i_example in range(tmp1[i_neuron].size()):
 				# TODO bias do aktywacji
-#				tmp1[i_neuron][i_example] = tmp1[i_neuron][i_example] + biases[i_layer - 1][i_neuron]
+				tmp1[i_neuron][i_example] = tmp1[i_neuron][i_example] + biases[i_layer - 1][i_neuron]
 				tmp1[i_neuron][i_example] = -exp(tmp1[i_neuron][i_example])
 				result[i_neuron].append(1 / (1 + tmp1[i_neuron][i_example]))
 		a[i_layer] = result
