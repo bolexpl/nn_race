@@ -4,6 +4,12 @@ extends Node
 const Neural = preload("res://Neural.gd")
 
 
+# zmiany:
+# - normalizacja x
+# - normalizacja y
+# - generowanie z 
+# - biasy
+
 func _ready():
 	pass
 	# min 20 par do 30
