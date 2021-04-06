@@ -49,3 +49,7 @@ position = Vector2( 16.8956, 5.54111 )
 enabled = true
 cast_to = Vector2( 500, 250 )
 collision_mask = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+rotating = true
+current = true
