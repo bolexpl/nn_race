@@ -1,14 +1,8 @@
 extends Node
 
 
-const Neural = preload("res://Neural.gd")
+const Neural = preload("res://src/Neural.gd")
 
-
-# zmiany:
-# - normalizacja x
-# - normalizacja y
-# - generowanie z 
-# - biasy
 
 func _ready():
 	pass
