@@ -45,5 +45,5 @@ func _ready():
 #	get_tree().quit()
 
 
-func val():
-	return randi() % 2
+#func val():
+#	return randi() % 2
