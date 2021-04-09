@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/SettingsMenu.gd" type="Script" id=1]
+
+[node name="SettingsMenu" type="MarginContainer"]
+margin_top = 200.0
+margin_right = 1024.0
+margin_bottom = 600.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 76.0
+size_flags_vertical = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2"]
+margin_right = 1024.0
+margin_bottom = 24.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer2"]
+margin_left = 322.0
+margin_top = 5.0
+margin_right = 498.0
+margin_bottom = 19.0
+text = "Plik z danymi treningowymi"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TrainFile" type="LineEdit" parent="VBoxContainer2/HBoxContainer2"]
+margin_left = 502.0
+margin_right = 702.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 200, 0 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2"]
+margin_top = 28.0
+margin_right = 1024.0
+margin_bottom = 52.0
+alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer2/HBoxContainer"]
+margin_left = 326.0
+margin_top = 5.0
+margin_right = 493.0
+margin_bottom = 19.0
+text = "Plik z danymi wynikowymi"
+
+[node name="ResultFile" type="LineEdit" parent="VBoxContainer2/HBoxContainer"]
+margin_left = 497.0
+margin_right = 697.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 200, 0 )
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer2"]
+margin_top = 56.0
+margin_right = 1024.0
+margin_bottom = 76.0
+alignment = 1
+
+[node name="BackButton" type="Button" parent="VBoxContainer2/HBoxContainer3"]
+margin_left = 454.0
+margin_right = 513.0
+margin_bottom = 20.0
+text = "Wstecz"
+
+[node name="SaveButton" type="Button" parent="VBoxContainer2/HBoxContainer3"]
+margin_left = 517.0
+margin_right = 570.0
+margin_bottom = 20.0
+text = "Zapisz"
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer3/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer3/SaveButton" to="." method="_on_SaveButton_pressed"]

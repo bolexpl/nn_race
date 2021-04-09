@@ -41,19 +41,22 @@ var ray_distances = [0,0,0,0,0]
 
 var train_file = null
 var result_file = null
+var train_file_name = null
+var result_file_name = null
 
 
 func _ready():
 	halfsize = wheel_base / 2
-	train_file = File.new()
-	train_file.open("user://train_file.txt", File.WRITE)
-#	train_file.store_string("asd\n")
-#	train_file.close()
 	
+	var config = ConfigFile.new()
+	var err = config.load("user://config.cfg")
+	var train_file_name = config.get_value("train", "training_data", "user://train_file.txt")
+	var result_file_name = config.get_value("train", "result_data", "user://result_file.txt")
+	
+	train_file = File.new()
 	result_file = File.new()
-	result_file.open("user://result_file.txt", File.WRITE)
-#	result_file.store_string("asd\n")
-#	result_file.close()
+	train_file.open(train_file_name, File.WRITE)
+	result_file.open(result_file_name, File.WRITE)
 	
 	rays = [$Left2, $Left, $Forward, $Right, $Right2]
 #	labels = [get_node("../ForwardLabel"),
