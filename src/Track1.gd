@@ -16,7 +16,6 @@ func _ready():
 #		[1],
 #		[1],
 #		[0]]
-	
 #	var x = []
 #	var y = []
 #	x.resize(20)
@@ -33,7 +32,6 @@ func _ready():
 #	var iter_count = 1000
 #	var x_bounds = Neural.get_min_max(Neural.normalize(x))
 #	var nn = Neural.new(len(x[0]), len(n_array), n_array, x_bounds[0], x_bounds[1])
-#	var nn = Neural.new(len(x[0]), len(n_array), n_array, 0, 1)
 	
 #	nn.train(Neural.normalize(x), y, iter_count)
 #	nn.train(x2, y2, iter_count)

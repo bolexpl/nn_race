@@ -10,7 +10,7 @@ var x_min
 var x_max
 
 
-func _init(input_count, layer_count, neurons_array, x_min_p, x_max_p):
+func _init(input_count, layer_count, neurons_array, x_min_p, x_max_p, theta_file = null, bias_file = null):
 	self.rand = RandomNumberGenerator.new()
 	self.rand.randomize()
 	self.n_array = [input_count] + neurons_array
