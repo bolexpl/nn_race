@@ -24,25 +24,44 @@ custom_constants/separation = 50
 alignment = 1
 
 [node name="Track1Button" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 173.0
+margin_top = 136.0
 margin_right = 274.0
-margin_bottom = 224.0
+margin_bottom = 187.0
 custom_fonts/font = ExtResource( 1 )
 text = "TRACK 1"
 
 [node name="EmptyButton" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 274.0
+margin_top = 237.0
 margin_right = 274.0
-margin_bottom = 325.0
+margin_bottom = 288.0
 custom_fonts/font = ExtResource( 1 )
 text = "PUSTA MAPA"
 
 [node name="SettingsButton" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 375.0
+margin_top = 338.0
 margin_right = 274.0
-margin_bottom = 426.0
+margin_bottom = 389.0
 custom_fonts/font = ExtResource( 1 )
 text = "USTAWIENIA"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 439.0
+margin_right = 274.0
+margin_bottom = 463.0
+alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 99.0
+margin_right = 123.0
+margin_bottom = 24.0
+
+[node name="CheckBoxLabel" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 127.0
+margin_top = 5.0
+margin_right = 174.0
+margin_bottom = 19.0
+text = "Trening"
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Track1Button" to="." method="_on_Track1Button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/EmptyButton" to="." method="_on_EmptyButton_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/CheckBox" to="." method="_on_CheckBox_pressed"]

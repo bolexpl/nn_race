@@ -10,8 +10,8 @@ func _ready():
 	var err = config.load(file_to_save)
 	var train = config.get_value(section, "training_data", "user://train_file.txt")
 	var result = config.get_value(section, "result_data", "user://result_file.txt")
-	config.set_value(section, "training_data", train)
-	config.set_value(section, "result_data", result)
+#	config.set_value(section, "training_data", train)
+#	config.set_value(section, "result_data", result)
 	config.save(file_to_save)
 	$VBoxContainer2/HBoxContainer2/TrainFile.text = train
 	$VBoxContainer2/HBoxContainer/ResultFile.text = result

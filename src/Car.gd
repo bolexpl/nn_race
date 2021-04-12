@@ -48,15 +48,16 @@ var result_file_name = null
 func _ready():
 	halfsize = wheel_base / 2
 	
-	var config = ConfigFile.new()
-	var err = config.load("user://config.cfg")
-	var train_file_name = config.get_value("train", "training_data", "user://train_file.txt")
-	var result_file_name = config.get_value("train", "result_data", "user://result_file.txt")
-	
-	train_file = File.new()
-	result_file = File.new()
-	train_file.open(train_file_name, File.WRITE)
-	result_file.open(result_file_name, File.WRITE)
+	if Global.train_check:
+		var config = ConfigFile.new()
+		var err = config.load("user://config.cfg")
+		var train_file_name = config.get_value("train", "training_data", "user://train_file.txt")
+		var result_file_name = config.get_value("train", "result_data", "user://result_file.txt")
+		
+		train_file = File.new()
+		result_file = File.new()
+		train_file.open(train_file_name, File.WRITE)
+		result_file.open(result_file_name, File.WRITE)
 	
 	rays = [$Left2, $Left, $Forward, $Right, $Right2]
 #	labels = [get_node("../ForwardLabel"),
@@ -68,7 +69,9 @@ func _ready():
 
 
 func _exit_tree():
-	train_file.close()
+	if Global.train_check:
+		train_file.close()
+		result_file.close()
 
 
 func _physics_process(delta):
@@ -103,7 +106,7 @@ func _physics_process(delta):
 
 
 func set_input(turn_param, accel_param):
-	if not neural:
+	if not neural && Global.train_check:
 		if accel_param != 0:
 			result_file.store_string(str(turn_param) + " " + str(accel_param)+"\n")
 			write_data()
