@@ -1,67 +1,94 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/noto_sans_ui_regular.tres" type="DynamicFont" id=1]
 [ext_resource path="res://src/MainMenu.gd" type="Script" id=2]
 
-[node name="MainMenu" type="MarginContainer"]
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 1 )
+
+[node name="MainMenu" type="Control"]
 margin_right = 1024.0
 margin_bottom = 600.0
+theme = SubResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="MainPanel" type="ColorRect" parent="."]
 margin_right = 1024.0
 margin_bottom = 600.0
-alignment = 1
+color = Color( 0.113725, 0.113725, 0.113725, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 375.0
-margin_right = 649.0
-margin_bottom = 600.0
-custom_constants/separation = 50
-alignment = 1
+[node name="HSplitContainer" type="HSplitContainer" parent="MainPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Track1Button" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 136.0
-margin_right = 274.0
-margin_bottom = 187.0
-custom_fonts/font = ExtResource( 1 )
-text = "TRACK 1"
+[node name="TracksPanel" type="Panel" parent="MainPanel/HSplitContainer"]
+margin_right = 250.0
+margin_bottom = 580.0
+rect_min_size = Vector2( 250, 0 )
 
-[node name="EmptyButton" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 237.0
-margin_right = 274.0
-margin_bottom = 288.0
-custom_fonts/font = ExtResource( 1 )
-text = "PUSTA MAPA"
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/HSplitContainer/TracksPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="SettingsButton" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 338.0
-margin_right = 274.0
-margin_bottom = 389.0
-custom_fonts/font = ExtResource( 1 )
-text = "USTAWIENIA"
+[node name="Label" type="Label" parent="MainPanel/HSplitContainer/TracksPanel/VBoxContainer"]
+margin_right = 230.0
+margin_bottom = 23.0
+text = "Tory wyścigowe"
+align = 1
+valign = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 439.0
-margin_right = 274.0
-margin_bottom = 463.0
-alignment = 1
+[node name="Button" type="Button" parent="MainPanel/HSplitContainer/TracksPanel/VBoxContainer"]
+margin_top = 27.0
+margin_right = 230.0
+margin_bottom = 56.0
+text = "Tor 1"
 
-[node name="CheckBox" type="CheckBox" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 37.0
-margin_right = 61.0
-margin_bottom = 24.0
+[node name="Panel" type="Panel" parent="MainPanel/HSplitContainer"]
+margin_left = 262.0
+margin_right = 1004.0
+margin_bottom = 580.0
+rect_min_size = Vector2( 250, 0 )
 
-[node name="CheckBoxLabel" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 65.0
-margin_top = 5.0
-margin_right = 237.0
-margin_bottom = 19.0
-text = "Zapis danych treningowych"
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/Track1Button" to="." method="_on_Track1Button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/EmptyButton" to="." method="_on_EmptyButton_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/CheckBox" to="." method="_on_CheckBox_pressed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/HSplitContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MainPanel/HSplitContainer/Panel/VBoxContainer"]
+margin_right = 722.0
+margin_bottom = 23.0
+text = "Ustawienia"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="MainPanel/HSplitContainer/Panel/VBoxContainer"]
+margin_top = 27.0
+margin_right = 722.0
+margin_bottom = 56.0
+text = "Ustawienia"
