@@ -60,10 +60,16 @@ margin_right = 380.0
 margin_bottom = 82.0
 text = "Tor 1"
 
-[node name="Empty" type="Button" parent="MainPanel/HSplitContainer/TracksPanel/VBoxContainer"]
+[node name="Track2" type="Button" parent="MainPanel/HSplitContainer/TracksPanel/VBoxContainer"]
 margin_top = 94.0
 margin_right = 380.0
 margin_bottom = 132.0
+text = "Tor 2"
+
+[node name="Empty" type="Button" parent="MainPanel/HSplitContainer/TracksPanel/VBoxContainer"]
+margin_top = 144.0
+margin_right = 380.0
+margin_bottom = 182.0
 text = "Pusta mapa"
 
 [node name="Panel" type="Panel" parent="MainPanel/HSplitContainer"]
@@ -102,6 +108,7 @@ margin_right = 572.0
 margin_bottom = 134.0
 text = "Zapis pomiarów"
 [connection signal="pressed" from="MainPanel/HSplitContainer/TracksPanel/VBoxContainer/Track1" to="." method="_on_Track1_pressed"]
+[connection signal="pressed" from="MainPanel/HSplitContainer/TracksPanel/VBoxContainer/Track2" to="." method="_on_Track2_pressed"]
 [connection signal="pressed" from="MainPanel/HSplitContainer/TracksPanel/VBoxContainer/Empty" to="." method="_on_Empty_pressed"]
 [connection signal="pressed" from="MainPanel/HSplitContainer/Panel/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="MainPanel/HSplitContainer/Panel/VBoxContainer/CheckBox" to="." method="_on_CheckBox_pressed"]

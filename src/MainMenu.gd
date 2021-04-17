@@ -13,6 +13,10 @@ func _on_Track1_pressed():
 	var _tmp = get_tree().change_scene("res://src/Track1.tscn")
 
 
+func _on_Track2_pressed():
+	var _tmp = get_tree().change_scene("res://src/Track2.tscn")
+
+
 func _on_Empty_pressed():
 	var _tmp = get_tree().change_scene("res://src/EmptyMap.tscn")
 
@@ -24,4 +28,3 @@ func _on_Settings_pressed():
 func _on_CheckBox_pressed():
 	Global.train_check = !Global.train_check
 	$MainPanel/HSplitContainer/Panel/VBoxContainer/CheckBox.pressed = Global.train_check
-

@@ -11,6 +11,9 @@ script = ExtResource( 2 )
 position = Vector2( 509.909, 300.925 )
 scale = Vector2( 0.994147, 0.997503 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Car" parent="." instance=ExtResource( 3 )]
 position = Vector2( 184.097, 530.417 )
