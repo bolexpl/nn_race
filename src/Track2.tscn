@@ -19,6 +19,7 @@ rotation = -0.876642
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
+collision_layer = 2
 __meta__ = {
 "_edit_group_": true
 }

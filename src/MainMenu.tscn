@@ -107,6 +107,7 @@ margin_top = 94.0
 margin_right = 572.0
 margin_bottom = 134.0
 text = "Zapis pomiarów"
+
 [connection signal="pressed" from="MainPanel/HSplitContainer/TracksPanel/VBoxContainer/Track1" to="." method="_on_Track1_pressed"]
 [connection signal="pressed" from="MainPanel/HSplitContainer/TracksPanel/VBoxContainer/Track2" to="." method="_on_Track2_pressed"]
 [connection signal="pressed" from="MainPanel/HSplitContainer/TracksPanel/VBoxContainer/Empty" to="." method="_on_Empty_pressed"]

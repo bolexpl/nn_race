@@ -132,6 +132,7 @@ func write_data():
 		else:
 			var pos = rays[i].get_collision_point()
 			tmp = position.distance_to(pos) - halfsize
+#			qwe
 		train_file.store_string(str(tmp) + " ")
 	train_file.store_string("\n")
 
