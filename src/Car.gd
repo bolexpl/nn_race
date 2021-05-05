@@ -35,8 +35,6 @@ var acceleration = Vector2.ZERO
 var steer_angle
 var distance = 0
 var rays = null
-#var labels = null
-#var label_texts = null
 var ray_distances = [0,0,0,0,0]
 
 var train_file = null
@@ -60,12 +58,6 @@ func _ready():
 		result_file.open(result_file_name, File.WRITE)
 	
 	rays = [$Left2, $Left, $Forward, $Right, $Right2]
-#	labels = [get_node("../ForwardLabel"),
-#			get_node("../LeftLabel"),
-#			get_node("../RightLabel"),
-#			get_node("../LeftLabel2"),
-#			get_node("../RightLabel2")]
-#	label_texts = ["Przód: ", "Lewa: ", "Prawa: ", "Lewa2: ", "Prawa2: "]
 
 
 func _exit_tree():
@@ -79,8 +71,6 @@ func _physics_process(delta):
 		return
 	
 	distance += velocity.length() * delta
-#	get_node("../DistanceLabel").text = "Dystans: " + String(distance)
-#	cast_rays()
 	
 	acceleration = Vector2.ZERO
 	if(neural):
@@ -93,18 +83,6 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 
 
-#func cast_rays():
-#	for i in range(rays.size()):
-#		var c = rays[i].get_collider()
-#		if c == null:
-#			labels[i].text = label_texts[i] + "-9999"
-#		else:
-#			var pos = rays[i].get_collision_point()
-#			var tmp = position.distance_to(pos) - halfsize
-#			ray_distances[i] = tmp
-#			labels[i].text = label_texts[i] + String(tmp)
-
-
 func set_input(turn_param, accel_param):
 	if not neural && Global.train_check:
 		if accel_param != 0:
@@ -112,10 +90,6 @@ func set_input(turn_param, accel_param):
 			write_data()
 	
 	var turn = turn_param
-#	if turn_param > 0:
-#		turn += 1
-#	if turn_param < 0:
-#		turn -= 1
 	steer_angle = turn * deg2rad(steering_angle)
 	if accel_param > 0:
 		acceleration = transform.x * engine_power * accel_param
@@ -132,8 +106,8 @@ func write_data():
 		else:
 			var pos = rays[i].get_collision_point()
 			tmp = position.distance_to(pos) - halfsize
-#			qwe
 		train_file.store_string(str(tmp) + " ")
+	train_file.store_string(str(velocity.length()))
 	train_file.store_string("\n")
 
 
