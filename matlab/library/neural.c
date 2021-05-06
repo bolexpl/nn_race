@@ -1,11 +1,11 @@
 /*
  * MATLAB Compiler: 7.0.1 (R2019a)
- * Date: Thu May  6 23:51:40 2021
- * Arguments: "-B""macro_default""-l""../forward.m"
+ * Date: Fri May  7 01:21:57 2021
+ * Arguments: "-B""macro_default""-W""lib:neural""forward.m"
  */
 
-#define EXPORTING_forward 1
-#include "forward.h"
+#define EXPORTING_neural 1
+#include "neural.h"
 
 static HMCRINSTANCE _mcr_inst = NULL;
 
@@ -70,12 +70,12 @@ static int mclDefaultErrorHandler(const char *s)
 /* This symbol is defined in shared libraries. Define it here
  * (to nothing) in case this isn't a shared library. 
  */
-#ifndef LIB_forward_C_API
-#define LIB_forward_C_API /* No special import/export declaration */
+#ifndef LIB_neural_C_API
+#define LIB_neural_C_API /* No special import/export declaration */
 #endif
 
-LIB_forward_C_API 
-bool MW_CALL_CONV forwardInitializeWithHandlers(
+LIB_neural_C_API 
+bool MW_CALL_CONV neuralInitializeWithHandlers(
     mclOutputHandlerFcn error_handler,
     mclOutputHandlerFcn print_handler)
 {
@@ -84,7 +84,7 @@ bool MW_CALL_CONV forwardInitializeWithHandlers(
         return true;
     if (!mclmcrInitialize())
         return false;
-    if (!GetModuleFileName(GetModuleHandle("forward"), path_to_dll, _MAX_PATH))
+    if (!GetModuleFileName(GetModuleHandle("neural"), path_to_dll, _MAX_PATH))
         return false;
     {
         mclCtfStream ctfStream = 
@@ -104,21 +104,21 @@ bool MW_CALL_CONV forwardInitializeWithHandlers(
     return true;
 }
 
-LIB_forward_C_API 
-bool MW_CALL_CONV forwardInitialize(void)
+LIB_neural_C_API 
+bool MW_CALL_CONV neuralInitialize(void)
 {
-    return forwardInitializeWithHandlers(mclDefaultErrorHandler, mclDefaultPrintHandler);
+    return neuralInitializeWithHandlers(mclDefaultErrorHandler, mclDefaultPrintHandler);
 }
 
-LIB_forward_C_API 
-void MW_CALL_CONV forwardTerminate(void)
+LIB_neural_C_API 
+void MW_CALL_CONV neuralTerminate(void)
 {
     if (_mcr_inst != NULL)
         mclTerminateInstance(&_mcr_inst);
 }
 
-LIB_forward_C_API 
-void MW_CALL_CONV forwardPrintStackTrace(void) 
+LIB_neural_C_API 
+void MW_CALL_CONV neuralPrintStackTrace(void) 
 {
     char** stackTrace;
     int stackDepth = mclGetStackTrace(&stackTrace);
@@ -132,13 +132,13 @@ void MW_CALL_CONV forwardPrintStackTrace(void)
 }
 
 
-LIB_forward_C_API 
+LIB_neural_C_API 
 bool MW_CALL_CONV mlxForward(int nlhs, mxArray *plhs[], int nrhs, mxArray *prhs[])
 {
     return mclFeval(_mcr_inst, "forward", nlhs, plhs, nrhs, prhs);
 }
 
-LIB_forward_C_API 
+LIB_neural_C_API 
 bool MW_CALL_CONV mlfForward(int nargout, mxArray** y1, mxArray* x1)
 {
     return mclMlfFeval(_mcr_inst, "forward", nargout, 1, 1, y1, x1);

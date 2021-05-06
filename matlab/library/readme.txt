@@ -1,4 +1,4 @@
-forward C Shared Library
+neural C Shared Library
 
 1. Prerequisites for Deployment 
 
@@ -25,9 +25,9 @@ in the MathWorks Documentation Center.
 
 Files to Package
 ================
--forward.dll
--forward.h
--forward.lib
+-neural.dll
+-neural.h
+-neural.lib
 -MCRInstaller.exe 
     Note: if end users are unable to download the MATLAB Runtime using the
     instructions in the previous section, include it when building your 
