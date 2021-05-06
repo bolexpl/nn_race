@@ -1,0 +1,9 @@
+LIBRARY forward
+EXPORTS
+forwardInitialize
+forwardInitializeWithHandlers
+forwardTerminate
+forwardPrintStackTrace
+mlxForward
+mlfForward
+
