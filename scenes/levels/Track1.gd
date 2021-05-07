@@ -1,7 +1,7 @@
 extends Node
 
 
-const Neural = preload("res://src/Neural.gd")
+#const Neural = preload("res://src/Neural.gd")
 
 
 func _ready():

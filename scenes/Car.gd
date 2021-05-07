@@ -8,6 +8,7 @@ extends KinematicBody2D
 # output: przyspieszenie, kąt skrętu, droga możliwa po drodze maksymalnej
 
 # opracować sieć i uczenie na podstawie pomiarów ręcznych
+const Neural = preload("res://src/Neural.gd")
 
 export var neural = false
 export var working = true
@@ -58,6 +59,9 @@ func _ready():
 		result_file.open(result_file_name, File.WRITE)
 	
 	rays = [$Left2, $Left, $Forward, $Right, $Right2]
+	var n_array = [10, 2]
+	var nn = Neural.new(6, len(n_array), n_array, 0, 700)
+	nn.save_net()
 
 
 func _exit_tree():
@@ -74,7 +78,7 @@ func _physics_process(delta):
 	
 	acceleration = Vector2.ZERO
 	if(neural):
-		set_input(-1, 1)
+		neural_input()
 	else:
 		get_input()
 	apply_friction()
@@ -95,6 +99,11 @@ func set_input(turn_param, accel_param):
 		acceleration = transform.x * engine_power * accel_param
 	if accel_param < 0:
 		acceleration = transform.x * braking * (-accel_param)
+
+
+func neural_input():
+	
+	set_input(0, 0)
 
 
 func write_data():

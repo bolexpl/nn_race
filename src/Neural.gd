@@ -33,6 +33,22 @@ func _init(input_count, layer_count, neurons_array, x_min_p, x_max_p, theta_file
 #			self.biases[i][i2] = rand.randfn()
 
 
+func save_net():
+	var save_file = File.new()
+	save_file.open(Global.net_file, File.WRITE)
+	save_file.store_line(JSON.print([1, 2, 3]))
+	save_file.close()
+
+
+func load_net():
+	var save_file = File.new()
+	if not save_file.file_exists(Global.net_file):
+		return
+	save_file.open(Global.net_file, File.READ)
+	var data = JSON.parse(save_file.get_line())
+	save_file.close()
+
+
 func train(x, y, iter_count):
 	# assign transposed input to input layer
 	var a = []
