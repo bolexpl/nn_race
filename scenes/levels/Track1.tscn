@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/map.png" type="Texture" id=1]
-[ext_resource path="res://src/Track1.gd" type="Script" id=2]
-[ext_resource path="res://src/Car.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/levels/Track1.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Car.tscn" type="PackedScene" id=3]
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )

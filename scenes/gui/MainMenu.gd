@@ -10,19 +10,19 @@ func _ready():
 
 
 func _on_Track1_pressed():
-	var _tmp = get_tree().change_scene("res://src/Track1.tscn")
+	var _tmp = get_tree().change_scene("res://scenes/levels/Track1.tscn")
 
 
 func _on_Track2_pressed():
-	var _tmp = get_tree().change_scene("res://src/Track2.tscn")
+	var _tmp = get_tree().change_scene("res://scenes/levels/Track2.tscn")
 
 
 func _on_Empty_pressed():
-	var _tmp = get_tree().change_scene("res://src/EmptyMap.tscn")
+	var _tmp = get_tree().change_scene("res://scenes/levels/EmptyMap.tscn")
 
 
 func _on_Settings_pressed():
-	var _tmp = get_tree().change_scene("res://src/SettingsMenu.tscn")
+	var _tmp = get_tree().change_scene("res://scenes/gui/SettingsMenu.tscn")
 
 
 func _on_CheckBox_pressed():

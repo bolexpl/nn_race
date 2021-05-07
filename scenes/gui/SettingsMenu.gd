@@ -18,7 +18,7 @@ func _ready():
 
 
 func _on_BackButton_pressed():
-	var _tmp = get_tree().change_scene("res://src/MainMenu.tscn")
+	var _tmp = get_tree().change_scene("res://scenes/gui/MainMenu.tscn")
 
 
 func _on_SaveButton_pressed():
@@ -29,5 +29,5 @@ func _on_SaveButton_pressed():
 		config.set_value(section, "training_data", train)
 		config.set_value(section, "result_data", result)
 		config.save(file_to_save)
-	var _tmp = get_tree().change_scene("res://src/MainMenu.tscn")
+	var _tmp = get_tree().change_scene("res://scenes/gui/MainMenu.tscn")
 
