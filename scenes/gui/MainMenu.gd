@@ -25,6 +25,6 @@ func _on_Settings_pressed():
 	var _tmp = get_tree().change_scene("res://scenes/gui/SettingsMenu.tscn")
 
 
-func _on_CheckBox_pressed():
-	Global.train_check = !Global.train_check
-	$MainPanel/HSplitContainer/Panel/VBoxContainer/CheckBox.pressed = Global.train_check
+func _on_OptionButton_item_selected(index):
+	Global.mode = index
+

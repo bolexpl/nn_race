@@ -102,16 +102,10 @@ margin_right = 572.0
 margin_bottom = 82.0
 text = "Ustawienia"
 
-[node name="CheckBox" type="CheckBox" parent="MainPanel/HSplitContainer/Panel/VBoxContainer"]
+[node name="OptionButton" type="OptionButton" parent="MainPanel/HSplitContainer/Panel/VBoxContainer"]
 margin_top = 94.0
 margin_right = 572.0
-margin_bottom = 134.0
-text = "Zapis pomiarów"
-
-[node name="OptionButton" type="OptionButton" parent="MainPanel/HSplitContainer/Panel/VBoxContainer"]
-margin_top = 146.0
-margin_right = 572.0
-margin_bottom = 184.0
+margin_bottom = 132.0
 text = "Jazda manualna"
 items = [ "Jazda manualna", null, false, 0, null, "Zapis pomiarów", null, false, 1, null, "Sieć neuronowa", null, false, 2, null, "Wyścig", null, false, 3, null ]
 selected = 0
@@ -120,4 +114,4 @@ selected = 0
 [connection signal="pressed" from="MainPanel/HSplitContainer/TracksPanel/VBoxContainer/Track2" to="." method="_on_Track2_pressed"]
 [connection signal="pressed" from="MainPanel/HSplitContainer/TracksPanel/VBoxContainer/Empty" to="." method="_on_Empty_pressed"]
 [connection signal="pressed" from="MainPanel/HSplitContainer/Panel/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
-[connection signal="pressed" from="MainPanel/HSplitContainer/Panel/VBoxContainer/CheckBox" to="." method="_on_CheckBox_pressed"]
+[connection signal="item_selected" from="MainPanel/HSplitContainer/Panel/VBoxContainer/OptionButton" to="." method="_on_OptionButton_item_selected"]
