@@ -47,7 +47,7 @@ var result_file_name = null
 func _ready():
 	halfsize = wheel_base / 2
 	
-	if Global.train_check:
+	if Global.mode == Global.MANUAL_MODE:
 		var config = ConfigFile.new()
 		var err = config.load("user://config.cfg")
 		var train_file_name = config.get_value("train", "training_data", "user://train_file.txt")
@@ -65,7 +65,7 @@ func _ready():
 
 
 func _exit_tree():
-	if Global.train_check:
+	if Global.mode == Global.MANUAL_MODE:
 		train_file.close()
 		result_file.close()
 
@@ -88,7 +88,7 @@ func _physics_process(delta):
 
 
 func set_input(turn_param, accel_param):
-	if not neural && Global.train_check:
+	if not neural && Global.mode == Global.MANUAL_MODE:
 		if accel_param != 0:
 			result_file.store_string(str(turn_param) + " " + str(accel_param)+"\n")
 			write_data()

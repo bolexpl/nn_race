@@ -1,4 +1,4 @@
-extends Node
+extends "res://src/Map.gd"
 
 
 #const Neural = preload("res://src/Neural.gd")

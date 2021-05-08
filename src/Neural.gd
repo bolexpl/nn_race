@@ -10,7 +10,7 @@ var x_min
 var x_max
 
 
-func _init(input_count, layer_count, neurons_array, x_min_p, x_max_p, theta_file = null, bias_file = null):
+func _init(input_count, layer_count, neurons_array, x_min_p, x_max_p, load_weights = true):
 	self.rand = RandomNumberGenerator.new()
 	self.rand.randomize()
 	self.n_array = [input_count] + neurons_array
@@ -20,6 +20,14 @@ func _init(input_count, layer_count, neurons_array, x_min_p, x_max_p, theta_file
 	self.output = []
 	self.theta = []
 	self.biases = []
+	if load_weights:
+		# TODO
+		load_net()
+	else:
+		generate_weights()
+
+
+func generate_weights():
 	# init theta to random values (neurony, wejścia)
 	for i in range(1, self.l_count):
 		var tmp = randn(self.n_array[i], self.n_array[i - 1])
@@ -45,7 +53,8 @@ func load_net():
 	if not save_file.file_exists(Global.net_file):
 		return
 	save_file.open(Global.net_file, File.READ)
-	var data = JSON.parse(save_file.get_line())
+	var _data = JSON.parse(save_file.get_line())
+	# TODO
 	save_file.close()
 
 
