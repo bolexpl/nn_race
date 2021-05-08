@@ -36,7 +36,9 @@ var acceleration = Vector2.ZERO
 var steer_angle
 var distance = 0
 var rays = null
-var ray_distances = [0,0,0,0,0]
+
+var nn_in_vector = [0, 0, 0, 0, 0, 0]
+var nn = null
 
 var train_file = null
 var result_file = null
@@ -47,7 +49,7 @@ var result_file_name = null
 func _ready():
 	halfsize = wheel_base / 2
 	
-	if Global.mode == Global.MANUAL_MODE:
+	if Global.mode == Global.MEASURE_MODE: # zapis pomiarów
 		var config = ConfigFile.new()
 		var err = config.load("user://config.cfg")
 		var train_file_name = config.get_value("train", "training_data", "user://train_file.txt")
@@ -60,12 +62,11 @@ func _ready():
 	
 	rays = [$Left2, $Left, $Forward, $Right, $Right2]
 	var n_array = [10, 2]
-	var nn = Neural.new(6, len(n_array), n_array, 0, 700)
-	nn.save_net()
+	nn = Neural.new(6, len(n_array), n_array, 0, 700)
 
 
 func _exit_tree():
-	if Global.mode == Global.MANUAL_MODE:
+	if Global.mode == Global.MEASURE_MODE:
 		train_file.close()
 		result_file.close()
 
@@ -75,7 +76,6 @@ func _physics_process(delta):
 		return
 	
 	distance += velocity.length() * delta
-	
 	acceleration = Vector2.ZERO
 	if(neural):
 		neural_input()
@@ -85,10 +85,11 @@ func _physics_process(delta):
 	calculate_steering(delta)
 	velocity += acceleration * delta
 	velocity = move_and_slide(velocity)
+	print(velocity.length())
 
 
 func set_input(turn_param, accel_param):
-	if not neural && Global.mode == Global.MANUAL_MODE:
+	if Global.mode == Global.MEASURE_MODE:
 		if accel_param != 0:
 			result_file.store_string(str(turn_param) + " " + str(accel_param)+"\n")
 			write_data()
@@ -102,8 +103,19 @@ func set_input(turn_param, accel_param):
 
 
 func neural_input():
-	
-	set_input(0, 0)
+	# TODO
+	for i in range(rays.size()):
+		var tmp
+		var c = rays[i].get_collider()
+		if c == null:
+			tmp = 700
+		else:
+			var pos = rays[i].get_collision_point()
+			tmp = position.distance_to(pos) - halfsize
+		nn_in_vector[i] = tmp
+	nn_in_vector[5] = acceleration.length()
+	nn.forward([nn_in_vector])
+	set_input(nn.output[0][0], nn.output[0][1])
 
 
 func write_data():

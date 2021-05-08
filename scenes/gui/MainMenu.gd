@@ -33,17 +33,19 @@ func change(scene, x, y, r):
 	car.add_child(camera)
 	scene.add_child(car)
 	
-	match $MainPanel/HSplitContainer/Panel/VBoxContainer/OptionButton.index:
+	Global.mode = $MainPanel/HSplitContainer/Panel/VBoxContainer/OptionButton.selected
+	match Global.mode:
 		0:#manual
 			car.working = true
 			car.neural = false
 		1:#neuron
+			car.working = true
+			car.neural = true
+		2:#race
 			pass
-		2:#pomiar
-			pass
-	
-		3:#race
-			pass
+		3:#pomiar
+			car.working = true
+			car.neural = false
 	
 	var root = get_tree().root
 	var level = root.get_node("MainMenu")
@@ -51,7 +53,4 @@ func change(scene, x, y, r):
 	level.call_deferred("free")
 	root.add_child(scene)
 
-
-func _on_OptionButton_item_selected(index):
-	Global.mode = index
 

@@ -20,11 +20,11 @@ func _init(input_count, layer_count, neurons_array, x_min_p, x_max_p, load_weigh
 	self.output = []
 	self.theta = []
 	self.biases = []
-	if load_weights:
-		# TODO
-		load_net()
-	else:
-		generate_weights()
+#	if load_weights:
+#		# TODO
+#		load_net()
+#	else:
+	generate_weights()
 
 
 func generate_weights():
