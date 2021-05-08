@@ -107,7 +107,7 @@ margin_top = 94.0
 margin_right = 572.0
 margin_bottom = 132.0
 text = "Jazda manualna"
-items = [ "Jazda manualna", null, false, 0, null, "Zapis pomiarów", null, false, 1, null, "Sieć neuronowa", null, false, 2, null, "Wyścig", null, false, 3, null ]
+items = [ "Jazda manualna", null, false, 0, null, "Jazda neuronalna", null, false, 1, null, "Wyścig", null, false, 2, null, "Zapis pomiarów", null, false, 3, null ]
 selected = 0
 
 [connection signal="pressed" from="MainPanel/HSplitContainer/TracksPanel/VBoxContainer/Track1" to="." method="_on_Track1_pressed"]

@@ -33,6 +33,18 @@ func change(scene, x, y, r):
 	car.add_child(camera)
 	scene.add_child(car)
 	
+	match $MainPanel/HSplitContainer/Panel/VBoxContainer/OptionButton.index:
+		0:#manual
+			car.working = true
+			car.neural = false
+		1:#neuron
+			pass
+		2:#pomiar
+			pass
+	
+		3:#race
+			pass
+	
 	var root = get_tree().root
 	var level = root.get_node("MainMenu")
 	root.remove_child(level)
