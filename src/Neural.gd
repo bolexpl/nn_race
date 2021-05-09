@@ -58,7 +58,7 @@ func load_net():
 	save_file.close()
 
 
-func train(x, y, iter_count):
+func train(x, y, iter_count = 1):
 	# assign transposed input to input layer
 	var a = []
 	a.resize(self.l_count)

@@ -35,54 +35,61 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="XButton" type="Button" parent="ColorRect/Panel/VBoxContainer"]
-margin_top = 197.0
+[node name="Label" type="Label" parent="ColorRect/Panel/VBoxContainer"]
+margin_top = 127.0
 margin_right = 490.0
-margin_bottom = 235.0
+margin_bottom = 159.0
 text = "Wybierz plik z danymi wejściowymi"
 
-[node name="YButton" type="Button" parent="ColorRect/Panel/VBoxContainer"]
-margin_top = 247.0
+[node name="XButton" type="Button" parent="ColorRect/Panel/VBoxContainer"]
+margin_top = 171.0
 margin_right = 490.0
-margin_bottom = 285.0
+margin_bottom = 209.0
+text = "Wybierz"
+
+[node name="Label2" type="Label" parent="ColorRect/Panel/VBoxContainer"]
+margin_top = 221.0
+margin_right = 490.0
+margin_bottom = 253.0
 text = "Wybierz plik z danymi wyjściowymi"
 
-[node name="TrainButton" type="Button" parent="ColorRect/Panel/VBoxContainer"]
-margin_top = 297.0
+[node name="YButton" type="Button" parent="ColorRect/Panel/VBoxContainer"]
+margin_top = 265.0
 margin_right = 490.0
-margin_bottom = 335.0
+margin_bottom = 303.0
+text = "Wybierz"
+
+[node name="CheckBox" type="CheckBox" parent="ColorRect/Panel/VBoxContainer"]
+margin_top = 315.0
+margin_right = 490.0
+margin_bottom = 355.0
+pressed = true
+text = "Wygenerowanie nowych wag"
+
+[node name="TrainButton" type="Button" parent="ColorRect/Panel/VBoxContainer"]
+margin_top = 367.0
+margin_right = 490.0
+margin_bottom = 405.0
 text = "Trenuj"
 
 [node name="BackButton" type="Button" parent="ColorRect/Panel/VBoxContainer"]
-margin_top = 347.0
+margin_top = 417.0
 margin_right = 490.0
-margin_bottom = 385.0
+margin_bottom = 455.0
 text = "Wstecz"
 
-[node name="XFile" type="FileDialog" parent="."]
+[node name="FileDialog" type="FileDialog" parent="."]
 margin_left = 38.0
 margin_top = 45.0
 margin_right = 989.0
 margin_bottom = 563.0
+rect_min_size = Vector2( 150, 52.5 )
 window_title = "Otwórz plik"
+mode_overrides_title = false
 mode = 0
 access = 2
-current_dir = "/Users/bolek/Documents/Godot/nn_race"
-current_path = "/Users/bolek/Documents/Godot/nn_race/"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="YFile" type="FileDialog" parent="."]
-margin_left = 40.063
-margin_top = 36.5071
-margin_right = 994.063
-margin_bottom = 565.507
-window_title = "Otwórz plik"
-mode = 0
-access = 2
-current_dir = "/Users/bolek/Documents/Godot/nn_race"
-current_path = "/Users/bolek/Documents/Godot/nn_race/"
+current_dir = "/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork"
+current_path = "/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -91,5 +98,4 @@ __meta__ = {
 [connection signal="pressed" from="ColorRect/Panel/VBoxContainer/YButton" to="." method="_on_YButton_pressed"]
 [connection signal="pressed" from="ColorRect/Panel/VBoxContainer/TrainButton" to="." method="_on_TrainButton_pressed"]
 [connection signal="pressed" from="ColorRect/Panel/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
-[connection signal="file_selected" from="XFile" to="." method="_on_XFile_file_selected"]
-[connection signal="file_selected" from="YFile" to="." method="_on_YFile_file_selected"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_XFile_file_selected"]
