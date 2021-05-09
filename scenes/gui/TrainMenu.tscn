@@ -31,6 +31,7 @@ margin_right = 742.0
 margin_bottom = 582.0
 alignment = 1
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -57,3 +58,38 @@ margin_top = 347.0
 margin_right = 490.0
 margin_bottom = 385.0
 text = "Wstecz"
+
+[node name="XFile" type="FileDialog" parent="."]
+margin_left = 38.0
+margin_top = 45.0
+margin_right = 989.0
+margin_bottom = 563.0
+window_title = "Otwórz plik"
+mode = 0
+access = 2
+current_dir = "/Users/bolek/Documents/Godot/nn_race"
+current_path = "/Users/bolek/Documents/Godot/nn_race/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YFile" type="FileDialog" parent="."]
+margin_left = 40.063
+margin_top = 36.5071
+margin_right = 994.063
+margin_bottom = 565.507
+window_title = "Otwórz plik"
+mode = 0
+access = 2
+current_dir = "/Users/bolek/Documents/Godot/nn_race"
+current_path = "/Users/bolek/Documents/Godot/nn_race/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="ColorRect/Panel/VBoxContainer/XButton" to="." method="_on_XButton_pressed"]
+[connection signal="pressed" from="ColorRect/Panel/VBoxContainer/YButton" to="." method="_on_YButton_pressed"]
+[connection signal="pressed" from="ColorRect/Panel/VBoxContainer/TrainButton" to="." method="_on_TrainButton_pressed"]
+[connection signal="pressed" from="ColorRect/Panel/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="file_selected" from="XFile" to="." method="_on_XFile_file_selected"]
+[connection signal="file_selected" from="YFile" to="." method="_on_YFile_file_selected"]

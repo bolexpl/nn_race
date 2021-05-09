@@ -54,3 +54,9 @@ func change(scene, x, y, r):
 	root.add_child(scene)
 
 
+func _on_Button_pressed():
+	get_tree().change_scene("res://scenes/gui/TrainMenu.tscn")
+
+
+func _on_Exit_pressed():
+	get_tree().quit()

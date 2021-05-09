@@ -1,16 +1,33 @@
 extends Control
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var x_file = null
+var y_file = null
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _on_XButton_pressed():
+	$XFile.popup()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_YButton_pressed():
+	$YFile.popup()
+
+
+func _on_XFile_file_selected(path):
+	x_file = path
+
+
+func _on_YFile_file_selected(path):
+	y_file = path
+
+
+func _on_TrainButton_pressed():
+	# TODO
+	pass
+
+
+func _on_BackButton_pressed():
+	get_tree().change_scene("res://scenes/gui/MainMenu.tscn")
+
+
+
