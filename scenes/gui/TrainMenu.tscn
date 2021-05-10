@@ -125,10 +125,38 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="ColorRect/HSplitContainer/Panel2/VBoxContainer"]
-margin_top = 274.0
+margin_top = 177.0
 margin_right = 542.0
-margin_bottom = 306.0
+margin_bottom = 209.0
+text = "Wybierz plik z danymi wejściowymi"
 align = 1
+valign = 1
+
+[node name="InButton" type="Button" parent="ColorRect/HSplitContainer/Panel2/VBoxContainer"]
+margin_top = 221.0
+margin_right = 542.0
+margin_bottom = 259.0
+text = "Wybierz"
+
+[node name="Label2" type="Label" parent="ColorRect/HSplitContainer/Panel2/VBoxContainer"]
+margin_top = 271.0
+margin_right = 542.0
+margin_bottom = 303.0
+text = "Wybierz plik do zapisania wyników"
+align = 1
+valign = 1
+
+[node name="OutButton" type="Button" parent="ColorRect/HSplitContainer/Panel2/VBoxContainer"]
+margin_top = 315.0
+margin_right = 542.0
+margin_bottom = 353.0
+text = "Wybierz"
+
+[node name="TestBt" type="Button" parent="ColorRect/HSplitContainer/Panel2/VBoxContainer"]
+margin_top = 365.0
+margin_right = 542.0
+margin_bottom = 403.0
+text = "Testuj"
 
 [node name="FileDialog" type="FileDialog" parent="."]
 margin_left = 38.0
@@ -140,8 +168,21 @@ window_title = "Otwórz plik"
 mode_overrides_title = false
 mode = 0
 access = 2
-current_dir = "/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork"
-current_path = "/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/"
+current_dir = "/Users/bolek/Documents/Godot/nn_race"
+current_path = "/Users/bolek/Documents/Godot/nn_race/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SaveDialog" type="FileDialog" parent="."]
+margin_left = 37.0
+margin_top = 48.0
+margin_right = 987.0
+margin_bottom = 559.0
+window_title = "Zapisz plik"
+access = 2
+current_dir = "/Users/bolek/Documents/Godot/nn_race"
+current_path = "/Users/bolek/Documents/Godot/nn_race/"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -165,14 +206,27 @@ margin_top = 227.825
 margin_right = 650.213
 margin_bottom = 321.825
 window_title = "Zakończono"
-dialog_text = "Zakończono trenowanie."
+dialog_text = "Zakończono pomyślnie."
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TestErrorDialog" type="AcceptDialog" parent="."]
+margin_left = 330.143
+margin_top = 238.685
+margin_right = 662.143
+margin_bottom = 349.685
+window_title = "Błąd!"
+dialog_text = "Błąd zapisu danych"
+script = ExtResource( 3 )
+
 [connection signal="pressed" from="ColorRect/HSplitContainer/Panel/VBoxContainer/XButton" to="." method="_on_XButton_pressed"]
 [connection signal="pressed" from="ColorRect/HSplitContainer/Panel/VBoxContainer/YButton" to="." method="_on_YButton_pressed"]
 [connection signal="pressed" from="ColorRect/HSplitContainer/Panel/VBoxContainer/TrainButton" to="." method="_on_TrainButton_pressed"]
 [connection signal="pressed" from="ColorRect/HSplitContainer/Panel/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="ColorRect/HSplitContainer/Panel2/VBoxContainer/InButton" to="." method="_on_InButton_pressed"]
+[connection signal="pressed" from="ColorRect/HSplitContainer/Panel2/VBoxContainer/OutButton" to="." method="_on_OutButton_pressed"]
+[connection signal="pressed" from="ColorRect/HSplitContainer/Panel2/VBoxContainer/TestBt" to="." method="_on_TestBt_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
+[connection signal="file_selected" from="SaveDialog" to="." method="_on_SaveDialog_file_selected"]

@@ -65,11 +65,11 @@ func _ready():
 	nn = Neural.new(6, len(n_array), n_array)
 	nn.load_weights()
 	
-	set_input(0, 1)
-	apply_friction()
-	calculate_steering(0.5)
-	velocity += acceleration * 0.5
-	velocity = move_and_slide(velocity)
+#	set_input(0, 1)
+#	apply_friction()
+#	calculate_steering(0.5)
+#	velocity += acceleration * 0.5
+#	velocity = move_and_slide(velocity)
 
 
 func _exit_tree():
@@ -92,11 +92,12 @@ func _physics_process(delta):
 	calculate_steering(delta)
 	velocity += acceleration * delta
 	velocity = move_and_slide(velocity)
+	print(velocity.length())
 
 
 func set_input(turn_param, accel_param):
 	if Global.mode == Global.MEASURE_MODE:
-		if accel_param != 0:
+		if abs(accel_param) >= 0.1:
 			result_file.store_string(str(turn_param) + " " + str(accel_param)+"\n")
 			write_data()
 	
@@ -109,7 +110,6 @@ func set_input(turn_param, accel_param):
 
 
 func neural_input():
-	# TODO
 	for i in range(rays.size()):
 		var tmp
 		var c = rays[i].get_collider()
@@ -121,8 +121,6 @@ func neural_input():
 		nn_in_vector[i] = tmp
 	nn_in_vector[5] = acceleration.length()
 	nn.forward([nn_in_vector])
-	print(nn_in_vector)
-	print(nn.output)
 	set_input(nn.output[0][0], nn.output[1][0])
 
 

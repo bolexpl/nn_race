@@ -7,8 +7,8 @@
 %   x - input data.
 %   y - target data.
 
-x = train_data';
-t = result_data';
+x = x';
+t = y';
 
 % Choose a Training Function
 % For a list of all training functions type: help nntrain
@@ -27,10 +27,10 @@ net.divideParam.valRatio = 15/100;
 net.divideParam.testRatio = 15/100;
 
 % Train the Network
-[net, tr] = train(net,x,t);
+[net, ~] = train(net,x,t);
 
 % Test the Network
-y = net(x);
+y_matlab = net(x);
 % e = gsubtract(t,y);
 % performance = perform(net,t,y)
 

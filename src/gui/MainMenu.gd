@@ -1,6 +1,7 @@
 extends Control
 
 
+const Car = preload("res://scenes/Car.tscn")
 const section = "train"
 const file_to_save = "user://config.cfg"
 
@@ -25,7 +26,7 @@ func _on_Settings_pressed():
 
 
 func change(scene, x, y, r):
-	var car = preload("res://scenes/Car.tscn").instance()
+	var car = Car.instance()
 	car.position = Vector2(x, y)
 	car.rotation_degrees = r
 	var camera = Camera2D.new()
@@ -35,15 +36,22 @@ func change(scene, x, y, r):
 	
 	Global.mode = $MainPanel/HSplitContainer/Panel/VBoxContainer/OptionButton.selected
 	match Global.mode:
-		0:#manual
+		Global.MANUAL_MODE:
 			car.working = true
 			car.neural = false
-		1:#neuron
+		Global.NEURAL_MODE:
 			car.working = true
 			car.neural = true
-		2:#race
-			pass
-		3:#pomiar
+		Global.RACE_MODE:
+			car.working = true
+			car.neural = false
+			var car2 = Car.instance()
+			car2.position = Vector2(x, y)
+			car2.rotation_degrees = r
+			car2.working = true
+			car2.neural = true
+			scene.add_child(car2)
+		Global.MEASURE_MODE:
 			car.working = true
 			car.neural = false
 	
