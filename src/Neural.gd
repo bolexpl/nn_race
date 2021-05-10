@@ -6,56 +6,49 @@ var theta
 var output
 var biases
 var rand
-var x_min
-var x_max
 
 
-func _init(input_count, layer_count, neurons_array, x_min_p, x_max_p, load_weights = true):
+func _init(input_count, layer_count, neurons_array):
 	self.rand = RandomNumberGenerator.new()
 	self.rand.randomize()
 	self.n_array = [input_count] + neurons_array
 	self.l_count = layer_count + 1
-	self.x_min = x_min_p
-	self.x_max = x_max_p
 	self.output = []
 	self.theta = []
 	self.biases = []
-#	if load_weights:
-#		# TODO
-#		load_net()
-#	else:
-	generate_weights()
 
 
-func generate_weights():
+func generate_weights(w_min, w_max):
 	# init theta to random values (neurony, wejścia)
 	for i in range(1, self.l_count):
-		var tmp = randn(self.n_array[i], self.n_array[i - 1])
-		self.theta.append(tmp)
+		self.theta.append(randn(self.n_array[i], self.n_array[i - 1], w_min, w_max))
 	# init biases
 	for i in range(self.l_count - 1):
 		self.biases.append([])
 		self.biases[i].resize(self.n_array[i+1])
 		for i2 in range(self.biases[i].size()):
-			self.biases[i][i2] = rand.randf_range(self.x_min, self.x_max)
+			self.biases[i][i2] = rand.randf_range(w_min, w_max)
 #			self.biases[i][i2] = rand.randfn()
 
 
-func save_net():
+func save_weights():
 	var save_file = File.new()
 	save_file.open(Global.net_file, File.WRITE)
-	save_file.store_line(JSON.print([1, 2, 3]))
+	var data = {"theta": self.theta, "biases": self.biases}
+	var s = JSON.print(data)
+	save_file.store_line(s)
 	save_file.close()
 
 
-func load_net():
-	var save_file = File.new()
-	if not save_file.file_exists(Global.net_file):
+func load_weights():
+	var f = File.new()
+	if not f.file_exists(Global.net_file):
 		return
-	save_file.open(Global.net_file, File.READ)
-	var _data = JSON.parse(save_file.get_line())
-	# TODO
-	save_file.close()
+	f.open(Global.net_file, File.READ)
+	var data = JSON.parse(f.get_line()).result
+	self.theta = data["theta"]
+	self.biases = data["biases"]
+	f.close()
 
 
 func train(x, y, iter_count = 1):
@@ -154,7 +147,7 @@ static func get_min_max(x):
 
 static func transpose(arr):
 	var result = []
-	var m = arr.size()
+	var m = arr.size() 
 	var n = arr[0].size()
 	for i in range(n):
 		var tmp = []
@@ -164,12 +157,12 @@ static func transpose(arr):
 	return result
 
 
-func randn(n, m):
+func randn(n, m, w_min, w_max):
 	var result = []
 	for i in range(n):
 		result.append([])
 		for _j in range(m):
-			result[i].append(rand.randf_range(self.x_min, self.x_max))
+			result[i].append(rand.randf_range(w_min, w_max))
 #			result[i].append(rand.randfn())
 	return result
 

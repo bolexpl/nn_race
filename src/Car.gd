@@ -38,7 +38,6 @@ var distance = 0
 var rays = null
 
 var nn_in_vector = [0, 0, 0, 0, 0, 0]
-var nn = null
 
 var train_file = null
 var result_file = null
@@ -51,9 +50,9 @@ func _ready():
 	
 	if Global.mode == Global.MEASURE_MODE: # zapis pomiarów
 		var config = ConfigFile.new()
-		var err = config.load("user://config.cfg")
-		var train_file_name = config.get_value("train", "training_data", "user://train_file.txt")
-		var result_file_name = config.get_value("train", "result_data", "user://result_file.txt")
+		var _err = config.load("user://config.cfg")
+		train_file_name = config.get_value("train", "training_data", "user://train_file.txt")
+		result_file_name = config.get_value("train", "result_data", "user://result_file.txt")
 		
 		train_file = File.new()
 		result_file = File.new()
@@ -61,8 +60,6 @@ func _ready():
 		result_file.open(result_file_name, File.WRITE)
 	
 	rays = [$Left2, $Left, $Forward, $Right, $Right2]
-	var n_array = [10, 2]
-	nn = Neural.new(6, len(n_array), n_array, 0, 700)
 
 
 func _exit_tree():
@@ -85,7 +82,6 @@ func _physics_process(delta):
 	calculate_steering(delta)
 	velocity += acceleration * delta
 	velocity = move_and_slide(velocity)
-	print(velocity.length())
 
 
 func set_input(turn_param, accel_param):
@@ -113,9 +109,9 @@ func neural_input():
 			var pos = rays[i].get_collision_point()
 			tmp = position.distance_to(pos) - halfsize
 		nn_in_vector[i] = tmp
-	nn_in_vector[5] = acceleration.length()
-	nn.forward([nn_in_vector])
-	set_input(nn.output[0][0], nn.output[0][1])
+#	nn_in_vector[5] = acceleration.length()
+#	nn.forward([nn_in_vector])
+#	set_input(nn.output[0][0], nn.output[0][1])
 
 
 func write_data():

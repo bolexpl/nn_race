@@ -55,7 +55,7 @@ func change(scene, x, y, r):
 
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://scenes/gui/TrainMenu.tscn")
+	var _err = get_tree().change_scene("res://scenes/gui/TrainMenu.tscn")
 
 
 func _on_Exit_pressed():
