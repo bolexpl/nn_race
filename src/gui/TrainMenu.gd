@@ -13,8 +13,8 @@ var y
 
 
 func _ready():
-	$ColorRect/Panel/VBoxContainer/XButton.text = x_file
-	$ColorRect/Panel/VBoxContainer/YButton.text = y_file
+	$ColorRect/HSplitContainer/Panel/VBoxContainer/XButton.text = x_file
+	$ColorRect/HSplitContainer/Panel/VBoxContainer/YButton.text = y_file
 
 
 func _on_XButton_pressed():
@@ -30,10 +30,10 @@ func _on_YButton_pressed():
 func _on_FileDialog_file_selected(path):
 	if file_index == 0:
 		x_file = path
-		$ColorRect/Panel/VBoxContainer/XButton.text = path
+		$ColorRect/HSplitContainer/Panel/VBoxContainer/XButton.text = path
 	else:
 		y_file = path
-		$ColorRect/Panel/VBoxContainer/YButton.text = path
+		$ColorRect/HSplitContainer/Panel/VBoxContainer/YButton.text = path
 
 
 func _on_TrainButton_pressed():

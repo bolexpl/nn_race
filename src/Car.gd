@@ -37,6 +37,7 @@ var steer_angle
 var distance = 0
 var rays = null
 
+var nn
 var nn_in_vector = [0, 0, 0, 0, 0, 0]
 
 var train_file = null
@@ -60,6 +61,15 @@ func _ready():
 		result_file.open(result_file_name, File.WRITE)
 	
 	rays = [$Left2, $Left, $Forward, $Right, $Right2]
+	var n_array = [10, 2]
+	nn = Neural.new(6, len(n_array), n_array)
+	nn.load_weights()
+	
+	set_input(0, 1)
+	apply_friction()
+	calculate_steering(0.5)
+	velocity += acceleration * 0.5
+	velocity = move_and_slide(velocity)
 
 
 func _exit_tree():
@@ -109,9 +119,11 @@ func neural_input():
 			var pos = rays[i].get_collision_point()
 			tmp = position.distance_to(pos) - halfsize
 		nn_in_vector[i] = tmp
-#	nn_in_vector[5] = acceleration.length()
-#	nn.forward([nn_in_vector])
-#	set_input(nn.output[0][0], nn.output[0][1])
+	nn_in_vector[5] = acceleration.length()
+	nn.forward([nn_in_vector])
+	print(nn_in_vector)
+	print(nn.output)
+	set_input(nn.output[0][0], nn.output[1][0])
 
 
 func write_data():
