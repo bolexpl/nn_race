@@ -9,7 +9,6 @@ extends KinematicBody2D
 
 # opracować sieć i uczenie na podstawie pomiarów ręcznych
 const Neural = preload("res://src/Neural.gd")
-const NeuralPy = preload("res://src/python/NeuralPy.py")
 
 export var neural = false
 export var working = true

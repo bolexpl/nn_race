@@ -2,13 +2,8 @@ extends Control
 
 
 const Car = preload("res://scenes/Car.tscn")
-const Tensor = preload("res://src/python/tensor.py")
 const section = "train"
 const file_to_save = "user://config.cfg"
-
-
-func _ready():
-	var t = Tensor.instance()
 
 
 func _on_Track1_pressed():
