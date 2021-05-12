@@ -7,6 +7,6 @@ const MEASURE_MODE = 3
 
 var mode = 0
 
-#var net_file = "user://netfile.json"
+var net_file = "user://netfile.json"
 #var net_file = "/home/bolek/netfile.json"
-var net_file = "C:/Users/bolek/Desktop/netfile.json"
+#var net_file = "C:/Users/bolek/Desktop/netfile.json"

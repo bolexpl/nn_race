@@ -206,17 +206,23 @@ static func subtract(a, b):
 			matrix[i][j] = a[i][j] - b[i][j]
 	return matrix
 
-# x1 / suma_x1
+
 static func normalize(mat):
-	var res = zero_matrix(mat.size(), mat[0].size())
-	var cols = []
-	
-	cols.resize(mat[0].size())
-	for col in range(mat[0].size()):
-		cols[col] = 0.0
-		for row in range(mat.size()):
-			cols[col] = cols[col] + mat[row][col]
-		
-		for row in range(mat.size()):
-			res[row][col] = mat[row][col] / cols[col]
-	return res
+	for sample in range(mat.size()):
+		for field in range(mat[0].size() - 1):
+			mat[sample][field] = (mat[sample][field]/700) * 1;
+		mat[sample][5] = (mat[sample][5]/400) * 1;
+
+
+#static func normalize(mat):
+#	var res = zero_matrix(mat.size(), mat[0].size())
+#	var cols = []
+#	cols.resize(mat[0].size())
+#	for col in range(mat[0].size()):
+#		cols[col] = 0.0
+#		for row in range(mat.size()):
+#			cols[col] = cols[col] + mat[row][col]
+#
+#		for row in range(mat.size()):
+#			res[row][col] = mat[row][col] / cols[col]
+#	return res

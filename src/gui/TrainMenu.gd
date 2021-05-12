@@ -2,10 +2,10 @@ extends Control
 
 
 const Neural = preload("res://src/Neural.gd")
-var x_file = "C:/Users/bolek/Desktop/x.txt"
-var y_file = "C:/Users/bolek/Desktop/y.txt"
-var x2_file = "C:/Users/bolek/Desktop/x.txt"
-var y2_file = "C:/Users/bolek/Desktop/y_godot.txt"
+var x_file = "/home/bolek/x.txt"
+var y_file = "/home/bolek/y.txt"
+var x2_file = "/home/bolek/x.txt"
+var y2_file = "/home/bolek/y_godot.txt"
 var file_index = 0
 var x_thread
 var y_thread
@@ -93,6 +93,7 @@ func train(check):
 	else:
 		nn.load_weights()
 	# trenowanie
+	nn.normalize(x)
 	nn.train(x, y, 1)
 	# zapis
 	nn.save_weights()
@@ -125,6 +126,7 @@ func test_net(_param):
 	var nn = Neural.new(len(x[0]), len(n_array), n_array)
 	# wczytanie wag
 	nn.load_weights()
+	nn.normalize(x)
 	# trenowanie
 	nn.forward(x)
 	# zapis

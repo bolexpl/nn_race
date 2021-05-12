@@ -9,6 +9,7 @@ extends KinematicBody2D
 
 # opracować sieć i uczenie na podstawie pomiarów ręcznych
 const Neural = preload("res://src/Neural.gd")
+const NeuralPy = preload("res://src/python/NeuralPy.py")
 
 export var neural = false
 export var working = true
@@ -65,6 +66,7 @@ func _ready():
 	nn = Neural.new(6, len(n_array), n_array)
 	nn.load_weights()
 	
+	
 #	set_input(0, 1)
 #	apply_friction()
 #	calculate_steering(0.5)
@@ -120,7 +122,9 @@ func neural_input():
 			tmp = position.distance_to(pos) - halfsize
 		nn_in_vector[i] = tmp
 	nn_in_vector[5] = acceleration.length()
-	nn.forward([nn_in_vector])
+	var tmp = [nn_in_vector]
+	nn.normalize(tmp)
+	nn.forward(tmp)
 	set_input(nn.output[0][0], nn.output[1][0])
 
 
