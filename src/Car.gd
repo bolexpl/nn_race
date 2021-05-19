@@ -15,8 +15,8 @@ export var working = true
 
 # steering
 export var wheel_base = 35  # Distance from front to rear wheel
-export var steering_angle = 15  # Amount that front wheel turns, in degrees
-export var steering_scale = 1.7
+export var steering_angle = 25  # Amount that front wheel turns, in degrees
+export var steering_scale = 2
 # acceleration
 export var engine_power = 600  # Forward acceleration force.
 # friction, drag
@@ -44,6 +44,7 @@ var train_file = null
 var result_file = null
 var train_file_name = null
 var result_file_name = null
+var file_count
 
 
 func _ready():
@@ -59,12 +60,12 @@ func _ready():
 		result_file = File.new()
 		train_file.open(train_file_name, File.WRITE)
 		result_file.open(result_file_name, File.WRITE)
+		file_count = 0
 	
 	rays = [$Left2, $Left, $Forward, $Right, $Right2]
 	var n_array = [10, 2]
 	nn = Neural.new(6, len(n_array), n_array)
 	nn.load_weights()
-	
 	
 #	set_input(0, 1)
 #	apply_friction()
@@ -93,13 +94,14 @@ func _physics_process(delta):
 	calculate_steering(delta)
 	velocity += acceleration * delta
 	velocity = move_and_slide(velocity)
-	print(velocity.length())
 
 
 func set_input(turn_param, accel_param):
 	if Global.mode == Global.MEASURE_MODE:
 		if abs(accel_param) >= 0.1:
-			result_file.store_string(str(turn_param) + " " + str(accel_param)+"\n")
+			file_count = file_count + 1
+			print(file_count)
+			result_file.store_string(str(turn_param) + ";" + str(accel_param)+"\n")
 			write_data()
 	
 	var turn = turn_param
@@ -136,7 +138,9 @@ func write_data():
 		else:
 			var pos = rays[i].get_collision_point()
 			tmp = position.distance_to(pos) - halfsize
-		train_file.store_string(str(tmp) + " ")
+		train_file.store_string(str(tmp))
+		if i < rays.size():
+			train_file.store_string(";")
 	train_file.store_string(str(velocity.length()))
 	train_file.store_string("\n")
 
@@ -154,14 +158,18 @@ func get_input():
 		accel_param -= 1
 		
 	if Input.is_action_pressed("turn_right"):
-		turn_param += Input.get_action_strength("turn_right") * steering_scale
+		turn_param += Input.get_action_strength("turn_right")
 	if Input.is_action_pressed("turn_left"):
-		turn_param -= Input.get_action_strength("turn_left") * steering_scale
+		turn_param -= Input.get_action_strength("turn_left")
 	if Input.is_action_pressed("accelerate"):
 		accel_param += Input.get_action_strength("accelerate")
 	if Input.is_action_pressed("brake"):
 		accel_param -= Input.get_action_strength("brake")
+	
+	
 	set_input(turn_param, accel_param)
+	if Input.is_action_pressed("turn_right") or Input.is_action_pressed("turn_left"):
+		turn_param = turn_param * steering_scale
 
 
 func apply_friction():

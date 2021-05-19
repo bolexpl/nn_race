@@ -8,8 +8,8 @@ const file_to_save = "user://config.cfg"
 func _ready():
 	var config = ConfigFile.new()
 	var _err = config.load(file_to_save)
-	var train = config.get_value(section, "training_data", "user://train_file.txt")
-	var result = config.get_value(section, "result_data", "user://result_file.txt")
+	var train = config.get_value(section, "training_data", "user://train_file.csv")
+	var result = config.get_value(section, "result_data", "user://result_file.csv")
 	var save_net = config.get_value(section, "save_net", "user://save_net.json")
 	var load_net = config.get_value(section, "load_net", "user://load_net.json")
 	config.save(file_to_save)
