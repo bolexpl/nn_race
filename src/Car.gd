@@ -66,12 +66,6 @@ func _ready():
 	var n_array = [10, 2]
 	nn = Neural.new(6, len(n_array), n_array)
 	nn.load_weights()
-	
-#	set_input(0, 1)
-#	apply_friction()
-#	calculate_steering(0.5)
-#	velocity += acceleration * 0.5
-#	velocity = move_and_slide(velocity)
 
 
 func _exit_tree():
@@ -129,22 +123,6 @@ func neural_input():
 	set_input(nn.output[0][0], nn.output[1][0])
 
 
-func write_data():
-	for i in range(rays.size()):
-		var tmp
-		var c = rays[i].get_collider()
-		if c == null:
-			tmp = 600
-		else:
-			var pos = rays[i].get_collision_point()
-			tmp = position.distance_to(pos) - halfsize
-		train_file.store_string(str(tmp))
-		if i < rays.size():
-			train_file.store_string(";")
-	train_file.store_string(str(velocity.length()))
-	train_file.store_string("\n")
-
-
 func get_input():
 	var turn_param = 0
 	var accel_param = 0
@@ -165,7 +143,6 @@ func get_input():
 		accel_param += Input.get_action_strength("accelerate")
 	if Input.is_action_pressed("brake"):
 		accel_param -= Input.get_action_strength("brake")
-	
 	
 	set_input(turn_param, accel_param)
 	if Input.is_action_pressed("turn_right") or Input.is_action_pressed("turn_left"):
@@ -199,3 +176,17 @@ func calculate_steering(delta):
 	rotation = new_heading.angle()
 
 
+func write_data():
+	for i in range(rays.size()):
+		var tmp
+		var c = rays[i].get_collider()
+		if c == null:
+			tmp = 600
+		else:
+			var pos = rays[i].get_collision_point()
+			tmp = position.distance_to(pos) - halfsize
+		train_file.store_string(str(tmp))
+		if i < rays.size():
+			train_file.store_string(";")
+	train_file.store_string(str(velocity.length()))
+	train_file.store_string("\n")
