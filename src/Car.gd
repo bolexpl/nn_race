@@ -4,9 +4,6 @@ extends KinematicBody2D
 # input: 5 odległości do ścian, aktualna prędkość
 # output: przyspieszenie i obrót
 
-# input: x, y, 5 odległości s, v0
-# output: przyspieszenie, kąt skrętu, droga możliwa po drodze maksymalnej
-
 # opracować sieć i uczenie na podstawie pomiarów ręcznych
 const Neural = preload("res://src/Neural.gd")
 
