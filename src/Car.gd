@@ -5,7 +5,7 @@ extends KinematicBody2D
 # output: przyspieszenie i obrót
 
 # opracować sieć i uczenie na podstawie pomiarów ręcznych
-const Neural = preload("res://src/Neural.gd")
+const Neural = preload("res://native/Neural.gdns")
 
 export var neural = false
 export var working = true
@@ -60,9 +60,10 @@ func _ready():
 		file_count = 0
 	
 	rays = [$Left2, $Left, $Forward, $Right, $Right2]
-	var n_array = [10, 2]
-	nn = Neural.new(6, len(n_array), n_array)
-	nn.load_weights()
+#	var n_array = [10, 2]
+#	nn = Neural.new(6, len(n_array), n_array)
+#	nn.load_weights()
+	nn = Neural.new()
 
 
 func _exit_tree():
@@ -114,10 +115,11 @@ func neural_input():
 			tmp = position.distance_to(pos) - halfsize
 		nn_in_vector[i] = tmp
 	nn_in_vector[5] = acceleration.length()
-	var tmp = [nn_in_vector]
-	nn.normalize(tmp)
-	nn.forward(tmp)
-	set_input(nn.output[0][0], nn.output[1][0])
+#	var tmp = [nn_in_vector]
+#	nn.normalize(tmp)
+#	nn.forward(tmp)
+	var output = nn.predict(nn_in_vector)
+	set_input(output[0], output[1])
 
 
 func get_input():
