@@ -4,7 +4,7 @@
 #include <Godot.hpp>
 #include <Reference.hpp>
 #include <PoolArrays.hpp>
-#include "lib/GdNeural.h"
+#include "matlib/GdNeural.h"
 
 namespace godot {
 

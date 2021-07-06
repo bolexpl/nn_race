@@ -1,1 +1,1 @@
-/usr/bin/c++ -fPIC -g -shared -Wl,-soname,libgdneural.so -o libgdneural.so CMakeFiles/gdneural.dir/gdlibrary.cpp.o CMakeFiles/gdneural.dir/Neural.cpp.o ../godot-cpp/bin/libgodot-cpp.linux.debug.64.a ../lib/gdNetLib.a 
+/usr/bin/c++ -fPIC -g -shared -Wl,-soname,libgdneural.so -o libgdneural.so CMakeFiles/gdneural.dir/gdlibrary.cpp.o CMakeFiles/gdneural.dir/Neural.cpp.o ../godot-cpp/bin/libgodot-cpp.linux.debug.64.a ../matlib/gdNetLib.a 

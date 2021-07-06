@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/exe.dir/main.cpp.o CMakeFiles/exe.dir/gdlibrary.cpp.o CMakeFiles/exe.dir/Neural.cpp.o ../godot-cpp/bin/libgodot-cpp.linux.debug.64.a ../lib/libneural.a -o exe 

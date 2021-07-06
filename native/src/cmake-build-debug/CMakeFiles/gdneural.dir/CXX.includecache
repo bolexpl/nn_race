@@ -588,35 +588,35 @@ float.h
 stddef.h
 -
 
-/home/bolek/sda6/home/Dokumenty/CLionProjects/gdneural/Neural.cpp
+/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/Neural.cpp
 Neural.h
-/home/bolek/sda6/home/Dokumenty/CLionProjects/gdneural/Neural.h
+/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/Neural.h
 Godot.hpp
 -
 
-/home/bolek/sda6/home/Dokumenty/CLionProjects/gdneural/Neural.h
+/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/Neural.h
 Godot.hpp
 -
 Reference.hpp
 -
 PoolArrays.hpp
 -
-lib/GdNeural.h
-/home/bolek/sda6/home/Dokumenty/CLionProjects/gdneural/lib/GdNeural.h
+matlib/GdNeural.h
+/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/matlib/GdNeural.h
 
-/home/bolek/sda6/home/Dokumenty/CLionProjects/gdneural/gdlibrary.cpp
+/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/gdlibrary.cpp
 Neural.h
-/home/bolek/sda6/home/Dokumenty/CLionProjects/gdneural/Neural.h
+/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/Neural.h
 
-/home/bolek/sda6/home/Dokumenty/CLionProjects/gdneural/lib/GdNeural.h
+/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/matlib/GdNeural.h
 rtwtypes.h
-/home/bolek/sda6/home/Dokumenty/CLionProjects/gdneural/lib/rtwtypes.h
+/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/matlib/rtwtypes.h
 cstddef
 -
 cstdlib
 -
 
-/home/bolek/sda6/home/Dokumenty/CLionProjects/gdneural/lib/rtwtypes.h
+/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/matlib/rtwtypes.h
 tmwtypes.h
-/home/bolek/sda6/home/Dokumenty/CLionProjects/gdneural/lib/tmwtypes.h
+/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/matlib/tmwtypes.h
 
