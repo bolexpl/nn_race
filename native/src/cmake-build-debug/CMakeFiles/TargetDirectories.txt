@@ -1,0 +1,3 @@
+/home/bolek/sda6/home/Dokumenty/CLionProjects/gdneural/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/bolek/sda6/home/Dokumenty/CLionProjects/gdneural/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/bolek/sda6/home/Dokumenty/CLionProjects/gdneural/cmake-build-debug/CMakeFiles/gdneural.dir

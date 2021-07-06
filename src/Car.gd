@@ -60,9 +60,6 @@ func _ready():
 		file_count = 0
 	
 	rays = [$Left2, $Left, $Forward, $Right, $Right2]
-#	var n_array = [10, 2]
-#	nn = Neural.new(6, len(n_array), n_array)
-#	nn.load_weights()
 	nn = Neural.new()
 
 
@@ -115,10 +112,8 @@ func neural_input():
 			tmp = position.distance_to(pos) - halfsize
 		nn_in_vector[i] = tmp
 	nn_in_vector[5] = acceleration.length()
-#	var tmp = [nn_in_vector]
-#	nn.normalize(tmp)
-#	nn.forward(tmp)
-	var output = nn.predict(nn_in_vector)
+	nn_in_vector = nn.norm(nn_in_vector)
+	var output = nn.predict(nn_in_vector, 3)
 	set_input(output[0], output[1])
 
 
