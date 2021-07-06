@@ -220,6 +220,27 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//MatlabDataArray Library
+Matlab_DATAARRAY_LIBRARY:FILEPATH=/home/bolek/sda6/MATLAB/R2021a/bin/glnxa64/libMatlabDataArray.so
+
+//MatlabEngine Library
+Matlab_ENGINE_LIBRARY:FILEPATH=/home/bolek/sda6/MATLAB/R2021a/extern/bin/glnxa64/libMatlabEngine.so
+
+//Path to a file.
+Matlab_INCLUDE_DIRS:PATH=/home/bolek/sda6/MATLAB/R2021a/extern/include
+
+//Extensions for the mex targets (automatically given by Matlab)
+Matlab_MEX_EXTENSION:STRING=mexa64
+
+//Path to a library.
+Matlab_MEX_LIBRARY:FILEPATH=/home/bolek/sda6/MATLAB/R2021a/bin/glnxa64/libmex.so
+
+//Path to a library.
+Matlab_MX_LIBRARY:FILEPATH=/home/bolek/sda6/MATLAB/R2021a/bin/glnxa64/libmx.so
+
+//Matlab installation root path
+Matlab_ROOT_DIR:PATH=/home/bolek/sda6/MATLAB/R2021a
+
 //Path to a program.
 ProcessorCount_cmd_nproc:FILEPATH=/usr/bin/nproc
 
@@ -388,6 +409,26 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding Matlab
+FIND_PACKAGE_MESSAGE_DETAILS_Matlab:INTERNAL=[/home/bolek/sda6/MATLAB/R2021a/extern/include][/home/bolek/sda6/MATLAB/R2021a/bin/glnxa64/libmex.so][mexa64][/home/bolek/sda6/MATLAB/R2021a][/home/bolek/sda6/MATLAB/R2021a/bin/glnxa64/libmx.so][/home/bolek/sda6/MATLAB/R2021a/extern/bin/glnxa64/libMatlabEngine.so][/home/bolek/sda6/MATLAB/R2021a/bin/glnxa64/libMatlabDataArray.so][c ][v9.10()]
+//ADVANCED property for variable: Matlab_DATAARRAY_LIBRARY
+Matlab_DATAARRAY_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Matlab_ENGINE_LIBRARY
+Matlab_ENGINE_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Matlab_INCLUDE_DIRS
+Matlab_INCLUDE_DIRS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Matlab_MEX_EXTENSION
+Matlab_MEX_EXTENSION-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Matlab_MEX_LIBRARY
+Matlab_MEX_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Matlab_MX_LIBRARY
+Matlab_MX_LIBRARY-ADVANCED:INTERNAL=1
+//internal matlab location for the discovered version
+Matlab_PROG_VERSION_STRING_AUTO_DETECT:INTERNAL=/home/bolek/sda6/MATLAB/R2021a/bin/matlab
+//last Matlab root dir location
+Matlab_ROOT_DIR_LAST_CACHED:INTERNAL=/home/bolek/sda6/MATLAB/R2021a
+//Matlab version (automatically determined)
+Matlab_VERSION_STRING_INTERNAL:INTERNAL=9.10
 //ADVANCED property for variable: ProcessorCount_cmd_nproc
 ProcessorCount_cmd_nproc-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ProcessorCount_cmd_sysctl

@@ -3,8 +3,12 @@ project(src)
 
 set(CMAKE_CXX_STANDARD 14)
 
+# /home/bolek/sda6/MATLAB/R2021a/extern/include
+
+find_package(Matlab REQUIRED)
+INCLUDE_DIRECTORIES("${Matlab_ROOT_DIR}/extern/include")
+
 include_directories(
-        /home/bolek/sda6/MATLAB/R2021a/extern/include
         ${CMAKE_CURRENT_SOURCE_DIR}/godot-cpp/godot-headers/
         ${CMAKE_CURRENT_SOURCE_DIR}/godot-cpp/include/
         ${CMAKE_CURRENT_SOURCE_DIR}/godot-cpp/include/core/
