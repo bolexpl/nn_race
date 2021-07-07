@@ -27,21 +27,12 @@ endif()
 #message(STATUS "gdlib = godot-cpp/bin/libgodot-cpp.${lib_system}.debug.64.a")
 #message(STATUS "netlib = matlib/gdNet.${lib_ext}")
 
-#add_library(gdlib STATIC IMPORTED)
-#set_property(TARGET gdlib PROPERTY IMPORTED_IMPLIB "${CMAKE_SOURCE_DIR}/godot-cpp/bin/libgodot-cpp.windows.debug.64.a")
-
-#add_library(netlib STATIC IMPORTED)
-#set_property(TARGET netlib PROPERTY IMPORTED_IMPLIB "${CMAKE_SOURCE_DIR}/matlib/gdNet.lib")
-
 add_library(gdneural SHARED gdlibrary.cpp
         Neural.cpp Neural.h
-#        $<TARGET_OBJECTS:gdlib>
-#        $<TARGET_OBJECTS:netlib>
         ${CMAKE_SOURCE_DIR}/matlib/GdNet.h
         ${CMAKE_SOURCE_DIR}/matlib/gdNet_data.h
         ${CMAKE_SOURCE_DIR}/matlib/gdNet_types.h
         ${CMAKE_SOURCE_DIR}/matlib/rtwtypes.h
         )
-#target_link_libraries(gdneural PRIVATE gdlib netlib)
-target_link_libraries(gdneural ${CMAKE_SOURCE_DIR}/godot-cpp/bin/libgodot-cpp.windows.debug.64.a)
-target_link_libraries(gdneural ${CMAKE_SOURCE_DIR}/matlib/gdNet.lib)
+target_link_libraries(gdneural ${CMAKE_SOURCE_DIR}/godot-cpp/bin/libgodot-cpp.${lib_system}.debug.64.a)
+target_link_libraries(gdneural ${CMAKE_SOURCE_DIR}/matlib/gdNet.${lib_ext})

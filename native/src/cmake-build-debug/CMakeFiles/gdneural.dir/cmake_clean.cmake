@@ -1,10 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/gdneural.dir/Neural.cpp.obj"
-  "CMakeFiles/gdneural.dir/gdlibrary.cpp.obj"
-  "libgdneural.dll"
-  "libgdneural.dll.a"
-  "libgdneural.dll.manifest"
+  "CMakeFiles/gdneural.dir/Neural.cpp.o"
+  "CMakeFiles/gdneural.dir/gdlibrary.cpp.o"
   "libgdneural.pdb"
+  "libgdneural.so"
 )
 
 # Per-language clean rules from dependency scanning.

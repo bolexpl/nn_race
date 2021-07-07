@@ -7,7 +7,7 @@ reloadable=true
 
 [entry]
 
-X11.64="res://native/compiled/libgdneural_linux64.so"
+X11.64="res://native/compiled/libgdneural.so"
 
 [dependencies]
 
