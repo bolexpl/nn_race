@@ -110,12 +110,12 @@ gdneural_OBJECTS = \
 # External object files for target gdneural
 gdneural_EXTERNAL_OBJECTS = \
 "/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/godot-cpp/bin/libgodot-cpp.linux.debug.64.a" \
-"/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/matlib/gdNetLib.a"
+"/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/matlib/gdNet.a"
 
 libgdneural.so: CMakeFiles/gdneural.dir/gdlibrary.cpp.o
 libgdneural.so: CMakeFiles/gdneural.dir/Neural.cpp.o
 libgdneural.so: ../godot-cpp/bin/libgodot-cpp.linux.debug.64.a
-libgdneural.so: ../matlib/gdNetLib.a
+libgdneural.so: ../matlib/gdNet.a
 libgdneural.so: CMakeFiles/gdneural.dir/build.make
 libgdneural.so: CMakeFiles/gdneural.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library libgdneural.so"

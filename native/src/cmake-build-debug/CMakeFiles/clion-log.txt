@@ -1,5 +1,4 @@
 /home/bolek/sda6/home/toolbox/apps/apps/CLion/ch-0/211.7442.42/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src
--- Found Matlab: /home/bolek/sda6/MATLAB/R2021a/extern/include (found version "9.10")  
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/cmake-build-debug

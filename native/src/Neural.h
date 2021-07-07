@@ -4,7 +4,7 @@
 #include <Godot.hpp>
 #include <Reference.hpp>
 #include <PoolArrays.hpp>
-#include "matlib/GdNeural.h"
+#include "matlib/GdNet.h"
 
 namespace godot {
 
@@ -12,7 +12,7 @@ namespace godot {
     GODOT_CLASS(Neural, Reference)
     public:
         Neural() {
-            classInstance = new GdNeural();
+            classInstance = new GdNet();
         }
 
         ~Neural() {
@@ -29,7 +29,7 @@ namespace godot {
         static void _register_methods();
 
     private:
-        GdNeural *classInstance;
+        GdNet *classInstance;
     };
 }
 

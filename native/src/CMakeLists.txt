@@ -3,10 +3,8 @@ project(src)
 
 set(CMAKE_CXX_STANDARD 14)
 
-# /home/bolek/sda6/MATLAB/R2021a/extern/include
-
 find_package(Matlab REQUIRED)
-INCLUDE_DIRECTORIES("${Matlab_ROOT_DIR}/extern/include")
+include_directories("${Matlab_ROOT_DIR}/extern/include")
 
 include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/godot-cpp/godot-headers/
@@ -20,13 +18,13 @@ set_property(TARGET matlib PROPERTY IMPORTED_OBJECTS
         godot-cpp/bin/libgodot-cpp.linux.debug.64.a)
 
 add_library(netlib OBJECT IMPORTED)
-set_property(TARGET netlib PROPERTY IMPORTED_OBJECTS matlib/gdNetLib.a)
+set_property(TARGET netlib PROPERTY IMPORTED_OBJECTS matlib/gdNet.a)
 
 add_library(gdneural SHARED gdlibrary.cpp
         $<TARGET_OBJECTS:matlib>
         $<TARGET_OBJECTS:netlib>
-        matlib/GdNeural.h
-        matlib/gdNetLib_data.h
-        matlib/gdNetLib_types.h
+        matlib/GdNet.h
+        matlib/gdNet_data.h
+        matlib/gdNet_types.h
         matlib/rtwtypes.h
         Neural.cpp Neural.h)

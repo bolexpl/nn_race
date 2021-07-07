@@ -59,7 +59,7 @@ CMakeFiles/gdneural.dir/Neural.cpp.o
  /home/bolek/sda6/MATLAB/R2021a/extern/include/tmwtypes.h
  /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/Neural.cpp
  /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/Neural.h
- /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/matlib/GdNeural.h
+ /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/matlib/GdNet.h
  /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/matlib/rtwtypes.h
 CMakeFiles/gdneural.dir/gdlibrary.cpp.o
  ../godot-cpp/godot-headers/android/godot_android.h
@@ -119,5 +119,5 @@ CMakeFiles/gdneural.dir/gdlibrary.cpp.o
  /home/bolek/sda6/MATLAB/R2021a/extern/include/tmwtypes.h
  /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/Neural.h
  /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/gdlibrary.cpp
- /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/matlib/GdNeural.h
+ /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/matlib/GdNet.h
  /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/matlib/rtwtypes.h

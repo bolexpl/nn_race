@@ -28,17 +28,11 @@ PoolRealArray Neural::predict(PoolRealArray args, int ver) {
         dv[idx1] = args.read()[idx1];
     }
 
-    switch (ver) {
-        case 1:
+//    switch (ver) {
+//        case 1:
             classInstance->gdNet(dv, b_y1);
-            break;
-        case 2:
-            classInstance->gdBiggerNet(dv, b_y1);
-            break;
-        default:
-            classInstance->gdFilterNet(dv, b_y1);
-            break;
-    }
+//            break;
+//    }
 
     PoolRealArray result;
     result.append((float) b_y1[0]);
