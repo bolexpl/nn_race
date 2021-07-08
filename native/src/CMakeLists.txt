@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.19)
 project(src)
 
 set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_EXE_LINKER_FLAGS "-static -static-libgcc -static-libstdc++")
 
 find_package(Matlab REQUIRED)
 include_directories("${Matlab_ROOT_DIR}/extern/include")
@@ -24,9 +25,6 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
     set(lib_system "windows")
 endif()
 
-#message(STATUS "gdlib = godot-cpp/bin/libgodot-cpp.${lib_system}.debug.64.a")
-#message(STATUS "netlib = matlib/gdNet.${lib_ext}")
-
 add_library(gdneural SHARED gdlibrary.cpp
         Neural.cpp Neural.h
         ${CMAKE_SOURCE_DIR}/matlib/GdNet.h
@@ -34,5 +32,6 @@ add_library(gdneural SHARED gdlibrary.cpp
         ${CMAKE_SOURCE_DIR}/matlib/gdNet_types.h
         ${CMAKE_SOURCE_DIR}/matlib/rtwtypes.h
         )
+target_link_options(gdneural PRIVATE -static -static-libgcc -static-libstdc++)
 target_link_libraries(gdneural ${CMAKE_SOURCE_DIR}/godot-cpp/bin/libgodot-cpp.${lib_system}.debug.64.a)
 target_link_libraries(gdneural ${CMAKE_SOURCE_DIR}/matlib/gdNet.${lib_ext})
