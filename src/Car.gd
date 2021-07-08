@@ -1,10 +1,5 @@
 extends KinematicBody2D
 
-# TODO sieć neuronowa
-# input: 5 odległości do ścian, aktualna prędkość
-# output: przyspieszenie i obrót
-
-# opracować sieć i uczenie na podstawie pomiarów ręcznych
 const Neural = preload("res://native/Neural.gdns")
 
 export var neural = false
@@ -47,11 +42,14 @@ var file_count
 func _ready():
 	halfsize = wheel_base / 2
 	
+	if neural:
+		$Sprite.texture = load("res://assets/car_red_small_1.png")
+	
 	if Global.mode == Global.MEASURE_MODE: # zapis pomiarów
 		var config = ConfigFile.new()
 		var _err = config.load("user://config.cfg")
-		train_file_name = config.get_value("train", "training_data", "user://train_file.txt")
-		result_file_name = config.get_value("train", "result_data", "user://result_file.txt")
+		train_file_name = config.get_value("train", "sensors_file", "user://sensors_file.txt")
+		result_file_name = config.get_value("train", "user_input_file", "user://user_input_file.txt")
 		
 		train_file = File.new()
 		result_file = File.new()

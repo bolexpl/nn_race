@@ -1,7 +1,6 @@
 extends Control
 
 
-const Neural = preload("res://src/Neural.gd")
 var x_file = "/home/bolek/x.txt"
 var y_file = "/home/bolek/y.txt"
 var x2_file = "/home/bolek/x.txt"
@@ -78,25 +77,7 @@ func _on_TrainButton_pressed():
 	train_thread = Thread.new()
 	train_thread.start(self, "train", check)
 	train_thread.wait_to_finish()
-#	train(check)
 	$FinishDialog.popup_centered()
-
-
-func train(check):
-	# tworzenie sieci
-	var n_array = [10, 2]
-	var nn = Neural.new(len(x[0]), len(n_array), n_array)
-	# generowanie lub wczytanie wag
-	if check:
-		nn.generate_weights(-1, 1)
-		nn.save_weights()
-	else:
-		nn.load_weights()
-	# trenowanie
-	nn.normalize(x)
-	nn.train(x, y, 1)
-	# zapis
-	nn.save_weights()
 
 
 func _on_TestBt_pressed():
@@ -118,19 +99,6 @@ func _on_TestBt_pressed():
 		$FinishDialog.popup_centered()
 	else:
 		$TestErrorDialog.popup_centered()
-
-
-func test_net(_param):
-	# tworzenie sieci
-	var n_array = [10, 2]
-	var nn = Neural.new(len(x[0]), len(n_array), n_array)
-	# wczytanie wag
-	nn.load_weights()
-	nn.normalize(x)
-	# trenowanie
-	nn.forward(x)
-	# zapis
-	return save_data(y2_file, nn.output)
 
 
 func load_data(path):
@@ -162,7 +130,6 @@ func save_data(path, data):
 	
 	f.close()
 	return true
-	
 
 
 func _on_BackButton_pressed():

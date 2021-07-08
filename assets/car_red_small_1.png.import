@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/performance.jpg-8a1fda87ee3cbaad790b7efd5232cc81.stex"
+path="res://.import/car_red_small_1.png-d23a8e18c62ea7584903f84197a735c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://matlab/performance.jpg"
-dest_files=[ "res://.import/performance.jpg-8a1fda87ee3cbaad790b7efd5232cc81.stex" ]
+source_file="res://assets/car_red_small_1.png"
+dest_files=[ "res://.import/car_red_small_1.png-d23a8e18c62ea7584903f84197a735c0.stex" ]
 
 [params]
 

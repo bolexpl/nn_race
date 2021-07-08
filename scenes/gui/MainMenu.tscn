@@ -104,27 +104,20 @@ text = "Jazda manualna"
 items = [ "Jazda manualna", null, false, 0, null, "Jazda neuronalna", null, false, 1, null, "Wyścig", null, false, 2, null, "Zapis pomiarów", null, false, 3, null ]
 selected = 0
 
-[node name="Train" type="Button" parent="MainPanel/HSplitContainer/Panel/VBoxContainer"]
+[node name="Settings" type="Button" parent="MainPanel/HSplitContainer/Panel/VBoxContainer"]
 margin_top = 94.0
 margin_right = 572.0
 margin_bottom = 132.0
-text = "Trenowanie sieci"
-
-[node name="Settings" type="Button" parent="MainPanel/HSplitContainer/Panel/VBoxContainer"]
-margin_top = 144.0
-margin_right = 572.0
-margin_bottom = 182.0
 text = "Ustawienia"
 
 [node name="Exit" type="Button" parent="MainPanel/HSplitContainer/Panel/VBoxContainer"]
-margin_top = 194.0
+margin_top = 144.0
 margin_right = 572.0
-margin_bottom = 232.0
+margin_bottom = 182.0
 text = "Wyjście"
 
 [connection signal="pressed" from="MainPanel/HSplitContainer/TracksPanel/VBoxContainer/Track1" to="." method="_on_Track1_pressed"]
 [connection signal="pressed" from="MainPanel/HSplitContainer/TracksPanel/VBoxContainer/Track2" to="." method="_on_Track2_pressed"]
 [connection signal="pressed" from="MainPanel/HSplitContainer/TracksPanel/VBoxContainer/Empty" to="." method="_on_Empty_pressed"]
-[connection signal="pressed" from="MainPanel/HSplitContainer/Panel/VBoxContainer/Train" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="MainPanel/HSplitContainer/Panel/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="MainPanel/HSplitContainer/Panel/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]

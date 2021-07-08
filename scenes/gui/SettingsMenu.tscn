@@ -32,8 +32,8 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/Panel"]
-margin_left = 293.0
-margin_right = 689.0
+margin_left = 273.0
+margin_right = 715.0
 margin_bottom = 580.0
 alignment = 1
 __meta__ = {
@@ -41,60 +41,58 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 50.0
-margin_right = 396.0
-margin_bottom = 82.0
-text = "Plik z danymi treningowymi"
+margin_top = 152.0
+margin_right = 442.0
+margin_bottom = 184.0
+text = "Plik do zapisania danych z czujników"
+align = 1
 
-[node name="TrainFile" type="LineEdit" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 94.0
-margin_right = 396.0
-margin_bottom = 136.0
+[node name="SensorsButton" type="Button" parent="MainPanel/Panel/VBoxContainer"]
+margin_top = 196.0
+margin_right = 442.0
+margin_bottom = 234.0
+text = "..."
 
 [node name="Label2" type="Label" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 148.0
-margin_right = 396.0
-margin_bottom = 180.0
-text = "Plik z danymi wynikowymi"
-
-[node name="ResultFile" type="LineEdit" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 192.0
-margin_right = 396.0
-margin_bottom = 234.0
-
-[node name="Label3" type="Label" parent="MainPanel/Panel/VBoxContainer"]
 margin_top = 246.0
-margin_right = 396.0
+margin_right = 442.0
 margin_bottom = 278.0
-text = "Plik do zapisania sieci"
+text = "Plik do zapisania sterowania"
+align = 1
 
-[node name="SaveNet" type="LineEdit" parent="MainPanel/Panel/VBoxContainer"]
+[node name="InputsButton" type="Button" parent="MainPanel/Panel/VBoxContainer"]
 margin_top = 290.0
-margin_right = 396.0
-margin_bottom = 332.0
-
-[node name="Label4" type="Label" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 344.0
-margin_right = 396.0
-margin_bottom = 376.0
-text = "Plik do wczytania sieci"
-
-[node name="LoadNet" type="LineEdit" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 388.0
-margin_right = 396.0
-margin_bottom = 430.0
+margin_right = 442.0
+margin_bottom = 328.0
+text = "..."
 
 [node name="SaveButton" type="Button" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 442.0
-margin_right = 396.0
-margin_bottom = 480.0
+margin_top = 340.0
+margin_right = 442.0
+margin_bottom = 378.0
 text = "Zapisz"
 
 [node name="BackButton" type="Button" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 492.0
-margin_right = 396.0
-margin_bottom = 530.0
+margin_top = 390.0
+margin_right = 442.0
+margin_bottom = 428.0
 text = "Wstecz"
 
+[node name="FileDialog" type="FileDialog" parent="."]
+margin_left = 54.7654
+margin_top = 46.0347
+margin_right = 974.765
+margin_bottom = 561.035
+window_title = "Zapisz plik"
+access = 2
+current_dir = "/Users/bolek/Documents/Godot/nn_race"
+current_path = "/Users/bolek/Documents/Godot/nn_race/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="MainPanel/Panel/VBoxContainer/SensorsButton" to="." method="_on_SensorsButton_pressed"]
+[connection signal="pressed" from="MainPanel/Panel/VBoxContainer/InputsButton" to="." method="_on_InputsButton_pressed"]
 [connection signal="pressed" from="MainPanel/Panel/VBoxContainer/SaveButton" to="." method="_on_SaveButton_pressed"]
 [connection signal="pressed" from="MainPanel/Panel/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
