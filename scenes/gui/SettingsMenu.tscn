@@ -83,10 +83,11 @@ margin_left = 54.7654
 margin_top = 46.0347
 margin_right = 974.765
 margin_bottom = 561.035
+rect_min_size = Vector2( 150, 52.5 )
 window_title = "Zapisz plik"
 access = 2
-current_dir = "/Users/bolek/Documents/Godot/nn_race"
-current_path = "/Users/bolek/Documents/Godot/nn_race/"
+current_dir = "/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork"
+current_path = "/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/"
 __meta__ = {
 "_edit_use_anchors_": false
 }

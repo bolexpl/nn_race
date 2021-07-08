@@ -1,2 +1,5 @@
-x=[1.1 2.1 3.1 4.1 5.1 6.1];
-result1 = gdNet(x);
+tmp=mix_x(1,:);
+result = gdNet20(tmp);
+result = gdNet30(tmp);
+
+clear tmp result

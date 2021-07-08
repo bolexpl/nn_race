@@ -26,6 +26,8 @@ namespace godot {
 
         PoolRealArray predict(PoolRealArray args, int ver);
 
+        PoolStringArray algorithms();
+
         static void _register_methods();
 
     private:

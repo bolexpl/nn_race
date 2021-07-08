@@ -17,7 +17,8 @@ class GdNet {
 public:
   GdNet();
   ~GdNet();
-  void gdNet(const double x1[6], double b_y1[2]);
+  void gdNet20(const double x1[12], double b_y1[2]);
+  void gdNet30(const double x1[12], double b_y1[2]);
 };
 
 #endif
