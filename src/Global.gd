@@ -7,3 +7,4 @@ const MEASURE_MODE = 3
 const SECTION = "measure"
 
 var mode = 0
+var gd_net_ver = 0

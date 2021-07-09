@@ -4,15 +4,15 @@ extends Control
 const Car = preload("res://scenes/Car.tscn")
 const file_to_save = "user://config.cfg"
 onready var optbtn = $MainPanel/HSplitContainer/Panel/VBoxContainer/OptionButton
-
+onready var algbtn = $MainPanel/HSplitContainer/Panel/VBoxContainer/AlgoButton
 
 func _ready():
-	optbtn.selected = Global.mode
-	var algbtn = $MainPanel/HSplitContainer/Panel/VBoxContainer/AlgoButton
 	var net = load("res://native/Neural.gdns").new()
 	var opts = net.algorithms()
 	for i in range(0, opts.size()):
 		algbtn.add_item(opts[i], i)
+	algbtn.selected = Global.gd_net_ver
+	optbtn.selected = Global.mode
 
 
 func _on_Track1_pressed():
@@ -73,3 +73,8 @@ func change(scene, x, y, r):
 
 func _on_Exit_pressed():
 	get_tree().quit()
+
+
+func _on_AlgoButton_item_selected(index):
+	Global.gd_net_ver = algbtn.selected
+	print(Global.gd_net_ver)

@@ -1,0 +1,10 @@
+tor 1
+tor 2
+oba 3
+neurony 20
+neurony 30
+neurony 40
+
+gdNet_3_20
+gdNet_3_30
+gdNet_3_40

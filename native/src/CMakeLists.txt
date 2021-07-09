@@ -35,6 +35,7 @@ add_library(gdneural SHARED gdlibrary.cpp
 
 target_link_libraries(gdneural ${CMAKE_SOURCE_DIR}/godot-cpp/bin/libgodot-cpp.${lib_system}.debug.64.a)
 target_link_libraries(gdneural ${CMAKE_SOURCE_DIR}/matlib/gdNet.${lib_ext})
+
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
     target_link_options(gdneural PRIVATE -static -static-libgcc -static-libstdc++)
 endif()

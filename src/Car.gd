@@ -1,8 +1,6 @@
 extends KinematicBody2D
 
 const Neural = preload("res://native/Neural.gdns")
-const gd_net_ver = 2
-
 
 export var neural = false
 export var working = true
@@ -116,7 +114,7 @@ func neural_input():
 		nn_in_vector[i] = tmp
 	nn_in_vector[nn_in_vector.size() - 1] = acceleration.length()
 	nn_in_vector = nn.norm(nn_in_vector)
-	var output = nn.predict(nn_in_vector, gd_net_ver)
+	var output = nn.predict(nn_in_vector, Global.gd_net_ver)
 	print(output)
 	set_input(output[0], output[1])
 

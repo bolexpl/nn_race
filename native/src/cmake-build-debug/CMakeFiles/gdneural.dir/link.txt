@@ -1,1 +1,3 @@
-/usr/bin/c++ -fPIC -g -shared -Wl,-soname,libgdneural.so -o libgdneural.so CMakeFiles/gdneural.dir/gdlibrary.cpp.o CMakeFiles/gdneural.dir/Neural.cpp.o  ../godot-cpp/bin/libgodot-cpp.linux.debug.64.a ../matlib/gdNet.a 
+C:\Users\bolek\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7628.27\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\gdneural.dir/objects.a
+C:\mingw-w64\x86_64-6.3.0-posix-seh-rt_v5-rev2\mingw64\bin\ar.exe cr CMakeFiles\gdneural.dir/objects.a @CMakeFiles\gdneural.dir\objects1.rsp
+C:\mingw-w64\x86_64-6.3.0-posix-seh-rt_v5-rev2\mingw64\bin\g++.exe -g -static -static-libgcc -static-libstdc++ -shared -o libgdneural.dll -Wl,--out-implib,libgdneural.dll.a -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles\gdneural.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\gdneural.dir\linklibs.rsp
