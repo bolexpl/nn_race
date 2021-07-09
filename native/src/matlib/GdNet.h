@@ -17,8 +17,8 @@ class GdNet {
 public:
   GdNet();
   ~GdNet();
-  void gdNet30(const double x1[14], double b_y1[2]);
-  void gdNet30Mix(const double x1[14], double b_y1[2]);
+  void gdNet(const double x1[14], double b_y1[2]);
+  void gdNetMix(const double x1[14], double b_y1[2]);
 };
 
 #endif

@@ -1,6 +1,6 @@
 
-mix_x = dlmread('mix_x.csv', ';');
-mix_y = dlmread('mix_y.csv', ';');
+% mix_x = dlmread('mix_x.csv', ';');
+% mix_y = dlmread('mix_y.csv', ';');
 
 x = dlmread('x.csv', ';');
 y = dlmread('y.csv', ';');

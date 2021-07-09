@@ -1,7 +1,7 @@
 //
 // rtwtypes.h
 //
-// Code generation for function 'gdNet30'
+// Code generation for function 'gdNet'
 //
 
 #ifndef RTWTYPES_H

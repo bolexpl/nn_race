@@ -58,16 +58,16 @@ func _ready():
 		result_file.open(result_file_name, File.WRITE)
 		file_count = 0
 	
-#	rays = [$Left0,$Left30, $Left45, \
-#			$Left60, $Left75, $Left80, \
-#			$Forward,\
-#			$Right80, $Right75, $Right60, \
-#			$Right45, $Right30, $Left0]
-	rays = [$Left30, \
-			$Left60, $Left75, \
+	rays = [$Left0,$Left30, $Left45, \
+			$Left60, $Left75, $Left80, \
 			$Forward,\
-			$Right75, $Right60, \
-			$Right30]
+			$Right80, $Right75, $Right60, \
+			$Right45, $Right30, $Left0]
+#	rays = [$Left30, \
+#			$Left60, $Left75, \
+#			$Forward,\
+#			$Right75, $Right60, \
+#			$Right30]
 	nn = Neural.new()
 
 
@@ -94,7 +94,7 @@ func _physics_process(delta):
 
 func set_input(turn_param, accel_param):
 	if Global.mode == Global.MEASURE_MODE:
-		if abs(accel_param) >= 0.1:
+		if abs(velocity.length()) > 0:
 			file_count = file_count + 1
 			print(file_count)
 			result_file.store_string(str(turn_param) + ";" + str(accel_param)+"\n")
@@ -109,21 +109,9 @@ func set_input(turn_param, accel_param):
 
 
 func neural_input():
-	var nn_in_vector = []
-	nn_in_vector.resize(rays.size() + 1)
-	for i in range(0, rays.size()):
-		var tmp
-		var c = rays[i].get_collider()
-		if c == null:
-			tmp = 700
-		else:
-			var pos = rays[i].get_collision_point()
-			tmp = position.distance_to(pos) - halfsize
-		nn_in_vector[i] = tmp
-	nn_in_vector[nn_in_vector.size() - 1] = acceleration.length()
+	var nn_in_vector = get_sensor_data()
 	nn_in_vector = nn.norm(nn_in_vector)
 	var output = nn.predict(nn_in_vector, Global.gd_net_ver)
-	print(nn_in_vector)
 	set_input(output[0], output[1])
 
 
@@ -181,6 +169,17 @@ func calculate_steering(delta):
 
 
 func write_data():
+	var values = get_sensor_data()
+	if Global.norm:
+		values = nn.norm(values)
+	for i in range(values.size()):
+		train_file.store_string(str(values[i]))
+		if i < values.size() - 1:
+			train_file.store_string(";")
+	train_file.store_string("\n")
+
+
+func get_sensor_data():
 	var values = []
 	values.resize(rays.size() + 1)
 	for i in range(0, values.size()-1):
@@ -193,10 +192,4 @@ func write_data():
 			tmp = position.distance_to(pos)
 		values[i] = tmp
 	values[values.size() - 1] = velocity.length()
-	if Global.norm:
-		values = nn.norm(values)
-	for i in range(values.size()):
-		train_file.store_string(str(values[i]))
-		if i < values.size() - 1:
-			train_file.store_string(";")
-	train_file.store_string("\n")
+	return values

@@ -54,6 +54,8 @@ CMakeFiles/gdneural.dir/Neural.cpp.o
  ../godot-cpp/include/core/Vector2.hpp
  ../godot-cpp/include/core/Vector3.hpp
  ../godot-cpp/include/core/Wrapped.hpp
+ ../godot-cpp/include/gen/Object.hpp
+ ../godot-cpp/include/gen/Reference.hpp
  /home/bolek/Dokumenty/Godot/nn_race/native/src/Neural.cpp
  /home/bolek/Dokumenty/Godot/nn_race/native/src/Neural.h
  /home/bolek/Dokumenty/Godot/nn_race/native/src/matlib/GdNet.h
@@ -112,6 +114,8 @@ CMakeFiles/gdneural.dir/gdlibrary.cpp.o
  ../godot-cpp/include/core/Vector2.hpp
  ../godot-cpp/include/core/Vector3.hpp
  ../godot-cpp/include/core/Wrapped.hpp
+ ../godot-cpp/include/gen/Object.hpp
+ ../godot-cpp/include/gen/Reference.hpp
  /home/bolek/Dokumenty/Godot/nn_race/native/src/Neural.h
  /home/bolek/Dokumenty/Godot/nn_race/native/src/gdlibrary.cpp
  /home/bolek/Dokumenty/Godot/nn_race/native/src/matlib/GdNet.h

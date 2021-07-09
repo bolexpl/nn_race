@@ -17,15 +17,15 @@ PoolRealArray Neural::norm(PoolRealArray args) {
     for (int i = 0; i < args.size() - 2; i++) {
         result.append(r[i] / 700);
     }
-    result.append(r[args.size() - 1] / 400);
+    result.append((r[args.size() - 1] / 400));
 
     return result;
 }
 
 PoolStringArray Neural::algorithms() {
     PoolStringArray result;
-    result.append(String("tor1 30n"));
-    result.append(String("tor1 30n mix"));
+    result.append(String("tor1"));
+    result.append(String("tor1 mix"));
     return result;
 }
 
@@ -38,10 +38,10 @@ PoolRealArray Neural::predict(PoolRealArray args, int ver) {
 
     switch (ver) {
         case 0:
-            classInstance->gdNet30(dv, b_y1);
+            classInstance->gdNet(dv, b_y1);
             break;
         case 1:
-            classInstance->gdNet30Mix(dv, b_y1);
+            classInstance->gdNetMix(dv, b_y1);
             break;
         default:
             break;

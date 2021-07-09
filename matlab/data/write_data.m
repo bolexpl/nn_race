@@ -1,2 +1,3 @@
-writematrix(mix_x,'mix_x.csv','Delimiter',';')
-writematrix(mix_y,'mix_y.csv','Delimiter',';')
+dlmwrite('mix_x.csv', mixx, ';')
+dlmwrite('mix_y.csv', mixy, ';')
+dlmwrite('x.csv', x, ';')

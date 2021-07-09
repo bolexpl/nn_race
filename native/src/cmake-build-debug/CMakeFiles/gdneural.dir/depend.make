@@ -53,6 +53,8 @@ CMakeFiles/gdneural.dir/Neural.cpp.o: ../godot-cpp/include/core/Variant.hpp
 CMakeFiles/gdneural.dir/Neural.cpp.o: ../godot-cpp/include/core/Vector2.hpp
 CMakeFiles/gdneural.dir/Neural.cpp.o: ../godot-cpp/include/core/Vector3.hpp
 CMakeFiles/gdneural.dir/Neural.cpp.o: ../godot-cpp/include/core/Wrapped.hpp
+CMakeFiles/gdneural.dir/Neural.cpp.o: ../godot-cpp/include/gen/Object.hpp
+CMakeFiles/gdneural.dir/Neural.cpp.o: ../godot-cpp/include/gen/Reference.hpp
 CMakeFiles/gdneural.dir/Neural.cpp.o: ../Neural.cpp
 CMakeFiles/gdneural.dir/Neural.cpp.o: ../Neural.h
 CMakeFiles/gdneural.dir/Neural.cpp.o: ../matlib/GdNet.h
@@ -111,6 +113,8 @@ CMakeFiles/gdneural.dir/gdlibrary.cpp.o: ../godot-cpp/include/core/Variant.hpp
 CMakeFiles/gdneural.dir/gdlibrary.cpp.o: ../godot-cpp/include/core/Vector2.hpp
 CMakeFiles/gdneural.dir/gdlibrary.cpp.o: ../godot-cpp/include/core/Vector3.hpp
 CMakeFiles/gdneural.dir/gdlibrary.cpp.o: ../godot-cpp/include/core/Wrapped.hpp
+CMakeFiles/gdneural.dir/gdlibrary.cpp.o: ../godot-cpp/include/gen/Object.hpp
+CMakeFiles/gdneural.dir/gdlibrary.cpp.o: ../godot-cpp/include/gen/Reference.hpp
 CMakeFiles/gdneural.dir/gdlibrary.cpp.o: ../Neural.h
 CMakeFiles/gdneural.dir/gdlibrary.cpp.o: ../gdlibrary.cpp
 CMakeFiles/gdneural.dir/gdlibrary.cpp.o: ../matlib/GdNet.h

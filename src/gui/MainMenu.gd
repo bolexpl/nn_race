@@ -77,3 +77,7 @@ func _on_Exit_pressed():
 
 func _on_AlgoButton_item_selected(index):
 	Global.gd_net_ver = index
+
+
+func _on_OptionButton_item_selected(index):
+	Global.mode = index

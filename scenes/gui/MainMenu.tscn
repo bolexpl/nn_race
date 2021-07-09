@@ -124,6 +124,7 @@ text = "Wyjście"
 [connection signal="pressed" from="MainPanel/HSplitContainer/TracksPanel/VBoxContainer/Track1" to="." method="_on_Track1_pressed"]
 [connection signal="pressed" from="MainPanel/HSplitContainer/TracksPanel/VBoxContainer/Track2" to="." method="_on_Track2_pressed"]
 [connection signal="pressed" from="MainPanel/HSplitContainer/TracksPanel/VBoxContainer/Empty" to="." method="_on_Empty_pressed"]
+[connection signal="item_selected" from="MainPanel/HSplitContainer/Panel/VBoxContainer/OptionButton" to="." method="_on_OptionButton_item_selected"]
 [connection signal="item_selected" from="MainPanel/HSplitContainer/Panel/VBoxContainer/AlgoButton" to="." method="_on_AlgoButton_item_selected"]
 [connection signal="pressed" from="MainPanel/HSplitContainer/Panel/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="MainPanel/HSplitContainer/Panel/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
