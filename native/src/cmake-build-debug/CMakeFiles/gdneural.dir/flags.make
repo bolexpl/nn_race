@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -Dgdneural_EXPORTS
 
-CXX_INCLUDES = -I/home/bolek/sda6/MATLAB/R2021a/extern/include -I/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/godot-cpp/godot-headers -I/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/godot-cpp/include -I/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/godot-cpp/include/core -I/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/godot-cpp/include/gen
+CXX_INCLUDES = -I/home/bolek/sda6/MATLAB/R2021a/extern/include -I/home/bolek/Dokumenty/Godot/nn_race/native/src/godot-cpp/godot-headers -I/home/bolek/Dokumenty/Godot/nn_race/native/src/godot-cpp/include -I/home/bolek/Dokumenty/Godot/nn_race/native/src/godot-cpp/include/core -I/home/bolek/Dokumenty/Godot/nn_race/native/src/godot-cpp/include/gen
 
 CXX_FLAGS = -g -fPIC -std=gnu++14
 

@@ -54,13 +54,11 @@ CMakeFiles/gdneural.dir/Neural.cpp.o
  ../godot-cpp/include/core/Vector2.hpp
  ../godot-cpp/include/core/Vector3.hpp
  ../godot-cpp/include/core/Wrapped.hpp
- ../godot-cpp/include/gen/Object.hpp
- ../godot-cpp/include/gen/Reference.hpp
+ /home/bolek/Dokumenty/Godot/nn_race/native/src/Neural.cpp
+ /home/bolek/Dokumenty/Godot/nn_race/native/src/Neural.h
+ /home/bolek/Dokumenty/Godot/nn_race/native/src/matlib/GdNet.h
+ /home/bolek/Dokumenty/Godot/nn_race/native/src/matlib/rtwtypes.h
  /home/bolek/sda6/MATLAB/R2021a/extern/include/tmwtypes.h
- /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/Neural.cpp
- /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/Neural.h
- /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/matlib/GdNet.h
- /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/matlib/rtwtypes.h
 CMakeFiles/gdneural.dir/gdlibrary.cpp.o
  ../godot-cpp/godot-headers/android/godot_android.h
  ../godot-cpp/godot-headers/arvr/godot_arvr.h
@@ -114,10 +112,8 @@ CMakeFiles/gdneural.dir/gdlibrary.cpp.o
  ../godot-cpp/include/core/Vector2.hpp
  ../godot-cpp/include/core/Vector3.hpp
  ../godot-cpp/include/core/Wrapped.hpp
- ../godot-cpp/include/gen/Object.hpp
- ../godot-cpp/include/gen/Reference.hpp
+ /home/bolek/Dokumenty/Godot/nn_race/native/src/Neural.h
+ /home/bolek/Dokumenty/Godot/nn_race/native/src/gdlibrary.cpp
+ /home/bolek/Dokumenty/Godot/nn_race/native/src/matlib/GdNet.h
+ /home/bolek/Dokumenty/Godot/nn_race/native/src/matlib/rtwtypes.h
  /home/bolek/sda6/MATLAB/R2021a/extern/include/tmwtypes.h
- /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/Neural.h
- /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/gdlibrary.cpp
- /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/matlib/GdNet.h
- /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/matlib/rtwtypes.h

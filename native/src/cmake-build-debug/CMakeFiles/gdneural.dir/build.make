@@ -62,10 +62,10 @@ RM = /home/bolek/sda6/home/toolbox/apps/apps/CLion/ch-0/211.7442.42/bin/cmake/li
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src
+CMAKE_SOURCE_DIR = /home/bolek/Dokumenty/Godot/nn_race/native/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/cmake-build-debug
+CMAKE_BINARY_DIR = /home/bolek/Dokumenty/Godot/nn_race/native/src/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/gdneural.dir/depend.make
@@ -78,29 +78,29 @@ include CMakeFiles/gdneural.dir/flags.make
 
 CMakeFiles/gdneural.dir/gdlibrary.cpp.o: CMakeFiles/gdneural.dir/flags.make
 CMakeFiles/gdneural.dir/gdlibrary.cpp.o: ../gdlibrary.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gdneural.dir/gdlibrary.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gdneural.dir/gdlibrary.cpp.o -c /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/gdlibrary.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bolek/Dokumenty/Godot/nn_race/native/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gdneural.dir/gdlibrary.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gdneural.dir/gdlibrary.cpp.o -c /home/bolek/Dokumenty/Godot/nn_race/native/src/gdlibrary.cpp
 
 CMakeFiles/gdneural.dir/gdlibrary.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gdneural.dir/gdlibrary.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/gdlibrary.cpp > CMakeFiles/gdneural.dir/gdlibrary.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bolek/Dokumenty/Godot/nn_race/native/src/gdlibrary.cpp > CMakeFiles/gdneural.dir/gdlibrary.cpp.i
 
 CMakeFiles/gdneural.dir/gdlibrary.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gdneural.dir/gdlibrary.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/gdlibrary.cpp -o CMakeFiles/gdneural.dir/gdlibrary.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bolek/Dokumenty/Godot/nn_race/native/src/gdlibrary.cpp -o CMakeFiles/gdneural.dir/gdlibrary.cpp.s
 
 CMakeFiles/gdneural.dir/Neural.cpp.o: CMakeFiles/gdneural.dir/flags.make
 CMakeFiles/gdneural.dir/Neural.cpp.o: ../Neural.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/gdneural.dir/Neural.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gdneural.dir/Neural.cpp.o -c /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/Neural.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bolek/Dokumenty/Godot/nn_race/native/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/gdneural.dir/Neural.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gdneural.dir/Neural.cpp.o -c /home/bolek/Dokumenty/Godot/nn_race/native/src/Neural.cpp
 
 CMakeFiles/gdneural.dir/Neural.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gdneural.dir/Neural.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/Neural.cpp > CMakeFiles/gdneural.dir/Neural.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bolek/Dokumenty/Godot/nn_race/native/src/Neural.cpp > CMakeFiles/gdneural.dir/Neural.cpp.i
 
 CMakeFiles/gdneural.dir/Neural.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gdneural.dir/Neural.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/Neural.cpp -o CMakeFiles/gdneural.dir/Neural.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bolek/Dokumenty/Godot/nn_race/native/src/Neural.cpp -o CMakeFiles/gdneural.dir/Neural.cpp.s
 
 # Object files for target gdneural
 gdneural_OBJECTS = \
@@ -116,7 +116,7 @@ libgdneural.so: CMakeFiles/gdneural.dir/build.make
 libgdneural.so: ../godot-cpp/bin/libgodot-cpp.linux.debug.64.a
 libgdneural.so: ../matlib/gdNet.a
 libgdneural.so: CMakeFiles/gdneural.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library libgdneural.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bolek/Dokumenty/Godot/nn_race/native/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library libgdneural.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gdneural.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -129,6 +129,6 @@ CMakeFiles/gdneural.dir/clean:
 .PHONY : CMakeFiles/gdneural.dir/clean
 
 CMakeFiles/gdneural.dir/depend:
-	cd /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/cmake-build-debug /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/cmake-build-debug /home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/cmake-build-debug/CMakeFiles/gdneural.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bolek/Dokumenty/Godot/nn_race/native/src/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bolek/Dokumenty/Godot/nn_race/native/src /home/bolek/Dokumenty/Godot/nn_race/native/src /home/bolek/Dokumenty/Godot/nn_race/native/src/cmake-build-debug /home/bolek/Dokumenty/Godot/nn_race/native/src/cmake-build-debug /home/bolek/Dokumenty/Godot/nn_race/native/src/cmake-build-debug/CMakeFiles/gdneural.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/gdneural.dir/depend
 

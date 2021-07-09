@@ -58,11 +58,16 @@ func _ready():
 		result_file.open(result_file_name, File.WRITE)
 		file_count = 0
 	
-	rays = [$Left30, $Left45, \
-			$Left60, $Left75, $Left80, \
+#	rays = [$Left0,$Left30, $Left45, \
+#			$Left60, $Left75, $Left80, \
+#			$Forward,\
+#			$Right80, $Right75, $Right60, \
+#			$Right45, $Right30, $Left0]
+	rays = [$Left30, \
+			$Left60, $Left75, \
 			$Forward,\
-			$Right80, $Right75, $Right60, \
-			$Right45, $Right30]
+			$Right75, $Right60, \
+			$Right30]
 	nn = Neural.new()
 
 
@@ -118,7 +123,7 @@ func neural_input():
 	nn_in_vector[nn_in_vector.size() - 1] = acceleration.length()
 	nn_in_vector = nn.norm(nn_in_vector)
 	var output = nn.predict(nn_in_vector, Global.gd_net_ver)
-	print(output)
+	print(nn_in_vector)
 	set_input(output[0], output[1])
 
 
@@ -182,14 +187,12 @@ func write_data():
 		var tmp
 		var c = rays[i].get_collider()
 		if c == null:
-			tmp = 600
+			tmp = 650
 		else:
 			var pos = rays[i].get_collision_point()
 			tmp = position.distance_to(pos)
 		values[i] = tmp
 	values[values.size() - 1] = velocity.length()
-	if tmp_fun(values):
-		print(values)
 	if Global.norm:
 		values = nn.norm(values)
 	for i in range(values.size()):
@@ -197,11 +200,3 @@ func write_data():
 		if i < values.size() - 1:
 			train_file.store_string(";")
 	train_file.store_string("\n")
-
-
-func tmp_fun(values):
-	for i in range(values.size()):
-		if values[i] <= 0:
-			return true
-	return false
-

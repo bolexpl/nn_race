@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/Neural.cpp" "/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/cmake-build-debug/CMakeFiles/gdneural.dir/Neural.cpp.o"
-  "/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/gdlibrary.cpp" "/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/native/src/cmake-build-debug/CMakeFiles/gdneural.dir/gdlibrary.cpp.o"
+  "/home/bolek/Dokumenty/Godot/nn_race/native/src/Neural.cpp" "/home/bolek/Dokumenty/Godot/nn_race/native/src/cmake-build-debug/CMakeFiles/gdneural.dir/Neural.cpp.o"
+  "/home/bolek/Dokumenty/Godot/nn_race/native/src/gdlibrary.cpp" "/home/bolek/Dokumenty/Godot/nn_race/native/src/cmake-build-debug/CMakeFiles/gdneural.dir/gdlibrary.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
