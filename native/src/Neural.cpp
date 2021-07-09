@@ -15,7 +15,7 @@ PoolRealArray Neural::norm(PoolRealArray args) {
 
     PoolRealArray result;
     for (int i = 0; i < args.size() - 2; i++) {
-        result.append(r[i] / 600);
+        result.append(r[i] / 650);
     }
     result.append(r[args.size() - 1] / 400);
 

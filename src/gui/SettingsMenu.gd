@@ -8,6 +8,7 @@ var inputs_file
 
 
 func _ready():
+	$MainPanel/Panel/VBoxContainer/CheckBox.pressed = Global.norm
 	var dir = OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP)
 	dir = dir.replace("\\","/")
 	var config = ConfigFile.new()
@@ -26,6 +27,7 @@ func _on_BackButton_pressed():
 
 
 func _on_SaveButton_pressed():
+	Global.norm = $MainPanel/Panel/VBoxContainer/CheckBox.pressed
 	var config = ConfigFile.new()
 	if config.load(config_file) == OK:
 		config.set_value(Global.SECTION, "sensors_file", sensor_file)

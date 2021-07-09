@@ -76,5 +76,4 @@ func _on_Exit_pressed():
 
 
 func _on_AlgoButton_item_selected(index):
-	Global.gd_net_ver = algbtn.selected
-	print(Global.gd_net_ver)
+	Global.gd_net_ver = index

@@ -58,8 +58,11 @@ func _ready():
 		result_file.open(result_file_name, File.WRITE)
 		file_count = 0
 	
-	rays = [$Left0, $Left15, $Left30, $Left45, $Left60, $Left75, $Forward,\
-			$Right75, $Right60, $Right45, $Right30, $Right15, $Right0]
+	rays = [$Left30, $Left45, \
+			$Left60, $Left75, $Left80, \
+			$Forward,\
+			$Right80, $Right75, $Right60, \
+			$Right45, $Right30]
 	nn = Neural.new()
 
 
@@ -175,22 +178,30 @@ func calculate_steering(delta):
 func write_data():
 	var values = []
 	values.resize(rays.size() + 1)
-	for i in range(0,values.size()-1):
+	for i in range(0, values.size()-1):
 		var tmp
 		var c = rays[i].get_collider()
 		if c == null:
 			tmp = 600
 		else:
 			var pos = rays[i].get_collision_point()
-			tmp = position.distance_to(pos) - halfsize
+			tmp = position.distance_to(pos)
 		values[i] = tmp
 	values[values.size() - 1] = velocity.length()
-	values = nn.norm(values)
-	for i in range(0,values.size()):
+	if tmp_fun(values):
+		print(values)
+	if Global.norm:
+		values = nn.norm(values)
+	for i in range(values.size()):
 		train_file.store_string(str(values[i]))
 		if i < values.size() - 1:
 			train_file.store_string(";")
 	train_file.store_string("\n")
 
 
+func tmp_fun(values):
+	for i in range(values.size()):
+		if values[i] <= 0:
+			return true
+	return false
 

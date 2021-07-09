@@ -41,41 +41,48 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 152.0
+margin_top = 126.0
 margin_right = 442.0
-margin_bottom = 184.0
+margin_bottom = 158.0
 text = "Plik do zapisania danych z czujników"
 align = 1
 
 [node name="SensorsButton" type="Button" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 196.0
+margin_top = 170.0
 margin_right = 442.0
-margin_bottom = 234.0
+margin_bottom = 208.0
 text = "..."
 
 [node name="Label2" type="Label" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 246.0
+margin_top = 220.0
 margin_right = 442.0
-margin_bottom = 278.0
+margin_bottom = 252.0
 text = "Plik do zapisania sterowania"
 align = 1
 
 [node name="InputsButton" type="Button" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 290.0
+margin_top = 264.0
 margin_right = 442.0
-margin_bottom = 328.0
+margin_bottom = 302.0
 text = "..."
 
-[node name="SaveButton" type="Button" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 340.0
+[node name="CheckBox" type="CheckBox" parent="MainPanel/Panel/VBoxContainer"]
+margin_top = 314.0
 margin_right = 442.0
-margin_bottom = 378.0
+margin_bottom = 354.0
+keep_pressed_outside = true
+text = "normalizacja danych"
+
+[node name="SaveButton" type="Button" parent="MainPanel/Panel/VBoxContainer"]
+margin_top = 366.0
+margin_right = 442.0
+margin_bottom = 404.0
 text = "Zapisz"
 
 [node name="BackButton" type="Button" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 390.0
+margin_top = 416.0
 margin_right = 442.0
-margin_bottom = 428.0
+margin_bottom = 454.0
 text = "Wstecz"
 
 [node name="FileDialog" type="FileDialog" parent="."]
