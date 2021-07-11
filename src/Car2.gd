@@ -1,5 +1,10 @@
 extends KinematicBody2D
 
+# TODO sieć neuronowa
+# input: 5 odległości do ścian, aktualna prędkość
+# output: przyspieszenie i obrót
+
+# opracować sieć i uczenie na podstawie pomiarów ręcznych
 const Neural = preload("res://native/Neural.gdns")
 
 export var neural = false
@@ -26,6 +31,11 @@ var halfsize
 var velocity = Vector2.ZERO
 var acceleration = Vector2.ZERO
 var steer_angle
+var distance = 0
+var rays = null
+
+var nn
+var nn_in_vector = [0, 0, 0, 0, 0, 0]
 
 var train_file = null
 var result_file = null
@@ -33,24 +43,15 @@ var train_file_name = null
 var result_file_name = null
 var file_count
 
-var rays = null
-var nn
 
 func _ready():
 	halfsize = wheel_base / 2
 	
-	if neural:
-		$Sprite.texture = load("res://assets/car_red_small_1.png")
-	
 	if Global.mode == Global.MEASURE_MODE: # zapis pomiarów
-		var dir = OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP)
-		dir = dir.replace("\\","/")
 		var config = ConfigFile.new()
 		var _err = config.load("user://config.cfg")
-		train_file_name = config.get_value(Global.SECTION, \
-			"sensors_file", dir + "/sensors_file.csv")
-		result_file_name = config.get_value(Global.SECTION, \
-			"user_input_file", dir + "/inputs_file.csv")
+		train_file_name = config.get_value("train", "training_data", "user://train_file.txt")
+		result_file_name = config.get_value("train", "result_data", "user://result_file.txt")
 		
 		train_file = File.new()
 		result_file = File.new()
@@ -58,16 +59,7 @@ func _ready():
 		result_file.open(result_file_name, File.WRITE)
 		file_count = 0
 	
-#	rays = [$Left0,$Left30, $Left45, \
-#			$Left60, $Left75, $Left80, \
-#			$Forward,\
-#			$Right80, $Right75, $Right60, \
-#			$Right45, $Right30, $Left0]
-	rays = [$Left30, \
-			$Left60, $Left75, \
-			$Forward,\
-			$Right75, $Right60, \
-			$Right30]
+	rays = [$Left2, $Left, $Forward, $Right, $Right2]
 	nn = Neural.new()
 
 
@@ -81,6 +73,7 @@ func _physics_process(delta):
 	if not working:
 		return
 	
+	distance += velocity.length() * delta
 	acceleration = Vector2.ZERO
 	if(neural):
 		neural_input()
@@ -94,7 +87,7 @@ func _physics_process(delta):
 
 func set_input(turn_param, accel_param):
 	if Global.mode == Global.MEASURE_MODE:
-		if abs(velocity.length()) > 0:
+		if abs(accel_param) >= 0.1:
 			file_count = file_count + 1
 			print(file_count)
 			result_file.store_string(str(turn_param) + ";" + str(accel_param)+"\n")
@@ -109,9 +102,18 @@ func set_input(turn_param, accel_param):
 
 
 func neural_input():
-	var nn_in_vector = get_sensor_data()
+	for i in range(rays.size()):
+		var tmp
+		var c = rays[i].get_collider()
+		if c == null:
+			tmp = 700
+		else:
+			var pos = rays[i].get_collision_point()
+			tmp = position.distance_to(pos) - halfsize
+		nn_in_vector[i] = tmp
+	nn_in_vector[5] = acceleration.length()
 	nn_in_vector = nn.norm(nn_in_vector)
-	var output = nn.predict(nn_in_vector, Global.gd_net_ver)
+	var output = nn.predict(nn_in_vector, 3)
 	set_input(output[0], output[1])
 
 
@@ -169,27 +171,16 @@ func calculate_steering(delta):
 
 
 func write_data():
-	var values = get_sensor_data()
-	if Global.norm:
-		values = nn.norm(values)
-	for i in range(values.size()):
-		train_file.store_string(str(values[i]))
-		if i < values.size() - 1:
-			train_file.store_string(";")
-	train_file.store_string("\n")
-
-
-func get_sensor_data():
-	var values = []
-	values.resize(rays.size() + 1)
-	for i in range(0, values.size()-1):
+	for i in range(rays.size()):
 		var tmp
 		var c = rays[i].get_collider()
 		if c == null:
-			tmp = 650
+			tmp = 600
 		else:
 			var pos = rays[i].get_collision_point()
-			tmp = position.distance_to(pos)
-		values[i] = tmp
-	values[values.size() - 1] = velocity.length()
-	return values
+			tmp = position.distance_to(pos) - halfsize
+		train_file.store_string(str(tmp))
+		if i < rays.size():
+			train_file.store_string(";")
+	train_file.store_string(str(velocity.length()))
+	train_file.store_string("\n")

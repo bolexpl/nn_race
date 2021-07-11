@@ -1,7 +1,7 @@
 extends Control
 
 
-const Car = preload("res://scenes/Car.tscn")
+const Car = preload("res://scenes/Car2.tscn")
 const file_to_save = "user://config.cfg"
 onready var optbtn = $MainPanel/HSplitContainer/Panel/VBoxContainer/OptionButton
 onready var algbtn = $MainPanel/HSplitContainer/Panel/VBoxContainer/AlgoButton
