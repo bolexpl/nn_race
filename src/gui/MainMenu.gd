@@ -1,10 +1,11 @@
 extends Control
 
 
-const Car = preload("res://scenes/Car2.tscn")
+const Car = preload("res://scenes/Car.tscn")
 const file_to_save = "user://config.cfg"
 onready var optbtn = $MainPanel/HSplitContainer/Panel/VBoxContainer/OptionButton
 onready var algbtn = $MainPanel/HSplitContainer/Panel/VBoxContainer/AlgoButton
+
 
 func _ready():
 	var net = load("res://native/Neural.gdns").new()
@@ -38,10 +39,6 @@ func change(scene, x, y, r):
 	var car = Car.instance()
 	car.position = Vector2(x, y)
 	car.rotation_degrees = r
-	var camera = Camera2D.new()
-	camera.current = true
-	car.add_child(camera)
-	scene.add_child(car)
 	
 	Global.mode = optbtn.selected
 	match Global.mode:
@@ -63,7 +60,17 @@ func change(scene, x, y, r):
 		Global.MEASURE_MODE:
 			car.working = true
 			car.neural = false
+		Global.WORKING_NET_MODE:
+			car = load("res://scenes/old/Car.tscn").instance()
+			car.position = Vector2(x, y)
+			car.rotation_degrees = r
+			car.working = true
+			car.neural = true
 	
+	var camera = Camera2D.new()
+	camera.current = true
+	car.add_child(camera)
+	scene.add_child(car)
 	var root = get_tree().root
 	var level = root.get_node("MainMenu")
 	root.remove_child(level)
