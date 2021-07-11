@@ -12,25 +12,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c7e40ed-3e2a-431e-bd8e-c1646c6edb89" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNet.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNet.prj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetMix.m" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../matlab/coder/test.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/coder/test.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../matlab/data/mix.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/data/mix.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/nn_norm.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/data/nn_norm.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../matlab/data/read_data.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/data/read_data.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/x.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/data/x.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/x.csv.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/y.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/data/y.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/y.csv.import" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../compiled/libgdneural.so" beforeDir="false" afterPath="$PROJECT_DIR$/../compiled/libgdneural.so" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neural.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Neural.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/Neural.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/Neural.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/gdlibrary.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/gdlibrary.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/libgdneural.so" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libgdneural.so" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matlib/GdNet.h" beforeDir="false" afterPath="$PROJECT_DIR$/matlib/GdNet.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matlib/gdNet.a" beforeDir="false" afterPath="$PROJECT_DIR$/matlib/gdNet.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matlib/gdNet_types.h" beforeDir="false" afterPath="$PROJECT_DIR$/matlib/gdNet_types.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matlib/rtwtypes.h" beforeDir="false" afterPath="$PROJECT_DIR$/matlib/rtwtypes.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/Car.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/Car.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/Car.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/Car.gd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,9 +70,19 @@
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RunManager" selected="CMake Application.gdneural">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="gdneural" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src" TARGET_NAME="gdneural" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="windows64" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
@@ -116,6 +131,7 @@
       <workItem from="1625863411144" duration="553000" />
       <workItem from="1625864546301" duration="318000" />
       <workItem from="1625866039208" duration="2458000" />
+      <workItem from="1626013297929" duration="519000" />
     </task>
     <servers />
   </component>

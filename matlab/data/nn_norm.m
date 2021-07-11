@@ -1,3 +1,6 @@
+function [x] = nn_norm(rawx)
+%UNTITLED Summary of this function goes here
+%   Detailed explanation goes here
 x = [];
 u=1;
 l=0;
@@ -9,4 +12,5 @@ end
 tmp = (rawx(:,size(rawx,2))/400) * (u - l) - l;
 x = [x tmp];
 
-clear tmp i u l
+end
+
