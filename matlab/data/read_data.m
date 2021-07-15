@@ -4,10 +4,10 @@
 
 x1n = dlmread('x1n.csv', ';');
 y1n = dlmread('y1n.csv', ';');
-x1r = dlmread('x1r.csv', ';');
-y1r = dlmread('y1r.csv', ';');
-% x=[x1; x1r];
-% y=[y1; y1r];
+x2n = dlmread('x2n.csv', ';');
+y2n = dlmread('y2n.csv', ';');
+x3n=[x1n; x2n];
+y3n=[y1n; y2n];
 
 % x = dlmread('x2.csv', ';');
 % y = dlmread('y2.csv', ';');

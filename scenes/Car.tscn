@@ -21,7 +21,7 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Left0" type="RayCast2D" parent="."]
-visible = false
+position = Vector2( 0, 1 )
 enabled = true
 cast_to = Vector2( 0, -573 )
 collision_mask = 2
@@ -32,7 +32,6 @@ cast_to = Vector2( 300, -511 )
 collision_mask = 2
 
 [node name="Left45" type="RayCast2D" parent="."]
-visible = false
 enabled = true
 cast_to = Vector2( 415, -415 )
 collision_mask = 2
@@ -48,7 +47,6 @@ cast_to = Vector2( 571, -157 )
 collision_mask = 2
 
 [node name="Left80" type="RayCast2D" parent="."]
-visible = false
 enabled = true
 cast_to = Vector2( 586.868, -84 )
 collision_mask = 2
@@ -59,7 +57,6 @@ cast_to = Vector2( 580, 0 )
 collision_mask = 2
 
 [node name="Right80" type="RayCast2D" parent="."]
-visible = false
 enabled = true
 cast_to = Vector2( 586.868, 84 )
 collision_mask = 2
@@ -75,7 +72,6 @@ cast_to = Vector2( 511, 295 )
 collision_mask = 2
 
 [node name="Right45" type="RayCast2D" parent="."]
-visible = false
 enabled = true
 cast_to = Vector2( 415, 415 )
 collision_mask = 2
@@ -86,7 +82,6 @@ cast_to = Vector2( 300, 511 )
 collision_mask = 2
 
 [node name="Right0" type="RayCast2D" parent="."]
-visible = false
 enabled = true
 cast_to = Vector2( 0, 573 )
 collision_mask = 2

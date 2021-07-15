@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -static -static-libgcc -static-libstdc++ CMakeFiles/main.dir/main.cpp.o -o main 
