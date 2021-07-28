@@ -7,8 +7,8 @@
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 509.909, 300.925 )
-scale = Vector2( 0.994147, 0.997503 )
+position = Vector2( 765.411, 452.008 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -16,6 +16,7 @@ __meta__ = {
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
+scale = Vector2( 1.5, 1.5 )
 collision_layer = 2
 __meta__ = {
 "_edit_group_": true,

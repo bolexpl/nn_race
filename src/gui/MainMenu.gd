@@ -18,7 +18,7 @@ func _ready():
 
 func _on_Track1_pressed():
 	var scene = preload("res://scenes/levels/Track1.tscn").instance()
-	change(scene, 184, 530, 0)
+	change(scene, 350, 790, 0)
 
 
 func _on_Track2_pressed():

@@ -17,9 +17,16 @@ class GdNet {
 public:
   GdNet();
   ~GdNet();
-  void gdNet1(const double x1[14], double b_y1[2]);
-  void gdNet2(const double x1[14], double b_y1[2]);
-  void gdNet3(const double x1[14], double b_y1[2]);
+  void gdNetBDMix20(const double x1[14], double b_y1[2]);
+  void gdNetBDMix20v2(const double x1[14], double b_y1[2]);
+  void gdNetBDMix30(const double x1[14], double b_y1[2]);
+  void gdNetBDMix30v2(const double x1[14], double b_y1[2]);
+  void gdNetBDMix40(const double x1[14], double b_y1[2]);
+  void gdNetBDMix40v2(const double x1[14], double b_y1[2]);
+  void gdNetBothDouble(const double x1[14], double b_y1[2]);
+  void gdNetBothDoubleMix(const double x1[14], double b_y1[2]);
+  void gdNetBothDoublev2(const double x1[14], double b_y1[2]);
+  void gdNetBothv2(const double x1[14], double b_y1[2]);
 };
 
 #endif

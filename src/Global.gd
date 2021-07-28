@@ -9,4 +9,4 @@ const SECTION = "measure"
 
 var mode = 0
 var gd_net_ver = 0
-var norm = false
+var norm = true

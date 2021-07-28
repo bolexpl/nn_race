@@ -1,7 +1,7 @@
 //
 // rtwtypes.h
 //
-// Code generation for function 'gdNet1'
+// Code generation for function 'gdNetBDMix20'
 //
 
 #ifndef RTWTYPES_H

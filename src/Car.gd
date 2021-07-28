@@ -63,11 +63,6 @@ func _ready():
 			$Forward,\
 			$Right80, $Right75, $Right60, \
 			$Right45, $Right30, $Left0]
-#	rays = [$Left30, \
-#			$Left60, $Left75, \
-#			$Forward,\
-#			$Right75, $Right60, \
-#			$Right30]
 	nn = Neural.new()
 
 

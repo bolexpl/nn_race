@@ -1,16 +1,22 @@
+clear
+cd v2
+x1 = dlmread('x1n.csv', ';');
+y1 = dlmread('y1n.csv', ';');
+x2 = dlmread('x2n.csv', ';');
+y2 = dlmread('y2n.csv', ';');
+cd ..
 
-% mix_x = dlmread('mix_x.csv', ';');
-% mix_y = dlmread('mix_y.csv', ';');
+[x1, y1] = mix(x1, y1);
+[x2, y2] = mix(x2, y2);
 
-x1n = dlmread('x1n.csv', ';');
-y1n = dlmread('y1n.csv', ';');
-x2n = dlmread('x2n.csv', ';');
-y2n = dlmread('y2n.csv', ';');
-x3n=[x1n; x2n];
-y3n=[y1n; y2n];
+x3=[x1; x2];
+y3=[y1; y2];
+[x3, y3] = mix(x3, y3);
 
-% x = dlmread('x2.csv', ';');
-% y = dlmread('y2.csv', ';');
+x1 = [x1; x1];
+x2 = [x2; x2];
+x3 = [x3; x3];
+y1 = [y1; y1];
+y2 = [y2; y2];
+y3 = [y3; y3];
 
-% x = [dlmread('x1.csv', ';'); dlmread('x2.csv', ';')];
-% y = [dlmread('y1.csv', ';'); dlmread('y2.csv', ';')];
