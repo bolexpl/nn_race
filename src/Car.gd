@@ -58,11 +58,11 @@ func _ready():
 		result_file.open(result_file_name, File.WRITE)
 		file_count = 0
 	
-	rays = [$Left0,$Left30, $Left45, \
-			$Left60, $Left75, $Left80, \
+	rays = [$Left0, $Left15, $Left30, \
+			$Left45, $Left60, $Left75, \
 			$Forward,\
-			$Right80, $Right75, $Right60, \
-			$Right45, $Right30, $Left0]
+			$Right75, $Right60, $Right45, \
+			$Right30, $Right15, $Left0]
 	nn = Neural.new()
 
 

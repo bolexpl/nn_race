@@ -1,16 +1,28 @@
 tmp=1:14;
 
-result = gdNetBDMix20(tmp);
-result = gdNetBDMix30(tmp);
-result = gdNetBDMix40(tmp);
+result = gdNetT1N20(tmp);
+result = gdNetT1N30(tmp);
+result = gdNetT1N40(tmp);
 
-result = gdNetBDMix20v2(tmp);
-result = gdNetBDMix30v2(tmp);
-result = gdNetBDMix40v2(tmp);
+result = gdNetT2N20(tmp);
+result = gdNetT2N30(tmp);
+result = gdNetT2N40(tmp);
 
-result = gdNetBothDouble(tmp);
-result = gdNetBothDoubleMix(tmp);
-result = gdNetBothDoublev2(tmp);
-result = gdNetBothv2(tmp);
+result = gdNetT3N20(tmp);
+result = gdNetT3N30(tmp);
+result = gdNetT3N40(tmp);
+
+
+result = gdNetT1N20D(tmp);
+result = gdNetT1N30D(tmp);
+result = gdNetT1N40D(tmp);
+
+result = gdNetT2N20D(tmp);
+result = gdNetT2N30D(tmp);
+result = gdNetT2N40D(tmp);
+
+result = gdNetT3N20D(tmp);
+result = gdNetT3N30D(tmp);
+result = gdNetT3N40D(tmp);
 
 clear tmp result

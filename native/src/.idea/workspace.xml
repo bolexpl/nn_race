@@ -12,23 +12,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c7e40ed-3e2a-431e-bd8e-c1646c6edb89" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNet1.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNet2.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNet3.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/lib_gdNet1.prj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetBDMix20.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetBDMix20v2.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetBDMix30.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetBDMix30v2.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetBDMix40.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetBDMix40v2.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetBothDouble.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetBothDoubleMix.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetBothDoublev2.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetBothv2.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/lib_gdNetBDMix20.prj" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../matlab/coder/test.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/coder/test.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/v1/gdNet1.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/v1/gdNet1.prj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/v1/gdNet1Double.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/v1/gdNet2.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/v1/gdNet2Double.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/v1/gdNetBoth.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/v1/gdNetBothDouble.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/v1/gdNetBothDoubleMix.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/v2/gdNet1Doublev2.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/v2/gdNet1v2.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/v2/gdNet2Doublev2.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/v2/gdNet2v2.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/v2/gdNetBothDoublev2.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/v2/gdNetBothv2.m" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../matlab/data/read_data.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/data/read_data.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/data/x1n.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/data/x1n.csv.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/data/x2n.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/data/x2n.csv.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/data/y1n.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/data/y1n.csv.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/data/y2n.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/data/y2n.csv.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/v1/x1n.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/v1/x1n.csv.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/v1/x2n.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/v1/x2n.csv.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/v1/y1n.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/v1/y1n.csv.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/v1/y2n.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/v1/y2n.csv.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/v2/x1n.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/v2/x1n.csv.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/v2/x2n.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/v2/x2n.csv.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/v2/y1n.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/v2/y1n.csv.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/v2/y2n.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/data/v2/y2n.csv.import" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../compiled/libgdneural.so" beforeDir="false" afterPath="$PROJECT_DIR$/../compiled/libgdneural.so" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neural.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Neural.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/Neural.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/Neural.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/gdlibrary.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/gdlibrary.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
@@ -37,10 +67,9 @@
       <change beforePath="$PROJECT_DIR$/matlib/gdNet.a" beforeDir="false" afterPath="$PROJECT_DIR$/matlib/gdNet.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matlib/gdNet_types.h" beforeDir="false" afterPath="$PROJECT_DIR$/matlib/gdNet_types.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matlib/rtwtypes.h" beforeDir="false" afterPath="$PROJECT_DIR$/matlib/rtwtypes.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/levels/Track1.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/levels/Track1.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/Car.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/Car.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/levels/Track2.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/levels/Track2.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../src/Car.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/Car.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/Global.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/Global.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/gui/MainMenu.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/gui/MainMenu.gd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,6 +167,13 @@
       <workItem from="1627499902109" duration="103000" />
       <workItem from="1627503507302" duration="432000" />
       <workItem from="1627504042477" duration="80000" />
+      <workItem from="1628773429819" duration="416000" />
+      <workItem from="1628774714599" duration="1376000" />
+      <workItem from="1628782396052" duration="276000" />
+      <workItem from="1628783520489" duration="1137000" />
+      <workItem from="1628794150486" duration="655000" />
+      <workItem from="1628794895993" duration="7000" />
+      <workItem from="1628800509712" duration="359000" />
     </task>
     <servers />
   </component>

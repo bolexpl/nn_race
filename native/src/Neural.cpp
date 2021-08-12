@@ -24,17 +24,26 @@ PoolRealArray Neural::norm(PoolRealArray args) {
 
 PoolStringArray Neural::algorithms() {
     PoolStringArray result;
-    result.append(String("gdNetBDMix20"));
-    result.append(String("gdNetBDMix30"));
-    result.append(String("gdNetBDMix40"));
-    result.append(String("gdNetBDMix20v2"));
-    result.append(String("gdNetBDMix30v2"));
-    result.append(String("gdNetBDMix40v2"));
 
-    result.append(String("gdNetBothDouble"));
-    result.append(String("gdNetBothDoubleMix"));
-    result.append(String("gdNetBothv2"));
-    result.append(String("gdNetBothDoublev2"));
+    result.append(String("gdNetT1N20"));
+    result.append(String("gdNetT1N30"));
+    result.append(String("gdNetT1N40"));
+    result.append(String("gdNetT2N20"));
+    result.append(String("gdNetT2N30"));
+    result.append(String("gdNetT2N40"));
+    result.append(String("gdNetT3N20"));
+    result.append(String("gdNetT3N30"));
+    result.append(String("gdNetT3N40"));
+    result.append(String("gdNetT1N20D"));
+    result.append(String("gdNetT1N30D"));
+    result.append(String("gdNetT1N40D"));
+    result.append(String("gdNetT2N20D"));
+    result.append(String("gdNetT2N30D"));
+    result.append(String("gdNetT2N40D"));
+    result.append(String("gdNetT3N20D"));
+    result.append(String("gdNetT3N30D"));
+    result.append(String("gdNetT3N40D"));
+
     return result;
 }
 
@@ -48,34 +57,58 @@ PoolRealArray Neural::predict(PoolRealArray args, int ver) {
 
     switch (ver) {
         case 0:
-            classInstance->gdNetBDMix20(dv, b_y1);
+            classInstance->gdNetT1N20(dv, b_y1);
             break;
         case 1:
-            classInstance->gdNetBDMix30(dv, b_y1);
+            classInstance->gdNetT1N30(dv, b_y1);
             break;
         case 2:
-            classInstance->gdNetBDMix40(dv, b_y1);
+            classInstance->gdNetT1N40(dv, b_y1);
             break;
         case 3:
-            classInstance->gdNetBDMix20v2(dv, b_y1);
+            classInstance->gdNetT2N20(dv, b_y1);
             break;
         case 4:
-            classInstance->gdNetBDMix30v2(dv, b_y1);
+            classInstance->gdNetT2N30(dv, b_y1);
             break;
         case 5:
-            classInstance->gdNetBDMix40v2(dv, b_y1);
+            classInstance->gdNetT2N40(dv, b_y1);
             break;
         case 6:
-            classInstance->gdNetBothDouble(dv, b_y1);
+            classInstance->gdNetT3N20(dv, b_y1);
             break;
         case 7:
-            classInstance->gdNetBothDoubleMix(dv, b_y1);
+            classInstance->gdNetT3N30(dv, b_y1);
             break;
         case 8:
-            classInstance->gdNetBothv2(dv, b_y1);
+            classInstance->gdNetT3N40(dv, b_y1);
             break;
         case 9:
-            classInstance->gdNetBothDoublev2(dv, b_y1);
+            classInstance->gdNetT1N20D(dv, b_y1);
+            break;
+        case 10:
+            classInstance->gdNetT1N30D(dv, b_y1);
+            break;
+        case 11:
+            classInstance->gdNetT1N40D(dv, b_y1);
+            break;
+        case 12:
+            classInstance->gdNetT2N20D(dv, b_y1);
+            break;
+        case 13:
+            classInstance->gdNetT2N30D(dv, b_y1);
+            break;
+        case 14:
+            classInstance->gdNetT2N40D(dv, b_y1);
+            break;
+        case 15:
+            classInstance->gdNetT3N20D(dv, b_y1);
+            break;
+        case 16:
+            classInstance->gdNetT3N30D(dv, b_y1);
+            break;
+        case 17:
+            classInstance->gdNetT3N40D(dv, b_y1);
             break;
     }
 

@@ -1,7 +1,7 @@
 //
 // gdNet_types.h
 //
-// Code generation for function 'gdNetBDMix20'
+// Code generation for function 'gdNetT1N20'
 //
 
 #ifndef GDNET_TYPES_H

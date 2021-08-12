@@ -26,6 +26,11 @@ enabled = true
 cast_to = Vector2( 0, -573 )
 collision_mask = 2
 
+[node name="Left15" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 150, -570 )
+collision_mask = 2
+
 [node name="Left30" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 300, -511 )
@@ -46,19 +51,9 @@ enabled = true
 cast_to = Vector2( 571, -157 )
 collision_mask = 2
 
-[node name="Left80" type="RayCast2D" parent="."]
-enabled = true
-cast_to = Vector2( 586.868, -84 )
-collision_mask = 2
-
 [node name="Forward" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 580, 0 )
-collision_mask = 2
-
-[node name="Right80" type="RayCast2D" parent="."]
-enabled = true
-cast_to = Vector2( 586.868, 84 )
 collision_mask = 2
 
 [node name="Right75" type="RayCast2D" parent="."]
@@ -79,6 +74,11 @@ collision_mask = 2
 [node name="Right30" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 300, 511 )
+collision_mask = 2
+
+[node name="Right15" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 150, 570 )
 collision_mask = 2
 
 [node name="Right0" type="RayCast2D" parent="."]
