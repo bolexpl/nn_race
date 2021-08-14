@@ -1,8 +1,5 @@
 tmp=1:14;
 
-result = gdNet1T20N(tmp);
-result = gdNet1T30N(tmp);
-result = gdNet1T40N(tmp);
 
 result = gdNet2T20N(tmp);
 result = gdNet2T30N(tmp);

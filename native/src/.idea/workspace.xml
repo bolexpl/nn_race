@@ -12,34 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c7e40ed-3e2a-431e-bd8e-c1646c6edb89" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetT1N20D.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetT1N30.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetT1N30D.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetT1N40.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetT1N40D.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetT2N20.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetT2N20D.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetT2N30.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetT2N30D.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetT2N40.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetT2N40D.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetT3N20.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetT3N20D.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetT3N30.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetT3N30D.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetT3N40.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/gdNetT3N40D.m" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../matlab/coder/test.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/coder/test.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/data/csv/x1n.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/data/csv/x1n.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/data/csv/x1n.csv.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/data/csv/x2n.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/data/csv/x2n.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/data/csv/x2n.csv.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/data/csv/y1n.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/data/csv/y1n.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/data/csv/y1n.csv.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/data/csv/y2n.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/data/csv/y2n.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/data/csv/y2n.csv.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/data/read_data.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/data/read_data.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../compiled/libgdneural.so" beforeDir="false" afterPath="$PROJECT_DIR$/../compiled/libgdneural.so" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neural.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Neural.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/Neural.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/Neural.cpp.o" afterDir="false" />
@@ -156,6 +129,7 @@
       <workItem from="1628800509712" duration="359000" />
       <workItem from="1628859762351" duration="1417000" />
       <workItem from="1628943294113" duration="1356000" />
+      <workItem from="1628971866849" duration="615000" />
     </task>
     <servers />
   </component>
