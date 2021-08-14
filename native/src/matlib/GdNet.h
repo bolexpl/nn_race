@@ -17,24 +17,15 @@ class GdNet {
 public:
   GdNet();
   ~GdNet();
-  void gdNetT1N20(const double x1[14], double b_y1[2]);
-  void gdNetT1N20D(const double x1[14], double b_y1[2]);
-  void gdNetT1N30(const double x1[14], double b_y1[2]);
-  void gdNetT1N30D(const double x1[14], double b_y1[2]);
-  void gdNetT1N40(const double x1[14], double b_y1[2]);
-  void gdNetT1N40D(const double x1[14], double b_y1[2]);
-  void gdNetT2N20(const double x1[14], double b_y1[2]);
-  void gdNetT2N20D(const double x1[14], double b_y1[2]);
-  void gdNetT2N30(const double x1[14], double b_y1[2]);
-  void gdNetT2N30D(const double x1[14], double b_y1[2]);
-  void gdNetT2N40(const double x1[14], double b_y1[2]);
-  void gdNetT2N40D(const double x1[14], double b_y1[2]);
-  void gdNetT3N20(const double x1[14], double b_y1[2]);
-  void gdNetT3N20D(const double x1[14], double b_y1[2]);
-  void gdNetT3N30(const double x1[14], double b_y1[2]);
-  void gdNetT3N30D(const double x1[14], double b_y1[2]);
-  void gdNetT3N40(const double x1[14], double b_y1[2]);
-  void gdNetT3N40D(const double x1[14], double b_y1[2]);
+  void gdNet1T20N(const double x1[14], double b_y1[2]);
+  void gdNet1T30N(const double x1[14], double b_y1[2]);
+  void gdNet1T40N(const double x1[14], double b_y1[2]);
+  void gdNet2T20N(const double x1[14], double b_y1[2]);
+  void gdNet2T30N(const double x1[14], double b_y1[2]);
+  void gdNet2T40N(const double x1[14], double b_y1[2]);
+  void gdNet3T20N(const double x1[14], double b_y1[2]);
+  void gdNet3T30N(const double x1[14], double b_y1[2]);
+  void gdNet3T40N(const double x1[14], double b_y1[2]);
 };
 
 #endif

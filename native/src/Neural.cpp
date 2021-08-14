@@ -25,24 +25,16 @@ PoolRealArray Neural::norm(PoolRealArray args) {
 PoolStringArray Neural::algorithms() {
     PoolStringArray result;
 
-    result.append(String("gdNetT1N20"));
-    result.append(String("gdNetT1N30"));
-    result.append(String("gdNetT1N40"));
-    result.append(String("gdNetT2N20"));
-    result.append(String("gdNetT2N30"));
-    result.append(String("gdNetT2N40"));
-    result.append(String("gdNetT3N20"));
-    result.append(String("gdNetT3N30"));
-    result.append(String("gdNetT3N40"));
-    result.append(String("gdNetT1N20D"));
-    result.append(String("gdNetT1N30D"));
-    result.append(String("gdNetT1N40D"));
-    result.append(String("gdNetT2N20D"));
-    result.append(String("gdNetT2N30D"));
-    result.append(String("gdNetT2N40D"));
-    result.append(String("gdNetT3N20D"));
-    result.append(String("gdNetT3N30D"));
-    result.append(String("gdNetT3N40D"));
+
+    result.append(String("gdNet1T20N"));
+    result.append(String("gdNet1T30N"));
+    result.append(String("gdNet1T40N"));
+    result.append(String("gdNet2T20N"));
+    result.append(String("gdNet2T30N"));
+    result.append(String("gdNet2T40N"));
+    result.append(String("gdNet3T20N"));
+    result.append(String("gdNet3T30N"));
+    result.append(String("gdNet3T40N"));
 
     return result;
 }
@@ -57,58 +49,31 @@ PoolRealArray Neural::predict(PoolRealArray args, int ver) {
 
     switch (ver) {
         case 0:
-            classInstance->gdNetT1N20(dv, b_y1);
+            classInstance->gdNet1T20N(dv, b_y1);
             break;
         case 1:
-            classInstance->gdNetT1N30(dv, b_y1);
+            classInstance->gdNet1T30N(dv, b_y1);
             break;
         case 2:
-            classInstance->gdNetT1N40(dv, b_y1);
+            classInstance->gdNet1T40N(dv, b_y1);
             break;
         case 3:
-            classInstance->gdNetT2N20(dv, b_y1);
+            classInstance->gdNet2T20N(dv, b_y1);
             break;
         case 4:
-            classInstance->gdNetT2N30(dv, b_y1);
+            classInstance->gdNet2T30N(dv, b_y1);
             break;
         case 5:
-            classInstance->gdNetT2N40(dv, b_y1);
+            classInstance->gdNet2T40N(dv, b_y1);
             break;
         case 6:
-            classInstance->gdNetT3N20(dv, b_y1);
+            classInstance->gdNet3T20N(dv, b_y1);
             break;
         case 7:
-            classInstance->gdNetT3N30(dv, b_y1);
+            classInstance->gdNet3T30N(dv, b_y1);
             break;
         case 8:
-            classInstance->gdNetT3N40(dv, b_y1);
-            break;
-        case 9:
-            classInstance->gdNetT1N20D(dv, b_y1);
-            break;
-        case 10:
-            classInstance->gdNetT1N30D(dv, b_y1);
-            break;
-        case 11:
-            classInstance->gdNetT1N40D(dv, b_y1);
-            break;
-        case 12:
-            classInstance->gdNetT2N20D(dv, b_y1);
-            break;
-        case 13:
-            classInstance->gdNetT2N30D(dv, b_y1);
-            break;
-        case 14:
-            classInstance->gdNetT2N40D(dv, b_y1);
-            break;
-        case 15:
-            classInstance->gdNetT3N20D(dv, b_y1);
-            break;
-        case 16:
-            classInstance->gdNetT3N30D(dv, b_y1);
-            break;
-        case 17:
-            classInstance->gdNetT3N40D(dv, b_y1);
+            classInstance->gdNet3T40N(dv, b_y1);
             break;
     }
 
