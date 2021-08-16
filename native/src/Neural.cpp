@@ -25,13 +25,7 @@ PoolRealArray Neural::norm(PoolRealArray args) {
 PoolStringArray Neural::algorithms() {
     PoolStringArray result;
 
-
-    result.append(String("gdNet2T20N"));
-    result.append(String("gdNet2T30N"));
-    result.append(String("gdNet2T40N"));
-    result.append(String("gdNet3T20N"));
-    result.append(String("gdNet3T30N"));
-    result.append(String("gdNet3T40N"));
+    result.append(String("gdNet3T40N_working"));
 
     return result;
 }
@@ -46,22 +40,7 @@ PoolRealArray Neural::predict(PoolRealArray args, int ver) {
 
     switch (ver) {
         case 0:
-            classInstance->gdNet2T20N(dv, b_y1);
-            break;
-        case 1:
-            classInstance->gdNet2T30N(dv, b_y1);
-            break;
-        case 2:
-            classInstance->gdNet2T40N(dv, b_y1);
-            break;
-        case 3:
-            classInstance->gdNet3T20N(dv, b_y1);
-            break;
-        case 4:
-            classInstance->gdNet3T30N(dv, b_y1);
-            break;
-        case 5:
-            classInstance->gdNet3T40N(dv, b_y1);
+            classInstance->gdNet3T40N_working(dv, b_y1);
             break;
     }
 

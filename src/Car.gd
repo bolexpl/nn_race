@@ -107,6 +107,7 @@ func neural_input():
 	var nn_in_vector = get_sensor_data()
 	nn_in_vector = nn.norm(nn_in_vector)
 	var output = nn.predict(nn_in_vector, Global.gd_net_ver)
+	print(output)
 	set_input(output[0], output[1])
 
 

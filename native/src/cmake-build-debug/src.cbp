@@ -104,10 +104,10 @@
 		<Unit filename="/home/bolek/Dokumenty/Godot/nn_race/native/src/matlib/GdNet.h">
 			<Option target="gdneural"/>
 		</Unit>
-		<Unit filename="/home/bolek/Dokumenty/Godot/nn_race/native/src/matlib/gdNet_data.h">
+		<Unit filename="/home/bolek/Dokumenty/Godot/nn_race/native/src/matlib/gdNet3T40N_working_data.h">
 			<Option target="gdneural"/>
 		</Unit>
-		<Unit filename="/home/bolek/Dokumenty/Godot/nn_race/native/src/matlib/gdNet_types.h">
+		<Unit filename="/home/bolek/Dokumenty/Godot/nn_race/native/src/matlib/gdNet3T40N_working_types.h">
 			<Option target="gdneural"/>
 		</Unit>
 		<Unit filename="/home/bolek/Dokumenty/Godot/nn_race/native/src/matlib/rtwtypes.h">
