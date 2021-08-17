@@ -28,8 +28,8 @@ endif()
 add_library(gdneural SHARED gdlibrary.cpp
         Neural.cpp Neural.h
         ${CMAKE_SOURCE_DIR}/matlib/GdNet.h
-        ${CMAKE_SOURCE_DIR}/matlib/gdNet3T40N_working_data.h
-        ${CMAKE_SOURCE_DIR}/matlib/gdNet3T40N_working_types.h
+        ${CMAKE_SOURCE_DIR}/matlib/gdNet_data.h
+        ${CMAKE_SOURCE_DIR}/matlib/gdNet_types.h
         ${CMAKE_SOURCE_DIR}/matlib/rtwtypes.h
         )
 

@@ -1,12 +1,9 @@
 tmp=1:14;
-
+tmp = tmp';
 
 result = gdNet2T20N(tmp);
-result = gdNet2T30N(tmp);
 result = gdNet2T40N(tmp);
-
-result = gdNet3T20N(tmp);
-result = gdNet3T30N(tmp);
-result = gdNet3T40N(tmp);
+result = gdNet2T40ND(tmp);
+result = gdNet3T40N_working(tmp');
 
 clear tmp result
