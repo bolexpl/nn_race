@@ -8,16 +8,14 @@ x3=[x1; x2];
 y3=[y1; y2];
 cd ..
 
-% x1 = [x1; x1];
-% y1 = [y1; y1];
-% x2 = [x2; x2];
-% y2 = [y2; y2];
-% x3 = [x3; x3];
-% y3 = [y3; y3];
-
 clear x1 y1
 
-% [x1, y1] = mix(x1, y1);
+x2d = [x2; x2];
+y2d = [y2; y2];
+x3d = [x3; x3];
+y3d = [y3; y3];
+
 [x2, y2] = mix(x2, y2);
 [x3, y3] = mix(x3, y3);
-
+[x2d, y2d] = mix(x2d, y2d);
+[x3d, y3d] = mix(x3d, y3d);
