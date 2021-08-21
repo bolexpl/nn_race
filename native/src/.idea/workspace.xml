@@ -12,6 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c7e40ed-3e2a-431e-bd8e-c1646c6edb89" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/kopia/gdNet2T40N.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/kopia/gdNet2T40ND.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/coder/kopia/gdNet3T40N_working.m" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../matlab/coder/test.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/coder/test.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neural.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Neural.cpp" afterDir="false" />
@@ -135,6 +138,7 @@
       <workItem from="1629153157674" duration="235000" />
       <workItem from="1629217258273" duration="706000" />
       <workItem from="1629301629247" duration="209000" />
+      <workItem from="1629311994727" duration="524000" />
     </task>
     <servers />
   </component>

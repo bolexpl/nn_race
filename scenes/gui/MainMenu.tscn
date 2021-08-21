@@ -101,7 +101,7 @@ margin_top = 44.0
 margin_right = 572.0
 margin_bottom = 82.0
 text = "Jazda manualna"
-items = [ "Jazda manualna", null, false, 0, null, "Jazda neuronalna", null, false, 1, null, "Wyścig", null, false, 2, null, "Zapis pomiarów", null, false, 3, null, "Działająca sieć", null, false, 4, null ]
+items = [ "Jazda manualna", null, false, 0, null, "Jazda neuronalna", null, false, 1, null, "Wyścig", null, false, 2, null, "Zapis pomiarów", null, false, 3, null ]
 selected = 0
 
 [node name="AlgoButton" type="OptionButton" parent="MainPanel/HSplitContainer/Panel/VBoxContainer"]

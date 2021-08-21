@@ -60,12 +60,6 @@ func change(scene, x, y, r):
 		Global.MEASURE_MODE:
 			car.working = true
 			car.neural = false
-		Global.WORKING_NET_MODE:
-			car = load("res://scenes/old/Car.tscn").instance()
-			car.position = Vector2(x, y)
-			car.rotation_degrees = r
-			car.working = true
-			car.neural = true
 	
 	var camera = Camera2D.new()
 	camera.current = true
