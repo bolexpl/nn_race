@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/map.png" type="Texture" id=1]
 [ext_resource path="res://src/levels/Track1.gd" type="Script" id=2]
+[ext_resource path="res://src/levels/Node2D.gd" type="Script" id=3]
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
@@ -29,3 +30,6 @@ polygon = PoolVector2Array( 403.904, 2.50763, 0.115417, 0.505367, 1.14817, 600.2
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( 0, 0.667419 )
 polygon = PoolVector2Array( 134.443, 202.142, 105.473, 207.698, 100.711, 229.922, 107.06, 256.907, 128.093, 294.608, 150.317, 348.977, 152.301, 445.411, 186.43, 486.684, 281.674, 483.509, 369.364, 463.959, 468.183, 443.172, 532.087, 390.249, 631.461, 390.265, 721.258, 448.633, 817.041, 414.077, 853.063, 299.391, 836.376, 193.444, 807.241, 146.298, 743.143, 156.893, 698.525, 180.589, 666.571, 207.498, 632.514, 244.497, 587.526, 269.303, 546.322, 290.326, 504.793, 310.474, 399.586, 286.542, 249.066, 235.668, 184.049, 221.191 )
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource( 3 )

@@ -40,31 +40,28 @@ func change(scene, x, y, r):
 	car.position = Vector2(x, y)
 	car.rotation_degrees = r
 	
+	
 	Global.mode = optbtn.selected
 	match Global.mode:
 		Global.MANUAL_MODE:
-			car.working = true
 			car.neural = false
 		Global.NEURAL_MODE:
-			car.working = true
 			car.neural = true
 		Global.RACE_MODE:
-			car.working = true
 			car.neural = false
 			var car2 = Car.instance()
 			car2.position = Vector2(x, y)
 			car2.rotation_degrees = r
-			car2.working = true
 			car2.neural = true
 			scene.add_child(car2)
 		Global.MEASURE_MODE:
-			car.working = true
 			car.neural = false
 	
 	var camera = Camera2D.new()
 	camera.current = true
 	car.add_child(camera)
 	scene.add_child(car)
+	scene.car = car
 	var root = get_tree().root
 	var level = root.get_node("MainMenu")
 	root.remove_child(level)

@@ -12,11 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c7e40ed-3e2a-431e-bd8e-c1646c6edb89" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/kopia/gdNet2T40N.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/kopia/gdNet2T40ND.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/coder/kopia/gdNet3T40N_working.m" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../matlab/coder/test.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/coder/test.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neural.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Neural.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/Neural.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/Neural.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/gdlibrary.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gdneural.dir/gdlibrary.cpp.o" afterDir="false" />
@@ -24,8 +20,11 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/libgdneural.so" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libgdneural.so" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matlib/GdNet.h" beforeDir="false" afterPath="$PROJECT_DIR$/matlib/GdNet.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matlib/gdNet.a" beforeDir="false" afterPath="$PROJECT_DIR$/matlib/gdNet.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matlib/gdNet_types.h" beforeDir="false" afterPath="$PROJECT_DIR$/matlib/gdNet_types.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matlib/rtwtypes.h" beforeDir="false" afterPath="$PROJECT_DIR$/matlib/rtwtypes.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/Car.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/Car.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/levels/Track1.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/levels/Track1.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/Car.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/Car.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/gui/MainMenu.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/gui/MainMenu.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/levels/Track1.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/levels/Track1.gd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +138,7 @@
       <workItem from="1629217258273" duration="706000" />
       <workItem from="1629301629247" duration="209000" />
       <workItem from="1629311994727" duration="524000" />
+      <workItem from="1629755966261" duration="314000" />
     </task>
     <servers />
   </component>

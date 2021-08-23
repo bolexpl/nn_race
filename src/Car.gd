@@ -3,7 +3,6 @@ extends KinematicBody2D
 const Neural = preload("res://native/Neural.gdns")
 
 export var neural = false
-export var working = true
 
 # steering
 export var wheel_base = 35  # Distance from front to rear wheel
@@ -35,6 +34,9 @@ var file_count
 
 var rays = null
 var nn
+var trajectory = []
+var last_trajectory_time = null
+var tr_elapsed_time = 0
 
 func _ready():
 	halfsize = wheel_base / 2
@@ -73,8 +75,11 @@ func _exit_tree():
 
 
 func _physics_process(delta):
-	if not working:
-		return
+	
+	tr_elapsed_time += delta
+	if tr_elapsed_time >= 0.05:
+		trajectory.append(global_position)
+		tr_elapsed_time = 0
 	
 	acceleration = Vector2.ZERO
 	if(neural):
@@ -85,6 +90,11 @@ func _physics_process(delta):
 	calculate_steering(delta)
 	velocity += acceleration * delta
 	velocity = move_and_slide(velocity)
+
+
+#func _draw():
+#	for i in trajectory:
+#		draw_circle(i, 900, Color.red)
 
 
 func set_input(turn_param, accel_param):

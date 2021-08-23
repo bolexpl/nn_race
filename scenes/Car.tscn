@@ -85,3 +85,10 @@ collision_mask = 2
 enabled = true
 cast_to = Vector2( 0, 573 )
 collision_mask = 2
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
