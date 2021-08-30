@@ -9,3 +9,4 @@ const SECTION = "measure"
 var mode = 0
 var gd_net_ver = 0
 var norm = true
+var trajectory = true

@@ -8,5 +8,4 @@ func _process(delta):
 func _draw():
 	var data = get_parent().car.trajectory
 	for i in range(data.size()):
-		print(data[i])
-		draw_circle(data[i], 2, Color.red)
+		draw_circle(data[i], 4, Color.red)

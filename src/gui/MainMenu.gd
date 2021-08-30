@@ -17,29 +17,36 @@ func _ready():
 
 
 func _on_Track1_pressed():
-	var scene = preload("res://scenes/levels/Track1.tscn").instance()
-	change(scene, 350, 790, 0)
+	var scene = preload("res://scenes/Map.tscn").instance()
+	var map = preload("res://scenes/levels/Track1.tscn").instance()
+	change(scene, map, 350, 790, 0)
 
 
 func _on_Track2_pressed():
-	var scene = preload("res://scenes/levels/Track2.tscn").instance()
-	change(scene, 662, 541, -50)
+	var scene = preload("res://scenes/Map.tscn").instance()
+	var map = preload("res://scenes/levels/Track2.tscn").instance()
+	change(scene, map, 662, 541, -50)
 
 
 func _on_Empty_pressed():
-	var scene = preload("res://scenes/levels/EmptyMap.tscn").instance()
-	change(scene, 300, 300, 0)
+	var scene = preload("res://scenes/Map.tscn").instance()
+	var map = preload("res://scenes/levels/EmptyMap.tscn").instance()
+	change(scene, map, 300, 300, 0)
 
 
 func _on_Settings_pressed():
 	var _err = get_tree().change_scene("res://scenes/gui/SettingsMenu.tscn")
 
 
-func change(scene, x, y, r):
+func change(scene, map, x, y, r):
+	var sprite = map.find_node("Sprite")
+	scene.sprite = sprite
+	
+	scene.add_child(map)
+	scene.move_child(map, 0)
 	var car = Car.instance()
 	car.position = Vector2(x, y)
 	car.rotation_degrees = r
-	
 	
 	Global.mode = optbtn.selected
 	match Global.mode:

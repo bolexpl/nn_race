@@ -41,48 +41,68 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 126.0
+margin_top = 53.0
 margin_right = 442.0
-margin_bottom = 158.0
+margin_bottom = 85.0
 text = "Plik do zapisania danych z czujników"
 align = 1
 
 [node name="SensorsButton" type="Button" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 170.0
+margin_top = 97.0
 margin_right = 442.0
-margin_bottom = 208.0
+margin_bottom = 135.0
 text = "..."
 
 [node name="Label2" type="Label" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 220.0
+margin_top = 147.0
 margin_right = 442.0
-margin_bottom = 252.0
+margin_bottom = 179.0
 text = "Plik do zapisania sterowania"
 align = 1
 
 [node name="InputsButton" type="Button" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 264.0
+margin_top = 191.0
 margin_right = 442.0
-margin_bottom = 302.0
+margin_bottom = 229.0
+text = "..."
+
+[node name="Label3" type="Label" parent="MainPanel/Panel/VBoxContainer"]
+margin_top = 241.0
+margin_right = 442.0
+margin_bottom = 273.0
+text = "Plik trajektorii"
+align = 1
+
+[node name="TrajectoryButton" type="Button" parent="MainPanel/Panel/VBoxContainer"]
+margin_top = 285.0
+margin_right = 442.0
+margin_bottom = 323.0
 text = "..."
 
 [node name="CheckBox" type="CheckBox" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 314.0
+margin_top = 335.0
 margin_right = 442.0
-margin_bottom = 354.0
+margin_bottom = 375.0
 keep_pressed_outside = true
 text = "normalizacja danych"
 
-[node name="SaveButton" type="Button" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 366.0
+[node name="CheckBox2" type="CheckBox" parent="MainPanel/Panel/VBoxContainer"]
+margin_top = 387.0
 margin_right = 442.0
-margin_bottom = 404.0
+margin_bottom = 427.0
+keep_pressed_outside = true
+text = "zapisanie trajektorii"
+
+[node name="SaveButton" type="Button" parent="MainPanel/Panel/VBoxContainer"]
+margin_top = 439.0
+margin_right = 442.0
+margin_bottom = 477.0
 text = "Zapisz"
 
 [node name="BackButton" type="Button" parent="MainPanel/Panel/VBoxContainer"]
-margin_top = 416.0
+margin_top = 489.0
 margin_right = 442.0
-margin_bottom = 454.0
+margin_bottom = 527.0
 text = "Wstecz"
 
 [node name="FileDialog" type="FileDialog" parent="."]
@@ -93,14 +113,15 @@ margin_bottom = 561.035
 rect_min_size = Vector2( 150, 52.5 )
 window_title = "Zapisz plik"
 access = 2
-current_dir = "/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork"
-current_path = "/home/bolek/sda6/home/Dokumenty/Godot/NeuralNetwork/"
+current_dir = "/home/bolek/sda6/home/Dokumenty/Godot/nn_race"
+current_path = "/home/bolek/sda6/home/Dokumenty/Godot/nn_race/"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [connection signal="pressed" from="MainPanel/Panel/VBoxContainer/SensorsButton" to="." method="_on_SensorsButton_pressed"]
 [connection signal="pressed" from="MainPanel/Panel/VBoxContainer/InputsButton" to="." method="_on_InputsButton_pressed"]
+[connection signal="pressed" from="MainPanel/Panel/VBoxContainer/TrajectoryButton" to="." method="_on_TrajectoryButton_pressed"]
 [connection signal="pressed" from="MainPanel/Panel/VBoxContainer/SaveButton" to="." method="_on_SaveButton_pressed"]
 [connection signal="pressed" from="MainPanel/Panel/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]

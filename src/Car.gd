@@ -75,11 +75,11 @@ func _exit_tree():
 
 
 func _physics_process(delta):
-	
-	tr_elapsed_time += delta
-	if tr_elapsed_time >= 0.05:
-		trajectory.append(global_position)
-		tr_elapsed_time = 0
+	if Global.trajectory:
+		tr_elapsed_time += delta
+		if tr_elapsed_time >= 0.05:
+			trajectory.append(global_position)
+			tr_elapsed_time = 0
 	
 	acceleration = Vector2.ZERO
 	if(neural):
@@ -198,3 +198,7 @@ func get_sensor_data():
 		values[i] = tmp
 	values[values.size() - 1] = velocity.length()
 	return values
+
+
+
+
