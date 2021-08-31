@@ -23,6 +23,7 @@ func _ready():
 			dir + "/tr_file.png")
 	$MainPanel/Panel/VBoxContainer/SensorsButton.text = sensor_file
 	$MainPanel/Panel/VBoxContainer/InputsButton.text = inputs_file
+	$MainPanel/Panel/VBoxContainer/TrajectoryButton.text = tr_file
 	config.save(config_file)
 
 

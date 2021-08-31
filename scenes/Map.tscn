@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Map.gd" type="Script" id=1]
 [ext_resource path="res://src/DrawingNode.gd" type="Script" id=2]
 [ext_resource path="res://assets/noto_sans_ui_regular.tres" type="DynamicFont" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 1 )
 
 [node name="Map" type="Node"]
 script = ExtResource( 1 )
@@ -17,6 +23,30 @@ margin_right = 78.0
 margin_bottom = 38.0
 custom_fonts/font = ExtResource( 3 )
 text = "zapisz"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 113.0
+margin_top = 7.0
+margin_right = 240.0
+margin_bottom = 39.0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Okrążenie:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LapsLabel" type="Label" parent="CanvasLayer"]
+margin_left = 238.0
+margin_top = 6.58578
+margin_right = 357.0
+margin_bottom = 38.5858
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }

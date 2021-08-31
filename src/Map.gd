@@ -3,6 +3,11 @@ extends Node
 
 var car = null
 var sprite = null
+var tr_tmp = false
+
+
+func _ready():
+	tr_tmp = Global.trajectory
 
 
 func _process(_delta):
@@ -12,6 +17,7 @@ func _process(_delta):
 		var level = root.get_node("Map")
 		root.remove_child(level)
 		level.call_deferred("free")
+		Global.trajectory = tr_tmp
 
 
 func _on_Button_pressed():

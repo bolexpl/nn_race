@@ -20,12 +20,14 @@ func _on_Track1_pressed():
 	var scene = preload("res://scenes/Map.tscn").instance()
 	var map = preload("res://scenes/levels/Track1.tscn").instance()
 	change(scene, map, 350, 790, 0)
+#	change(scene, map, 170, 220, 180)
 
 
 func _on_Track2_pressed():
 	var scene = preload("res://scenes/Map.tscn").instance()
 	var map = preload("res://scenes/levels/Track2.tscn").instance()
 	change(scene, map, 662, 541, -50)
+#	change(scene, map, 470, 620, 30)
 
 
 func _on_Empty_pressed():
