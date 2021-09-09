@@ -1,11 +1,15 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
   "CXX"
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bolek/Dokumenty/Godot/nn_race/native/src/Neural.cpp" "/home/bolek/Dokumenty/Godot/nn_race/native/src/cmake-build-debug/CMakeFiles/gdneural.dir/Neural.cpp.o"
-  "/home/bolek/Dokumenty/Godot/nn_race/native/src/gdlibrary.cpp" "/home/bolek/Dokumenty/Godot/nn_race/native/src/cmake-build-debug/CMakeFiles/gdneural.dir/gdlibrary.cpp.o"
+  "C:/Users/bolek/Documents/Godot/nn_race/native/src/Neural.cpp" "C:/Users/bolek/Documents/Godot/nn_race/native/src/cmake-build-debug/CMakeFiles/gdneural.dir/Neural.cpp.obj"
+  "C:/Users/bolek/Documents/Godot/nn_race/native/src/gdlibrary.cpp" "C:/Users/bolek/Documents/Godot/nn_race/native/src/cmake-build-debug/CMakeFiles/gdneural.dir/gdlibrary.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -16,11 +20,15 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/bolek/sda6/MATLAB/R2021a/extern/include"
+  "C:/Program Files/Polyspace/R2021a/extern/include"
   "../godot-cpp/godot-headers"
   "../godot-cpp/include"
   "../godot-cpp/include/core"
   "../godot-cpp/include/gen"
+  )
+
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
   )
 
 # Targets to which this target links.
